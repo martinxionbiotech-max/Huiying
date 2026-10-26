@@ -1,0 +1,46 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { newsPosts, newsCategories } from '../../data/newsPosts';
+
+const countBy = (cat: string) => newsPosts.filter((n) => n.category === cat).length;
+---
+
+<BaseLayout title="News" description="Filter knowledge and company updates.">
+  <section class="page-hero">
+    <div class="container"><h1>News</h1><p>Filter knowledge and company updates.</p></div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      {
+        newsCategories.map((cat) => (
+          <div class="news-group">
+            <div class="section-head">
+              <h2>{cat.label}</h2>
+              <p class="lede">{countBy(cat.slug)} article{countBy(cat.slug) === 1 ? '' : 's'}</p>
+            </div>
+            <div class="grid grid--3">
+              {
+                newsPosts.filter((n) => n.category === cat.slug).map((n) => (
+                  <a class="card news-card" href={`/news/${n.slug}/`}>
+                    <span class="chip">{cat.label}</span>
+                    <h3>{n.title}</h3>
+                    <p class="small muted">{n.date}</p>
+                    <p class="small">{n.body.split('\n')[0].slice(0, 140)}…</p>
+                  </a>
+                ))
+              }
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .news-group { margin-bottom: var(--sp-12); }
+  .news-card { color: inherit; display: flex; flex-direction: column; gap: 0.5rem; }
+  .news-card:hover { color: inherit; }
+  .news-card h3 { font-size: 1.05rem; margin-bottom: 0.25rem; }
+</style>

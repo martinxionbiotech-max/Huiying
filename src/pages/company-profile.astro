@@ -1,0 +1,43 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { companyProfile } from '../data/company';
+---
+
+<BaseLayout title="Company Profile" description={companyProfile.description.slice(0, 155)}>
+  <section class="page-hero">
+    <div class="container"><h1>{companyProfile.heading}</h1><p>{companyProfile.name}</p></div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="profile">
+        <div class="profile__text">
+          <h2>{companyProfile.name}</h2>
+          <p>{companyProfile.description}</p>
+          <p class="opinion"><strong>Boutique service.</strong> {companyProfile.welcome}</p>
+        </div>
+        <div class="profile__img">
+          <img src={companyProfile.images[0]} alt="Company" width="560" height="420" loading="lazy" />
+          <img src={companyProfile.images[1]} alt="Company" width="560" height="420" loading="lazy" />
+        </div>
+      </div>
+
+      <div class="grid grid--4 mt-2">
+        {companyProfile.strengths.map((s) => (
+          <div class="card strength">
+            <img src={s.image} alt={s.title} width="400" height="260" loading="lazy" />
+            <h3>{s.title}</h3>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .profile { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 3rem; align-items: start; }
+  .profile__img { display: grid; gap: 1rem; }
+  .profile__img img { border-radius: var(--radius); box-shadow: var(--shadow-md); }
+  .strength img { width: 100%; height: 180px; object-fit: cover; border-radius: var(--radius-sm); margin-bottom: 1rem; }
+  @media (max-width: 820px) { .profile { grid-template-columns: 1fr; } }
+</style>

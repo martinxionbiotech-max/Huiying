@@ -1,0 +1,466 @@
+/* =========================================================================
+   Hycarfilter — Design System (global tokens & base)
+   -------------------------------------------------------------------------
+   Palette : deep navy #0F2A43 (primary) · safety orange #E8622C (accent)
+             neutral off-white background · white cards, thin borders
+   Type    : system stack (no network font dependency)
+   Rhythm  : 8px spacing scale · soft radius · layered shadows
+   ========================================================================= */
+
+:root {
+  /* --- Brand: deep navy (primary) --- */
+  --navy-950: #07131F;
+  --navy-900: #0A1E30;
+  --navy-800: #0F2A43;   /* primary */
+  --navy-700: #14385A;
+  --navy-600: #1B4A73;
+  --navy-500: #2A5F8C;
+  --navy-100: #D7E2EE;
+  --navy-050: #EBF1F7;
+
+  /* --- Accent: safety orange --- */
+  --orange-700: #B34A1D;
+  --orange-600: #C95520;
+  --orange-500: #E8622C;  /* accent */
+  --orange-400: #F27C46;
+  --orange-100: #FBE3D6;
+  --orange-050: #FEF4EE;
+
+  /* --- Neutral --- */
+  --ink: #0E1C29;          /* headings / body text */
+  --ink-soft: #52616F;     /* secondary text */
+  --ink-faint: #7B8A99;    /* tertiary text */
+  --bg: #FFFFFF;
+  --bg-soft: #F4F6F9;      /* off-white section background */
+  --bg-tint: #F9FAFC;      /* zebra / subtle tint */
+  --line: #E4E9EF;         /* hairline border */
+  --line-strong: #D3DAE3;  /* emphasis border */
+
+  /* --- Legacy aliases (kept so existing component styles resolve) --- */
+  --brand: var(--navy-800);
+  --brand-dark: var(--navy-900);
+  --brand-ink: var(--ink);
+  --accent: var(--orange-500);
+  --accent-dark: var(--orange-600);
+
+  /* --- Typography --- */
+  --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB",
+    "Microsoft YaHei", sans-serif;
+
+  /* --- Spacing (8px rhythm) --- */
+  --sp-1: 0.25rem;
+  --sp-2: 0.5rem;
+  --sp-3: 0.75rem;
+  --sp-4: 1rem;
+  --sp-5: 1.25rem;
+  --sp-6: 1.5rem;
+  --sp-8: 2rem;
+  --sp-10: 2.5rem;
+  --sp-12: 3rem;
+  --sp-16: 4rem;
+
+  /* --- Radius --- */
+  --radius: 10px;
+  --radius-sm: 7px;
+  --radius-lg: 14px;
+
+  /* --- Shadows --- */
+  --shadow-sm: 0 1px 2px rgba(15, 42, 67, 0.05), 0 1px 3px rgba(15, 42, 67, 0.04);
+  --shadow-md: 0 6px 16px rgba(15, 42, 67, 0.09);
+  --shadow-lg: 0 16px 40px rgba(15, 42, 67, 0.14);
+
+  /* --- Layout --- */
+  --maxw: 1140px;
+  --header-h: 72px;
+
+  /* --- Motion --- */
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --t-fast: 0.16s;
+  --t-med: 0.24s;
+}
+
+/* =========================================================================
+   Reset & base
+   ========================================================================= */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.7;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection { background: var(--orange-500); color: #fff; }
+
+img { max-width: 100%; height: auto; display: block; }
+
+h1, h2, h3, h4, h5 {
+  line-height: 1.22;
+  margin: 0 0 0.6em;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+
+h1 { font-size: clamp(2rem, 4.2vw, 3rem); }
+h2 { font-size: clamp(1.5rem, 2.8vw, 2rem); }
+h3 { font-size: 1.2rem; }
+h4 { font-size: 1rem; }
+
+p { margin: 0 0 1em; }
+
+a { color: var(--brand); text-decoration: none; }
+a:hover { color: var(--accent); }
+
+:focus-visible {
+  outline: 2px solid var(--orange-500);
+  outline-offset: 2px;
+}
+
+/* =========================================================================
+   Layout
+   ========================================================================= */
+.container {
+  width: 100%;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 var(--sp-5);
+}
+
+.section { padding: var(--sp-16) 0; }
+.section--soft { background: var(--bg-soft); }
+
+.section-head { max-width: 780px; margin-bottom: var(--sp-8); }
+.section-head h2 { margin-bottom: 0.3em; }
+.section-head h2::after {
+  content: "";
+  display: block;
+  width: 56px;
+  height: 4px;
+  border-radius: 2px;
+  margin-top: 0.55rem;
+  background: linear-gradient(90deg, var(--orange-500), var(--orange-400));
+}
+.lede { color: var(--ink-soft); font-size: 1.06rem; }
+
+/* =========================================================================
+   Buttons
+   ========================================================================= */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.72rem 1.5rem;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 0.95rem;
+  line-height: 1;
+  border: 1.5px solid transparent;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background var(--t-fast) var(--ease), color var(--t-fast) var(--ease),
+    border-color var(--t-fast) var(--ease), box-shadow var(--t-fast) var(--ease),
+    transform var(--t-fast) var(--ease);
+}
+
+.btn--primary {
+  background: var(--orange-500);
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(232, 98, 44, 0.28);
+}
+.btn--primary:hover {
+  background: var(--orange-600);
+  color: #fff;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(232, 98, 44, 0.38);
+}
+
+.btn--brand { background: var(--navy-800); color: #fff; }
+.btn--brand:hover {
+  background: var(--navy-700);
+  color: #fff;
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn--outline { background: transparent; color: var(--navy-800); border-color: var(--navy-800); }
+.btn--outline:hover { background: var(--navy-800); color: #fff; }
+
+.btn--ghost { background: transparent; color: #fff; border-color: rgba(255, 255, 255, 0.65); }
+.btn--ghost:hover { background: #fff; color: var(--navy-800); }
+
+/* =========================================================================
+   Grids & cards
+   ========================================================================= */
+.grid { display: grid; gap: var(--sp-6); }
+.grid--2 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+.grid--3 { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+.grid--4 { grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); }
+
+.card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: var(--sp-6);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--t-med) var(--ease), transform var(--t-med) var(--ease),
+    border-color var(--t-med) var(--ease);
+}
+.card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
+  border-color: var(--line-strong);
+}
+.card h3 { margin-bottom: 0.45em; color: var(--navy-800); }
+
+/* =========================================================================
+   Chips / badges
+   ========================================================================= */
+.chip {
+  display: inline-block;
+  padding: 0.16rem 0.62rem;
+  border-radius: 999px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  background: var(--navy-050);
+  color: var(--navy-700);
+  border: 1px solid var(--navy-100);
+}
+
+/* =========================================================================
+   Tables — SKU spec (striped, industrial)
+   ========================================================================= */
+.table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  background: #fff;
+}
+
+table.spec {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  font-size: 0.92rem;
+}
+
+table.spec th,
+table.spec td {
+  border: 1px solid var(--line);
+  padding: 0.65rem 0.85rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+table.spec thead th {
+  background: var(--navy-800);
+  color: #fff;
+  font-weight: 700;
+  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 0.76rem;
+  border-color: var(--navy-700);
+}
+
+table.spec tbody th {
+  background: var(--navy-050);
+  color: var(--navy-800);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+table.spec tbody tr:nth-child(even) td { background: var(--bg-tint); }
+table.spec tbody tr:nth-child(even) th { background: #E8EEF5; }
+
+table.spec tbody tr:hover td { background: var(--orange-050); }
+table.spec tbody tr:hover th { background: #F7E4D8; }
+
+table.spec td.null { color: var(--ink-faint); }
+
+/* =========================================================================
+   Editorial opinion (blockquote)
+   ========================================================================= */
+.opinion {
+  border-left: 4px solid var(--orange-500);
+  background: var(--orange-050);
+  padding: var(--sp-5) var(--sp-6);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  margin: var(--sp-6) 0;
+}
+.opinion > strong { color: var(--navy-800); }
+.opinion .byline { font-size: 0.85rem; color: var(--ink-soft); margin-top: 0.5rem; }
+
+/* =========================================================================
+   FAQ
+   ========================================================================= */
+details.faq {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1rem 1.2rem;
+  margin-bottom: 0.8rem;
+  background: #fff;
+  transition: border-color var(--t-fast) var(--ease), box-shadow var(--t-fast) var(--ease);
+}
+details.faq[open] { border-color: var(--orange-400); box-shadow: var(--shadow-sm); }
+details.faq summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--navy-800);
+  list-style: none;
+}
+details.faq summary::-webkit-details-marker { display: none; }
+details.faq summary::before {
+  content: "+";
+  display: inline-block;
+  width: 1.2rem;
+  color: var(--orange-500);
+  font-weight: 700;
+  margin-right: 0.4rem;
+}
+details.faq[open] summary::before { content: "–"; }
+details.faq p { margin: 0.6rem 0 0; color: var(--ink-soft); }
+
+/* =========================================================================
+   Legal pages
+   ========================================================================= */
+.legal { max-width: 800px; }
+.legal h1 { margin-bottom: 0.4rem; }
+.legal h2 { margin-top: 2.4rem; font-size: 1.4rem; }
+.legal h3 { margin-top: 1.6rem; font-size: 1.05rem; }
+.legal ul, .legal ol { margin: 0 0 1em; padding-left: 1.4rem; }
+.legal li { margin-bottom: 0.4rem; }
+.legal .updated { color: var(--ink-soft); font-size: 0.9rem; }
+.legal a { text-decoration: underline; }
+.legal .toc {
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--orange-500);
+  border-radius: var(--radius);
+  padding: 1.1rem 1.5rem;
+  margin-bottom: 2rem;
+}
+.legal .toc ol { margin: 0.5rem 0 0; }
+.legal .toc li { margin-bottom: 0.3rem; }
+.legal table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  font-size: 0.9rem;
+  margin: 0 0 1.2em;
+}
+.legal table caption {
+  text-align: left;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--ink-soft);
+}
+.legal table th,
+.legal table td {
+  border: 1px solid var(--line);
+  padding: 0.6rem 0.75rem;
+  text-align: left;
+  vertical-align: top;
+}
+.legal table thead th {
+  background: var(--navy-800);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+.legal table tbody tr:nth-child(even) td { background: var(--bg-tint); }
+
+/* =========================================================================
+   Utilities
+   ========================================================================= */
+.muted { color: var(--ink-soft); }
+.small { font-size: 0.88rem; }
+.mt-2 { margin-top: var(--sp-8); }
+.mb-2 { margin-bottom: var(--sp-8); }
+.center { text-align: center; }
+
+/* =========================================================================
+   RTL (Arabic) — basic adaptation
+   ========================================================================= */
+[dir="rtl"] { direction: rtl; }
+[dir="rtl"] body { text-align: right; }
+[dir="rtl"] .opinion {
+  border-left: none;
+  border-right: 4px solid var(--orange-500);
+  border-radius: var(--radius) 0 0 var(--radius);
+}
+[dir="rtl"] details.faq summary::before { margin-right: 0; margin-left: 0.4rem; }
+[dir="rtl"] .legal .toc {
+  border-left: none;
+  border-right: 4px solid var(--orange-500);
+}
+[dir="rtl"] .legal ul,
+[dir="rtl"] .legal ol,
+[dir="rtl"] ul:not([class]),
+[dir="rtl"] ol:not([class]) {
+  padding-left: 0;
+  padding-right: 1.4rem;
+}
+[dir="rtl"] .table-wrap,
+[dir="rtl"] table.spec th,
+[dir="rtl"] table.spec td { text-align: right; }
+[dir="rtl"] .legal table caption,
+[dir="rtl"] .legal table th,
+[dir="rtl"] .legal table td { text-align: right; }
+[dir="rtl"] .cta__actions { justify-content: flex-start; }
+
+/* =========================================================================
+   Accessibility
+   ========================================================================= */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+
+/* =========================================================================
+   Shared page scaffolds
+   ========================================================================= */
+.page-hero {
+  background: linear-gradient(160deg, var(--navy-900), var(--navy-700));
+  color: #fff;
+  padding: 3.5rem 0;
+}
+.page-hero h1 { color: #fff; margin-bottom: 0.4rem; }
+.page-hero p { color: var(--navy-100); margin: 0; }
+
+.crumbs { background: var(--bg-soft); padding: 0.8rem 0; font-size: 0.9rem; color: var(--ink-soft); }
+.crumbs .container { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.crumbs a { color: var(--ink-soft); }
+.crumbs a:hover { color: var(--accent); }
+
+.gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: var(--sp-6); }
+.gallery img { width: 100%; height: 240px; object-fit: cover; border-radius: var(--radius); box-shadow: var(--shadow-sm); }
+
+/* WhatsApp contact button */
+.wa-btn {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: #25D366; color: #fff; font-weight: 700;
+  padding: 0.65rem 1.1rem; border-radius: 999px;
+  text-decoration: none; margin-top: 0.3rem;
+  transition: background var(--t-med) var(--ease), transform var(--t-med) var(--ease);
+}
+.wa-btn:hover { background: #1EBE5D; color: #fff; transform: translateY(-1px); }

@@ -1,0 +1,1154 @@
+{
+  "ok": 62,
+  "dead": 2,
+  "total": 64,
+  "deadList": [
+    {
+      "url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2024112814221781879/cms/image/ac7dfb0c-9f66-4346-a20f-f226255c788d.png",
+      "status": 404
+    },
+    {
+      "url": "https://omo-oss-image.thefastimg.com/portal-saas/pg2024112814221781879/cms/image/de378b30-b55f-4eab-91de-bef0d9ae88aa.png",
+      "status": 404
+    }
+  ],
+  "results": [
+    {
+      "uuid": "b27a61f1-1ae2-45bc-9dfc-310bd3f67f3d",
+      "file": "b27a61f1-1ae2-45bc-9dfc-310bd3f67f3d.png",
+      "status": "ok",
+      "size": 7352,
+      "pages": [
+        "__response__",
+        "home",
+        "company-profile",
+        "culture",
+        "factory",
+        "marketing",
+        "download",
+        "exhibition",
+        "contact",
+        "privacy-policy",
+        "news-index",
+        "news-company",
+        "news-industry",
+        "news-50",
+        "news-51",
+        "news-52",
+        "news-53",
+        "news-54",
+        "news-55",
+        "news-56",
+        "news-57",
+        "product-cat-37",
+        "product-cat-38",
+        "product-cat-39",
+        "product-cat-40",
+        "product-cat-41",
+        "product-cat-42",
+        "product-690",
+        "product-691",
+        "product-692",
+        "product-693",
+        "product-694",
+        "product-695",
+        "product-696",
+        "product-697",
+        "product-698",
+        "product-699",
+        "product-700",
+        "product-701",
+        "product-702",
+        "product-703"
+      ]
+    },
+    {
+      "uuid": "961d7908-60f5-4a42-8caa-b67c5c55ce11",
+      "file": "961d7908-60f5-4a42-8caa-b67c5c55ce11.png",
+      "status": "ok",
+      "size": 4654,
+      "pages": [
+        "__response__",
+        "home",
+        "company-profile",
+        "culture",
+        "factory",
+        "marketing",
+        "download",
+        "exhibition",
+        "contact",
+        "privacy-policy",
+        "news-index",
+        "news-company",
+        "news-industry",
+        "news-50",
+        "news-51",
+        "news-52",
+        "news-53",
+        "news-54",
+        "news-55",
+        "news-56",
+        "news-57",
+        "product-cat-37",
+        "product-cat-38",
+        "product-cat-39",
+        "product-cat-40",
+        "product-cat-41",
+        "product-cat-42",
+        "product-690",
+        "product-691",
+        "product-692",
+        "product-693",
+        "product-694",
+        "product-695",
+        "product-696",
+        "product-697",
+        "product-698",
+        "product-699",
+        "product-700",
+        "product-701",
+        "product-702",
+        "product-703"
+      ]
+    },
+    {
+      "uuid": "de9d5cc3-72d8-4aec-aaf5-1b78f4ca3e3c",
+      "file": "de9d5cc3-72d8-4aec-aaf5-1b78f4ca3e3c.png",
+      "status": "ok",
+      "size": 8014,
+      "pages": [
+        "__response__",
+        "home",
+        "company-profile",
+        "culture",
+        "factory",
+        "marketing",
+        "download",
+        "exhibition",
+        "contact",
+        "privacy-policy",
+        "news-index",
+        "news-company",
+        "news-industry",
+        "news-50",
+        "news-51",
+        "news-52",
+        "news-53",
+        "news-54",
+        "news-55",
+        "news-56",
+        "news-57",
+        "product-cat-37",
+        "product-cat-38",
+        "product-cat-39",
+        "product-cat-40",
+        "product-cat-41",
+        "product-cat-42",
+        "product-690",
+        "product-691",
+        "product-692",
+        "product-693",
+        "product-694",
+        "product-695",
+        "product-696",
+        "product-697",
+        "product-698",
+        "product-699",
+        "product-700",
+        "product-701",
+        "product-702",
+        "product-703"
+      ]
+    },
+    {
+      "uuid": "e77029a4-f8b4-40f2-a01b-a231126b0118",
+      "file": "e77029a4-f8b4-40f2-a01b-a231126b0118.png",
+      "status": "ok",
+      "size": 1279,
+      "pages": [
+        "__response__",
+        "home"
+      ]
+    },
+    {
+      "uuid": "b1412b80-d35c-4e8c-abfb-917770ed4190",
+      "file": "b1412b80-d35c-4e8c-abfb-917770ed4190.png",
+      "status": "ok",
+      "size": 8177,
+      "pages": [
+        "__response__",
+        "home",
+        "company-profile",
+        "culture",
+        "factory",
+        "marketing",
+        "download",
+        "exhibition",
+        "contact",
+        "privacy-policy",
+        "news-index",
+        "news-company",
+        "news-industry",
+        "news-50",
+        "news-51",
+        "news-52",
+        "news-53",
+        "news-54",
+        "news-55",
+        "news-56",
+        "news-57",
+        "product-cat-37",
+        "product-cat-38",
+        "product-cat-39",
+        "product-cat-40",
+        "product-cat-41",
+        "product-cat-42",
+        "product-690",
+        "product-691",
+        "product-692",
+        "product-693",
+        "product-694",
+        "product-695",
+        "product-696",
+        "product-697",
+        "product-698",
+        "product-699",
+        "product-700",
+        "product-701",
+        "product-702",
+        "product-703"
+      ]
+    },
+    {
+      "uuid": "6a2fe246-680d-466b-8ec1-301773bc3506",
+      "file": "6a2fe246-680d-466b-8ec1-301773bc3506.jpg",
+      "status": "ok",
+      "size": 101853,
+      "pages": [
+        "__response__",
+        "home",
+        "product-cat-37",
+        "product-cat-40",
+        "product-690",
+        "product-691",
+        "product-692",
+        "product-693",
+        "product-694",
+        "product-695",
+        "product-696",
+        "product-697",
+        "product-698",
+        "product-699",
+        "product-700",
+        "product-701",
+        "product-702",
+        "product-703"
+      ]
+    },
+    {
+      "uuid": "dfa88509-8560-4df5-88f7-e980a578d65a",
+      "file": "dfa88509-8560-4df5-88f7-e980a578d65a.png",
+      "status": "ok",
+      "size": 5024,
+      "pages": [
+        "__response__",
+        "home"
+      ]
+    },
+    {
+      "uuid": "d6028db0-eb29-447e-8e5a-1c238d99f4c0",
+      "file": "d6028db0-eb29-447e-8e5a-1c238d99f4c0.png",
+      "status": "ok",
+      "size": 8981,
+      "pages": [
+        "__response__",
+        "home"
+      ]
+    },
+    {
+      "uuid": "d8dc5304-3276-4f48-95dd-1e16fa3e4e23",
+      "file": "d8dc5304-3276-4f48-95dd-1e16fa3e4e23.png",
+      "status": "ok",
+      "size": 13860,
+      "pages": [
+        "__response__",
+        "home"
+      ]
+    },
+    {
+      "uuid": "d3c90754-3b64-49fe-9777-7973fb0eab78",
+      "file": "d3c90754-3b64-49fe-9777-7973fb0eab78.png",
+      "status": "ok",
+      "size": 4962,
+      "pages": [
+        "__response__",
+        "home"
+      ]
+    },
+    {
+      "uuid": "0a4f9845-4ecd-4d0c-a06d-fecf7478cca8",
+      "file": "0a4f9845-4ecd-4d0c-a06d-fecf7478cca8.png",
+      "status": "ok",
+      "size": 16605,
+      "pages": [
+        "__response__",
+        "home"
+      ]
+    },
+    {
+      "uuid": "f4fc45f5-88c2-4d17-a75d-f050fa645b58",
+      "file": "f4fc45f5-88c2-4d17-a75d-f050fa645b58.jpg",
+      "status": "ok",
+      "size": 70356,
+      "pages": [
+        "__response__",
+        "home"
+      ]
+    },
+    {
+      "uuid": "e7c649ac-5589-4023-bf1a-dd0789ad1acf",
+      "file": "e7c649ac-5589-4023-bf1a-dd0789ad1acf.jpg",
+      "status": "ok",
+      "size": 131730,
+      "pages": [
+        "__response__",
+        "home"
+      ]
+    },
+    {
+      "uuid": "d6a0298e-b775-4dac-8ba0-3d4a059757e5",
+      "file": "d6a0298e-b775-4dac-8ba0-3d4a059757e5.png",
+      "status": "ok",
+      "size": 19095,
+      "pages": [
+        "__response__",
+        "home"
+      ]
+    },
+    {
+      "uuid": "44f1165c-0b5b-4af2-9b3f-fce56e89ff63",
+      "file": "44f1165c-0b5b-4af2-9b3f-fce56e89ff63.jpg",
+      "status": "ok",
+      "size": 134499,
+      "pages": [
+        "__response__",
+        "home",
+        "product-cat-37",
+        "product-cat-38",
+        "product-690",
+        "product-691",
+        "product-692",
+        "product-693",
+        "product-694",
+        "product-695",
+        "product-696",
+        "product-697",
+        "product-698",
+        "product-699",
+        "product-700",
+        "product-701",
+        "product-702",
+        "product-703"
+      ]
+    },
+    {
+      "uuid": "b10a3bb2-030f-4546-ad8e-345129cba1ee",
+      "file": "b10a3bb2-030f-4546-ad8e-345129cba1ee.jpg",
+      "status": "ok",
+      "size": 135175,
+      "pages": [
+        "__response__",
+        "home",
+        "news-index",
+        "news-industry",
+        "news-52",
+        "product-cat-37",
+        "product-cat-39",
+        "product-690",
+        "product-691",
+        "product-692",
+        "product-693",
+        "product-694",
+        "product-695",
+        "product-696",
+        "product-697",
+        "product-698",
+        "product-699",
+        "product-700",
+        "product-701",
+        "product-702",
+        "product-703"
+      ]
+    },
+    {
+      "uuid": "46af20df-a963-4444-b4fd-88fb18f6afa9",
+      "file": "46af20df-a963-4444-b4fd-88fb18f6afa9.jpg",
+      "status": "ok",
+      "size": 188047,
+      "pages": [
+        "__response__",
+        "home"
+      ]
+    },
+    {
+      "uuid": "ea291f03-caa3-4ee1-ac0e-428bd1c86da0",
+      "file": "ea291f03-caa3-4ee1-ac0e-428bd1c86da0.jpg",
+      "status": "ok",
+      "size": 182663,
+      "pages": [
+        "__response__",
+        "home"
+      ]
+    },
+    {
+      "uuid": "dbd03028-d70f-46f7-ad30-16f4ff942295",
+      "file": "dbd03028-d70f-46f7-ad30-16f4ff942295.jpg",
+      "status": "ok",
+      "size": 370788,
+      "pages": [
+        "__response__",
+        "home"
+      ]
+    },
+    {
+      "uuid": "52ecab90-9ceb-45fe-8124-970cb75d212d",
+      "file": "52ecab90-9ceb-45fe-8124-970cb75d212d.jpg",
+      "status": "ok",
+      "size": 168709,
+      "pages": [
+        "__response__",
+        "home"
+      ]
+    },
+    {
+      "uuid": "5680c829-95a1-436e-bb78-5cd2d749ab92",
+      "file": "5680c829-95a1-436e-bb78-5cd2d749ab92.png",
+      "status": "ok",
+      "size": 136993,
+      "pages": [
+        "__response__",
+        "home"
+      ]
+    },
+    {
+      "uuid": "22e5e5b9-b2b4-4ac9-abb4-1e6d6c670c0a",
+      "file": "22e5e5b9-b2b4-4ac9-abb4-1e6d6c670c0a.jpg",
+      "status": "ok",
+      "size": 113065,
+      "pages": [
+        "__response__",
+        "home"
+      ]
+    },
+    {
+      "uuid": "067524c3-532b-4a62-abf4-2f03a9733f79",
+      "file": "067524c3-532b-4a62-abf4-2f03a9733f79.jpg",
+      "status": "ok",
+      "size": 31876,
+      "pages": [
+        "__response__",
+        "home",
+        "company-profile",
+        "culture",
+        "factory",
+        "marketing",
+        "download",
+        "exhibition",
+        "contact",
+        "privacy-policy",
+        "news-index",
+        "news-company",
+        "news-industry",
+        "news-50",
+        "news-51",
+        "news-52",
+        "news-53",
+        "news-54",
+        "news-55",
+        "news-56",
+        "news-57",
+        "product-cat-37",
+        "product-cat-38",
+        "product-cat-39",
+        "product-cat-40",
+        "product-cat-41",
+        "product-cat-42",
+        "product-690",
+        "product-691",
+        "product-692",
+        "product-693",
+        "product-694",
+        "product-695",
+        "product-696",
+        "product-697",
+        "product-698",
+        "product-699",
+        "product-700",
+        "product-701",
+        "product-702",
+        "product-703"
+      ]
+    },
+    {
+      "uuid": "ac7dfb0c-9f66-4346-a20f-f226255c788d",
+      "file": "ac7dfb0c-9f66-4346-a20f-f226255c788d.png",
+      "status": "dead",
+      "size": 0,
+      "pages": [
+        "home"
+      ]
+    },
+    {
+      "uuid": "f160b99a-513c-4af0-8b6b-7c10b433130d",
+      "file": "f160b99a-513c-4af0-8b6b-7c10b433130d.jpg",
+      "status": "ok",
+      "size": 46774,
+      "pages": [
+        "__response__",
+        "company-profile",
+        "culture",
+        "factory",
+        "marketing",
+        "download",
+        "exhibition",
+        "contact",
+        "privacy-policy",
+        "news-index",
+        "news-company",
+        "news-industry",
+        "news-50",
+        "news-51",
+        "news-52",
+        "news-53",
+        "news-54",
+        "news-55",
+        "news-56",
+        "news-57",
+        "product-cat-37",
+        "product-cat-38",
+        "product-cat-39",
+        "product-cat-40",
+        "product-cat-41",
+        "product-cat-42",
+        "product-690",
+        "product-691",
+        "product-692",
+        "product-693",
+        "product-694",
+        "product-695",
+        "product-696",
+        "product-697",
+        "product-698",
+        "product-699",
+        "product-700",
+        "product-701",
+        "product-702",
+        "product-703"
+      ]
+    },
+    {
+      "uuid": "b5a75dda-4946-4659-a382-773c64e0055a",
+      "file": "b5a75dda-4946-4659-a382-773c64e0055a.jpg",
+      "status": "ok",
+      "size": 83576,
+      "pages": [
+        "__response__",
+        "company-profile",
+        "culture",
+        "factory",
+        "marketing",
+        "download",
+        "exhibition",
+        "contact",
+        "privacy-policy",
+        "news-index",
+        "news-company",
+        "news-industry",
+        "news-50",
+        "news-51",
+        "news-52",
+        "news-53",
+        "news-54",
+        "news-55",
+        "news-56",
+        "news-57",
+        "product-cat-37",
+        "product-cat-38",
+        "product-cat-39",
+        "product-cat-40",
+        "product-cat-41",
+        "product-cat-42",
+        "product-690",
+        "product-691",
+        "product-692",
+        "product-693",
+        "product-694",
+        "product-695",
+        "product-696",
+        "product-697",
+        "product-698",
+        "product-699",
+        "product-700",
+        "product-701",
+        "product-702",
+        "product-703"
+      ]
+    },
+    {
+      "uuid": "4ccdbf70-687a-410d-b596-55757094e37f",
+      "file": "4ccdbf70-687a-410d-b596-55757094e37f.jpg",
+      "status": "ok",
+      "size": 99986,
+      "pages": [
+        "__response__",
+        "company-profile",
+        "culture",
+        "factory",
+        "marketing",
+        "download",
+        "exhibition",
+        "contact",
+        "privacy-policy",
+        "news-index",
+        "news-company",
+        "news-industry",
+        "news-50",
+        "news-51",
+        "news-52",
+        "news-53",
+        "news-54",
+        "news-55",
+        "news-56",
+        "news-57",
+        "product-cat-37",
+        "product-cat-38",
+        "product-cat-39",
+        "product-cat-40",
+        "product-cat-41",
+        "product-cat-42",
+        "product-690",
+        "product-691",
+        "product-692",
+        "product-693",
+        "product-694",
+        "product-695",
+        "product-696",
+        "product-697",
+        "product-698",
+        "product-699",
+        "product-700",
+        "product-701",
+        "product-702",
+        "product-703"
+      ]
+    },
+    {
+      "uuid": "e2302fd0-e550-4281-8068-ec9a1d0221ae",
+      "file": "e2302fd0-e550-4281-8068-ec9a1d0221ae.jpg",
+      "status": "ok",
+      "size": 101853,
+      "pages": [
+        "__response__",
+        "company-profile"
+      ]
+    },
+    {
+      "uuid": "e9647e60-eeba-412c-84a3-51208285c65c",
+      "file": "e9647e60-eeba-412c-84a3-51208285c65c.jpg",
+      "status": "ok",
+      "size": 142073,
+      "pages": [
+        "__response__",
+        "company-profile",
+        "culture",
+        "download",
+        "exhibition"
+      ]
+    },
+    {
+      "uuid": "a05a4769-ee8f-494a-8490-805b91999f73",
+      "file": "a05a4769-ee8f-494a-8490-805b91999f73.jpg",
+      "status": "ok",
+      "size": 146048,
+      "pages": [
+        "__response__",
+        "company-profile"
+      ]
+    },
+    {
+      "uuid": "07598f55-0f02-42d9-9649-8cfafbd88c7f",
+      "file": "07598f55-0f02-42d9-9649-8cfafbd88c7f.jpg",
+      "status": "ok",
+      "size": 107452,
+      "pages": [
+        "__response__",
+        "company-profile"
+      ]
+    },
+    {
+      "uuid": "c0117352-9851-433d-99d0-d7ece663fe6a",
+      "file": "c0117352-9851-433d-99d0-d7ece663fe6a.jpg",
+      "status": "ok",
+      "size": 86519,
+      "pages": [
+        "__response__",
+        "company-profile"
+      ]
+    },
+    {
+      "uuid": "447f20e8-e91b-46de-bda9-20ce84d92597",
+      "file": "447f20e8-e91b-46de-bda9-20ce84d92597.jpg",
+      "status": "ok",
+      "size": 53497,
+      "pages": [
+        "__response__",
+        "company-profile"
+      ]
+    },
+    {
+      "uuid": "5b08293c-8b97-4f3e-b5ea-2116d487dcc6",
+      "file": "5b08293c-8b97-4f3e-b5ea-2116d487dcc6.jpg",
+      "status": "ok",
+      "size": 87388,
+      "pages": [
+        "__response__",
+        "company-profile"
+      ]
+    },
+    {
+      "uuid": "0baa2d31-9857-44d6-a5e7-9e1993ccd122",
+      "file": "0baa2d31-9857-44d6-a5e7-9e1993ccd122.jpg",
+      "status": "ok",
+      "size": 84988,
+      "pages": [
+        "__response__",
+        "company-profile"
+      ]
+    },
+    {
+      "uuid": "cb6d9d7f-4cf1-4a59-a502-2437e15df108",
+      "file": "cb6d9d7f-4cf1-4a59-a502-2437e15df108.jpg",
+      "status": "ok",
+      "size": 109621,
+      "pages": [
+        "__response__"
+      ]
+    },
+    {
+      "uuid": "fdc4449b-3e36-4d88-89e8-dad85a694dff",
+      "file": "fdc4449b-3e36-4d88-89e8-dad85a694dff.jpg",
+      "status": "ok",
+      "size": 130017,
+      "pages": [
+        "__response__",
+        "culture"
+      ]
+    },
+    {
+      "uuid": "51181cbf-310b-4d88-836b-77e3da5233f2",
+      "file": "51181cbf-310b-4d88-836b-77e3da5233f2.jpg",
+      "status": "ok",
+      "size": 92191,
+      "pages": [
+        "__response__",
+        "culture"
+      ]
+    },
+    {
+      "uuid": "afe91872-0ad7-4d8c-9c2c-de67f8951e5a",
+      "file": "afe91872-0ad7-4d8c-9c2c-de67f8951e5a.jpg",
+      "status": "ok",
+      "size": 79467,
+      "pages": [
+        "__response__",
+        "culture"
+      ]
+    },
+    {
+      "uuid": "1381949f-aef8-4860-a33f-6fdfc0d5bbe0",
+      "file": "1381949f-aef8-4860-a33f-6fdfc0d5bbe0.jpg",
+      "status": "ok",
+      "size": 184594,
+      "pages": [
+        "__response__",
+        "culture"
+      ]
+    },
+    {
+      "uuid": "95d57966-b721-417b-a9f1-19ccee001137",
+      "file": "95d57966-b721-417b-a9f1-19ccee001137.jpg",
+      "status": "ok",
+      "size": 70290,
+      "pages": [
+        "__response__",
+        "culture"
+      ]
+    },
+    {
+      "uuid": "cdb5ad87-ffa7-4c86-996d-da097a190a17",
+      "file": "cdb5ad87-ffa7-4c86-996d-da097a190a17.jpg",
+      "status": "ok",
+      "size": 123946,
+      "pages": [
+        "__response__",
+        "factory",
+        "marketing"
+      ]
+    },
+    {
+      "uuid": "44babffb-c530-4321-af90-a0dc846f2960",
+      "file": "44babffb-c530-4321-af90-a0dc846f2960.jpg",
+      "status": "ok",
+      "size": 163991,
+      "pages": [
+        "__response__",
+        "marketing"
+      ]
+    },
+    {
+      "uuid": "0e4af394-ccb3-437b-8f83-d3d1c46f18a1",
+      "file": "0e4af394-ccb3-437b-8f83-d3d1c46f18a1.jpg",
+      "status": "ok",
+      "size": 49387,
+      "pages": [
+        "__response__",
+        "download"
+      ]
+    },
+    {
+      "uuid": "0a25f6bf-162a-451c-bc3a-3b25c973950d",
+      "file": "0a25f6bf-162a-451c-bc3a-3b25c973950d.jpg",
+      "status": "ok",
+      "size": 28349,
+      "pages": [
+        "__response__",
+        "exhibition",
+        "news-index",
+        "news-company",
+        "news-51",
+        "product-694"
+      ]
+    },
+    {
+      "uuid": "c0cff173-d89d-4996-a98d-c8fb2300f84d",
+      "file": "c0cff173-d89d-4996-a98d-c8fb2300f84d.jpg",
+      "status": "ok",
+      "size": 19744,
+      "pages": [
+        "__response__",
+        "exhibition",
+        "product-696"
+      ]
+    },
+    {
+      "uuid": "bebfe498-4952-40b6-9330-079aa59f9f4c",
+      "file": "bebfe498-4952-40b6-9330-079aa59f9f4c.jpg",
+      "status": "ok",
+      "size": 40751,
+      "pages": [
+        "__response__",
+        "exhibition",
+        "news-index",
+        "news-company",
+        "news-50",
+        "product-695"
+      ]
+    },
+    {
+      "uuid": "fec96d9d-8dff-42a6-8573-8b1e4cd015ad",
+      "file": "fec96d9d-8dff-42a6-8573-8b1e4cd015ad.jpg",
+      "status": "ok",
+      "size": 32787,
+      "pages": [
+        "__response__",
+        "exhibition",
+        "news-industry",
+        "product-697"
+      ]
+    },
+    {
+      "uuid": "02e67ad0-7c23-405f-b437-3652bb8c4d58",
+      "file": "02e67ad0-7c23-405f-b437-3652bb8c4d58.jpg",
+      "status": "ok",
+      "size": 94357,
+      "pages": [
+        "__response__",
+        "contact"
+      ]
+    },
+    {
+      "uuid": "b10ed89d-727a-412e-9079-901692f7f49a",
+      "file": "b10ed89d-727a-412e-9079-901692f7f49a.jpg",
+      "status": "ok",
+      "size": 123806,
+      "pages": [
+        "__response__",
+        "news-index",
+        "news-industry",
+        "news-53"
+      ]
+    },
+    {
+      "uuid": "e464e129-dcf3-4d28-859f-285125d00a98",
+      "file": "e464e129-dcf3-4d28-859f-285125d00a98.jpg",
+      "status": "ok",
+      "size": 28449,
+      "pages": [
+        "__response__",
+        "news-index",
+        "news-industry",
+        "news-55"
+      ]
+    },
+    {
+      "uuid": "49931be8-43c6-4084-b559-ffd567114ca2",
+      "file": "49931be8-43c6-4084-b559-ffd567114ca2.jpg",
+      "status": "ok",
+      "size": 76945,
+      "pages": [
+        "__response__",
+        "news-index",
+        "news-industry",
+        "news-54"
+      ]
+    },
+    {
+      "uuid": "df3ed444-9137-4206-8791-1cb3f74f96da",
+      "file": "df3ed444-9137-4206-8791-1cb3f74f96da.jpg",
+      "status": "ok",
+      "size": 200361,
+      "pages": [
+        "__response__",
+        "news-index",
+        "news-industry",
+        "news-56"
+      ]
+    },
+    {
+      "uuid": "7e1781ab-2338-4690-be20-db9c27b50821",
+      "file": "7e1781ab-2338-4690-be20-db9c27b50821.jpg",
+      "status": "ok",
+      "size": 81589,
+      "pages": [
+        "__response__",
+        "news-index",
+        "news-company",
+        "news-industry",
+        "news-50",
+        "news-51",
+        "news-52",
+        "news-53",
+        "news-54",
+        "news-55",
+        "news-56",
+        "news-57"
+      ]
+    },
+    {
+      "uuid": "8f37d9be-4e57-48b4-8155-e19db6fbef7e",
+      "file": "8f37d9be-4e57-48b4-8155-e19db6fbef7e.jpg",
+      "status": "ok",
+      "size": 384112,
+      "pages": [
+        "__response__",
+        "news-index",
+        "news-industry",
+        "news-57"
+      ]
+    },
+    {
+      "uuid": "de378b30-b55f-4eab-91de-bef0d9ae88aa",
+      "file": "de378b30-b55f-4eab-91de-bef0d9ae88aa.png",
+      "status": "dead",
+      "size": 0,
+      "pages": [
+        "news-50",
+        "news-51",
+        "news-52",
+        "news-53",
+        "news-54",
+        "news-55",
+        "news-56",
+        "news-57"
+      ]
+    },
+    {
+      "uuid": "8a59f159-d12a-4726-84f0-697566eec219",
+      "file": "8a59f159-d12a-4726-84f0-697566eec219.jpg",
+      "status": "ok",
+      "size": 187971,
+      "pages": [
+        "__response__",
+        "product-cat-37",
+        "product-cat-38",
+        "product-cat-39",
+        "product-cat-40",
+        "product-cat-41",
+        "product-cat-42",
+        "product-690",
+        "product-691",
+        "product-692",
+        "product-693",
+        "product-694",
+        "product-695",
+        "product-696",
+        "product-697",
+        "product-698",
+        "product-699",
+        "product-700",
+        "product-701",
+        "product-702",
+        "product-703"
+      ]
+    },
+    {
+      "uuid": "5549999c-f7bf-479f-952c-9b57973a8af3",
+      "file": "5549999c-f7bf-479f-952c-9b57973a8af3.jpg",
+      "status": "ok",
+      "size": 106333,
+      "pages": [
+        "__response__",
+        "product-cat-37",
+        "product-cat-38",
+        "product-690",
+        "product-691",
+        "product-692",
+        "product-693",
+        "product-694",
+        "product-695",
+        "product-696",
+        "product-697",
+        "product-698",
+        "product-699",
+        "product-700",
+        "product-701",
+        "product-702",
+        "product-703"
+      ]
+    },
+    {
+      "uuid": "f5fb9a94-ba63-4c1e-bfc3-f649ef04fab2",
+      "file": "f5fb9a94-ba63-4c1e-bfc3-f649ef04fab2.jpg",
+      "status": "ok",
+      "size": 39051,
+      "pages": [
+        "__response__",
+        "product-cat-37",
+        "product-cat-38",
+        "product-690",
+        "product-691",
+        "product-692",
+        "product-693",
+        "product-694",
+        "product-695",
+        "product-696",
+        "product-697",
+        "product-698",
+        "product-699",
+        "product-700",
+        "product-701",
+        "product-702",
+        "product-703"
+      ]
+    },
+    {
+      "uuid": "5e60e81c-72b8-4b7a-a41b-41b595c20329",
+      "file": "5e60e81c-72b8-4b7a-a41b-41b595c20329.jpg",
+      "status": "ok",
+      "size": 80189,
+      "pages": [
+        "__response__",
+        "product-cat-37",
+        "product-cat-38",
+        "product-690",
+        "product-691",
+        "product-692",
+        "product-693",
+        "product-694",
+        "product-695",
+        "product-696",
+        "product-697",
+        "product-698",
+        "product-699",
+        "product-700",
+        "product-701",
+        "product-702",
+        "product-703"
+      ]
+    },
+    {
+      "uuid": "eebd9d62-1f5b-4c05-9574-9d8ce7604cbb",
+      "file": "eebd9d62-1f5b-4c05-9574-9d8ce7604cbb.jpg",
+      "status": "ok",
+      "size": 69257,
+      "pages": [
+        "__response__",
+        "product-cat-37",
+        "product-cat-38",
+        "product-690",
+        "product-691",
+        "product-692",
+        "product-693",
+        "product-694",
+        "product-695",
+        "product-696",
+        "product-697",
+        "product-698",
+        "product-699",
+        "product-700",
+        "product-701",
+        "product-702",
+        "product-703"
+      ]
+    },
+    {
+      "uuid": "658c68a8-ef1e-4ace-bd56-7e74f5b7583e",
+      "file": "658c68a8-ef1e-4ace-bd56-7e74f5b7583e.jpg",
+      "status": "ok",
+      "size": 90469,
+      "pages": [
+        "__response__",
+        "product-cat-37",
+        "product-cat-38",
+        "product-690",
+        "product-691",
+        "product-692",
+        "product-693",
+        "product-694",
+        "product-695",
+        "product-696",
+        "product-697",
+        "product-698",
+        "product-699",
+        "product-700",
+        "product-701",
+        "product-702",
+        "product-703"
+      ]
+    },
+    {
+      "uuid": "af7c5e9c-3e08-474f-acfc-290640d53816",
+      "file": "af7c5e9c-3e08-474f-acfc-290640d53816.jpg",
+      "status": "ok",
+      "size": 80271,
+      "pages": [
+        "__response__",
+        "product-cat-37",
+        "product-cat-38",
+        "product-702"
+      ]
+    },
+    {
+      "uuid": "7ae94ce9-09fa-42eb-bfc2-d76335c09b7c",
+      "file": "7ae94ce9-09fa-42eb-bfc2-d76335c09b7c.jpg",
+      "status": "ok",
+      "size": 71533,
+      "pages": [
+        "__response__",
+        "product-cat-37",
+        "product-cat-38",
+        "product-701"
+      ]
+    }
+  ]
+}

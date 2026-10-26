@@ -1,0 +1,46 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { productCategories } from '../../data/site';
+import productsData from '../../data/products.json';
+
+const count = (slug: string) => productsData.products.filter((p) => p.category === slug).length;
+---
+
+<BaseLayout title="Products" description="Browse all filter products: air, cabin, oil, fuel filters and wipers.">
+  <section class="page-hero">
+    <div class="container">
+      <h1>Products</h1>
+      <p>Air filters, cabin filters, oil filters, fuel filters and wipers.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="grid grid--4">
+        {
+          productCategories.map((c) => (
+            <a class="card cat" href={`/products/${c.slug}/`}>
+              <img src={c.icon} alt={c.name} width="96" height="96" loading="lazy" />
+              <h3>{c.name}</h3>
+              <p class="muted small">{c.desc}</p>
+              <span class="cat__count">{count(c.slug)} product{count(c.slug) === 1 ? '' : 's'}</span>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-hero {
+    background: linear-gradient(160deg, var(--navy-900), var(--navy-700));
+    color: #fff; padding: 3.5rem 0;
+  }
+  .page-hero h1 { color: #fff; margin-bottom: 0.4rem; }
+  .page-hero p { color: var(--navy-100); margin: 0; }
+  .cat { text-align: center; color: inherit; display: flex; flex-direction: column; align-items: center; gap: 0.5rem; }
+  .cat:hover { color: inherit; }
+  .cat img { max-height: 96px; width: auto; }
+  .cat__count { color: var(--orange-600); font-weight: 700; font-size: 0.85rem; }
+</style>

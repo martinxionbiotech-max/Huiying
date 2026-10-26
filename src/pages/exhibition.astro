@@ -1,0 +1,20 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { exhibition } from '../data/company';
+---
+
+<BaseLayout title="Exhibition" description="Exhibition pictures.">
+  <section class="page-hero">
+    <div class="container"><h1>{exhibition.heading}</h1></div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="gallery">
+        {exhibition.images.map((src, i) => (
+          <img src={src} alt={`Exhibition picture ${i + 1}`} width="600" height="400" loading="lazy" />
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

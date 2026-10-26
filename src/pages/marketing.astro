@@ -1,0 +1,27 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { marketingInfo } from '../data/company';
+---
+
+<BaseLayout title="Marketing" description="Marketing network.">
+  <section class="page-hero">
+    <div class="container"><h1>Marketing</h1><p>{marketingInfo.heading}</p></div>
+  </section>
+
+  <section class="section">
+    <div class="container marketing">
+      <img src={marketingInfo.image} alt="Marketing Network" width="560" height="420" loading="lazy" />
+      <div>
+        <h2>{marketingInfo.heading}</h2>
+        <p>{marketingInfo.text}</p>
+        <a class="btn btn--primary" href="/contact/">Contact Our Sales Team</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .marketing { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 3rem; align-items: center; }
+  .marketing img { border-radius: var(--radius); box-shadow: var(--shadow-md); }
+  @media (max-width: 820px) { .marketing { grid-template-columns: 1fr; } }
+</style>

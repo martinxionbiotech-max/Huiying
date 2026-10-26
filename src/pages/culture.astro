@@ -1,0 +1,29 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { companyCulture } from '../data/company';
+---
+
+<BaseLayout title="Company Culture" description={companyCulture.tagline}>
+  <section class="page-hero">
+    <div class="container"><h1>{companyCulture.heading}</h1><p>{companyCulture.tagline}</p></div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="grid grid--4">
+        {companyCulture.items.map((i) => (
+          <div class="card culture">
+            <img src={i.image} alt={i.title} width="120" height="120" loading="lazy" />
+            <h3>{i.title}</h3>
+            <p class="muted">{i.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .culture { text-align: center; display: flex; flex-direction: column; align-items: center; gap: 0.5rem; }
+  .culture img { width: 88px; height: 88px; object-fit: contain; }
+</style>

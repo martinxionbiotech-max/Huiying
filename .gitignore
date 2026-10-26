@@ -1,0 +1,19 @@
+# build output
+dist/
+.astro/
+node_modules/
+
+# logs
+npm-debug.log*
+
+# environment
+.env
+.env.production
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+
+# crawl artifacts (keep scripts + report, not raw crawls in git unless needed)
+crawls/

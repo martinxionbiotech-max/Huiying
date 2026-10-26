@@ -1,0 +1,196 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site, productCategories } from '../data/site';
+import { newsPosts } from '../data/newsPosts';
+import productsData from '../data/products.json';
+import { companyProfile } from '../data/company';
+
+const strengths = [
+  { title: 'Professional supplier of filter products', text: '10,000 m² factory with a clean workshop of over 6,000 m².', image: '/images/f4fc45f5-88c2-4d17-a75d-f050fa645b58.jpg' },
+  { title: 'Advanced production equipment', text: 'Three PU filter production lines and 20+ sets of professional filter equipment.', image: '/images/8a59f159-d12a-4726-84f0-697566eec219.jpg' },
+  { title: 'Quality to open up the market', text: 'R&D, production and sales integrated since 1996.', image: '/images/e2302fd0-e550-4281-8068-ec9a1d0221ae.jpg' },
+  { title: 'Efficient, reasonable price', text: 'Stable quality and honest pricing for global buyers.', image: '/images/447f20e8-e91b-46de-bda9-20ce84d92597.jpg' },
+];
+
+const categoryCount = (slug: string) => productsData.products.filter((p) => p.category === slug).length;
+const latestNews = newsPosts.slice(0, 3);
+---
+
+<BaseLayout title="Home" description={site.positioning}>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero__inner">
+      <div class="hero__content">
+        <p class="hero__eyebrow">EST. {site.since} · QINGHE, HEBEI, CHINA</p>
+        <h1 class="hero__title">High-tech filter manufacturer &amp; exporter</h1>
+        <p class="hero__lede">
+          {site.positioning} We produce air, cabin, oil and fuel filters for
+          automotive and industrial applications.
+        </p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="/products/">Explore Products</a>
+          <a class="btn btn--ghost" href="/contact/">Get a Quote</a>
+        </div>
+        <ul class="hero__facts">
+          <li><strong>1996</strong><span>Founded</span></li>
+          <li><strong>10,000 m²</strong><span>Factory area</span></li>
+          <li><strong>100+</strong><span>Employees</span></li>
+          <li><strong>3</strong><span>PU filter lines</span></li>
+        </ul>
+      </div>
+      <div class="hero__media">
+        <img src="/images/f4fc45f5-88c2-4d17-a75d-f050fa645b58.jpg" alt="Filter production equipment" width="640" height="480" loading="eager" />
+      </div>
+    </div>
+  </section>
+
+  <!-- CATEGORIES -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2>Product Categories</h2>
+        <p class="lede">A full range of filter products for cars, trucks and industrial equipment.</p>
+      </div>
+      <div class="grid grid--4">
+        {
+          productCategories.map((c) => (
+            <a class="cat-card" href={`/products/${c.slug}/`}>
+              <div class="cat-card__icon">
+                <img src={c.icon} alt={c.name} width="96" height="96" loading="lazy" />
+              </div>
+              <h3>{c.name}</h3>
+              <p>{c.desc}</p>
+              <span class="cat-card__count">{categoryCount(c.slug)} product{categoryCount(c.slug) === 1 ? '' : 's'}</span>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPANY STRENGTH -->
+  <section class="section section--soft">
+    <div class="container">
+      <div class="section-head">
+        <h2>Company Strength</h2>
+        <p class="lede">Why global buyers choose {site.brand}.</p>
+      </div>
+      <div class="grid grid--4">
+        {
+          strengths.map((s) => (
+            <div class="card strength">
+              <img src={s.image} alt={s.title} width="400" height="260" loading="lazy" />
+              <h3>{s.title}</h3>
+              <p class="muted">{s.text}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT PREVIEW -->
+  <section class="section">
+    <div class="container about-preview">
+      <div class="about-preview__text">
+        <div class="section-head">
+          <h2>About {site.brand}</h2>
+        </div>
+        <p>{companyProfile.description.slice(0, 420)}…</p>
+        <a class="btn btn--brand" href="/company-profile/">Read Company Profile</a>
+      </div>
+      <div class="about-preview__img">
+        <img src="/images/e9647e60-eeba-412c-84a3-51208285c65c.jpg" alt="About Us" width="560" height="420" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWS PREVIEW -->
+  <section class="section section--soft">
+    <div class="container">
+      <div class="section-head">
+        <h2>Latest News</h2>
+        <p class="lede">Filter knowledge and company updates.</p>
+      </div>
+      <div class="grid grid--3">
+        {
+          latestNews.map((n) => (
+            <a class="card news-card" href={`/news/${n.slug}/`}>
+              <span class="chip">{n.categoryLabel}</span>
+              <h3>{n.title}</h3>
+              <p class="small muted">{n.date}</p>
+            </a>
+          ))
+        }
+      </div>
+      <p class="center mt-2"><a class="btn btn--outline" href="/news/">View All News</a></p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="container cta__inner">
+      <h2>Ready to source high-quality filters?</h2>
+      <p>We will contact you within one working day. Please pay attention to your email.</p>
+      <div class="cta__actions">
+        <a class="btn btn--primary" href="/contact/">Get a Quote</a>
+        <a class="btn btn--ghost" href={site.whatsappLink} target="_blank" rel="nofollow noopener">WhatsApp {site.whatsapp}</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero {
+    background:
+      radial-gradient(1100px 520px at 85% -10%, rgba(232, 98, 44, 0.18), transparent 60%),
+      linear-gradient(160deg, var(--navy-900) 0%, var(--navy-800) 55%, var(--navy-700) 100%);
+    color: #fff;
+    padding: 4.5rem 0 5rem;
+    overflow: hidden;
+  }
+  .hero__inner { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 3rem; align-items: center; }
+  .hero__eyebrow { color: var(--orange-400); font-weight: 700; letter-spacing: 0.14em; font-size: 0.82rem; margin-bottom: 1rem; }
+  .hero__title { color: #fff; font-size: clamp(2.2rem, 4.6vw, 3.4rem); margin-bottom: 1rem; }
+  .hero__lede { color: var(--navy-100); font-size: 1.12rem; max-width: 52ch; }
+  .hero__actions { display: flex; gap: 1rem; flex-wrap: wrap; margin: 1.75rem 0 2.25rem; }
+  .hero__facts { list-style: none; display: flex; gap: 2.25rem; flex-wrap: wrap; margin: 0; padding: 0; }
+  .hero__facts li { display: flex; flex-direction: column; }
+  .hero__facts strong { font-size: 1.6rem; color: var(--orange-400); line-height: 1.1; }
+  .hero__facts span { color: var(--navy-100); font-size: 0.82rem; }
+  .hero__media img { border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); }
+
+  .cat-card {
+    background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
+    padding: var(--sp-6); text-align: center; color: inherit;
+    transition: box-shadow var(--t-med) var(--ease), transform var(--t-med) var(--ease), border-color var(--t-med) var(--ease);
+  }
+  .cat-card:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); border-color: var(--line-strong); color: inherit; }
+  .cat-card__icon { height: 96px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; }
+  .cat-card__icon img { max-height: 96px; width: auto; margin: 0 auto; }
+  .cat-card h3 { color: var(--navy-800); }
+  .cat-card p { color: var(--ink-soft); font-size: 0.9rem; }
+  .cat-card__count { color: var(--orange-600); font-weight: 700; font-size: 0.85rem; }
+
+  .strength img { width: 100%; height: 180px; object-fit: cover; border-radius: var(--radius-sm); margin-bottom: 1rem; }
+
+  .about-preview { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+  .about-preview__img img { border-radius: var(--radius-lg); box-shadow: var(--shadow-md); }
+
+  .news-card { display: flex; flex-direction: column; gap: 0.5rem; }
+  .news-card h3 { font-size: 1.05rem; margin-bottom: 0.25rem; }
+
+  .cta {
+    background: linear-gradient(135deg, var(--orange-600), var(--orange-500));
+    color: #fff; padding: 4rem 0;
+  }
+  .cta h2 { color: #fff; margin-bottom: 0.4rem; }
+  .cta p { color: rgba(255, 255, 255, 0.92); }
+  .cta__actions { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1.25rem; }
+
+  @media (max-width: 860px) {
+    .hero__inner { grid-template-columns: 1fr; }
+    .hero__media { order: -1; }
+    .about-preview { grid-template-columns: 1fr; }
+  }
+</style>

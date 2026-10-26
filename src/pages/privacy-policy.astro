@@ -1,0 +1,55 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { privacyPolicy } from '../data/company';
+
+function renderBody(md: string): string {
+  const lines = md.split('\n');
+  const html: string[] = [];
+  let list: string[] = [];
+  let inList = false;
+
+  const flushList = () => {
+    if (list.length) {
+      html.push(`<ul>${list.map((l) => `<li>${l}</li>`).join('')}</ul>`);
+      list = [];
+      inList = false;
+    }
+  };
+
+  for (const line of lines) {
+    const t = line.trim();
+    if (t.startsWith('## ')) {
+      flushList();
+      html.push(`<h2>${t.slice(3)}</h2>`);
+    } else if (t.startsWith('- ')) {
+      inList = true;
+      list.push(t.slice(2));
+    } else if (/^\d+\.\s/.test(t)) {
+      inList = true;
+      list.push(t);
+    } else if (t === '') {
+      flushList();
+    } else {
+      flushList();
+      html.push(`<p>${t}</p>`);
+    }
+  }
+  flushList();
+  return html.join('');
+}
+
+const bodyHtml = renderBody(privacyPolicy.body);
+---
+
+<BaseLayout title="Privacy Policy" description="Privacy policy.">
+  <section class="page-hero">
+    <div class="container"><h1>{privacyPolicy.heading}</h1></div>
+  </section>
+
+  <section class="section">
+    <div class="container legal">
+      <p class="updated">Last updated: {privacyPolicy.updated}</p>
+      <div set:html={bodyHtml} />
+    </div>
+  </section>
+</BaseLayout>

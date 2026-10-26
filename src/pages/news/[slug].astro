@@ -1,0 +1,46 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { newsPosts } from '../../data/newsPosts';
+
+export function getStaticPaths() {
+  return newsPosts.map((n) => ({ params: { slug: n.slug }, props: { post: n } }));
+}
+
+const { post } = Astro.props;
+const idx = newsPosts.findIndex((n) => n.slug === post.slug);
+const prev = idx > 0 ? newsPosts[idx - 1] : null;
+const next = idx < newsPosts.length - 1 ? newsPosts[idx + 1] : null;
+
+function renderBody(body: string): string {
+  return body.split('\n\n').filter(Boolean).map((p) => `<p>${p}</p>`).join('');
+}
+---
+
+<BaseLayout title={post.title} description={post.body.slice(0, 155)}>
+  <section class="page-hero">
+    <div class="container">
+      <span class="chip">{post.categoryLabel}</span>
+      <h1>{post.title}</h1>
+      <p>Release time: {post.date}</p>
+    </div>
+  </section>
+
+  <article class="section">
+    <div class="container article">
+      <div class="article__body" set:html={renderBody(post.body)} />
+      <nav class="article__nav">
+        {prev && <a href={`/news/${prev.slug}/`}>&larr; {prev.title}</a>}
+        {next && <a href={`/news/${next.slug}/`}>{next.title} &rarr;</a>}
+      </nav>
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  .page-hero .chip { margin-bottom: 0.75rem; background: var(--orange-500); color: #fff; border-color: var(--orange-600); }
+  .article { max-width: 800px; }
+  .article__body { font-size: 1.02rem; }
+  .article__body p { margin-bottom: 1.2em; }
+  .article__nav { display: flex; justify-content: space-between; gap: 1rem; margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--line); font-size: 0.95rem; }
+  .article__nav a { max-width: 45%; }
+</style>

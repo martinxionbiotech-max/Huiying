@@ -1,0 +1,33 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { downloadCenter } from '../data/company';
+---
+
+<BaseLayout title="Download" description="Download company documents and catalogs.">
+  <section class="page-hero">
+    <div class="container"><h1>{downloadCenter.heading}</h1></div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="table-wrap">
+        <table class="spec">
+          <thead>
+            <tr><th>Document</th><th>File size</th><th>Updated</th><th></th></tr>
+          </thead>
+          <tbody>
+            {downloadCenter.files.map((f) => (
+              <tr>
+                <td>{f.name}</td>
+                <td>{f.size}</td>
+                <td>{f.updated}</td>
+                <td><a class="btn btn--outline" href="/contact/">Request Copy</a></td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="muted small mt-2">Company documents are provided on request. <a href="/contact/">Contact us</a> to receive the full catalog.</p>
+    </div>
+  </section>
+</BaseLayout>

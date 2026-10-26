@@ -1,0 +1,74 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { productCategories } from '../../data/site';
+import productsData from '../../data/products.json';
+
+export function getStaticPaths() {
+  return productCategories.map((c) => ({ params: { category: c.slug }, props: { category: c } }));
+}
+
+const { category } = Astro.props;
+const products = productsData.products.filter((p) => p.category === category.slug);
+---
+
+<BaseLayout title={category.name} description={category.desc}>
+  <section class="page-hero">
+    <div class="container page-hero__inner">
+      <div>
+        <h1>{category.name}</h1>
+        <p>{category.desc}</p>
+      </div>
+      <img src={category.icon} alt={category.name} width="120" height="120" />
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2>{category.name} Products</h2>
+        <p class="lede">{products.length} product{products.length === 1 ? '' : 's'} in this category.</p>
+      </div>
+      {
+        products.length === 0 ? (
+          <p class="muted">This category is currently being prepared. <a href="/contact/">Contact us</a> for availability.</p>
+        ) : (
+          <div class="grid grid--3">
+            {
+              products.map((p) => (
+                <a class="card product-card" href={`/products/${category.slug}/${p.slug}/`}>
+                  <img src={p.image} alt={`${p.name} ${p.model}`} width="400" height="300" loading="lazy" />
+                  <h3>{p.name}</h3>
+                  <p class="chip">{p.model}</p>
+                  <p class="muted small">{p.desc}</p>
+                </a>
+              ))
+            }
+          </div>
+        )
+      }
+    </div>
+  </section>
+
+  <section class="section section--soft">
+    <div class="container center">
+      <h2>Looking for a specific filter?</h2>
+      <p class="lede">Tell us your OE number or vehicle application and we will match the right part.</p>
+      <a class="btn btn--primary" href="/contact/">Request a Quote</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-hero {
+    background: linear-gradient(160deg, var(--navy-900), var(--navy-700));
+    color: #fff; padding: 3.5rem 0;
+  }
+  .page-hero__inner { display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
+  .page-hero h1 { color: #fff; margin-bottom: 0.4rem; }
+  .page-hero p { color: var(--navy-100); margin: 0; }
+  .page-hero img { max-height: 120px; width: auto; filter: drop-shadow(0 4px 10px rgba(0,0,0,0.3)); }
+  .product-card { color: inherit; display: flex; flex-direction: column; gap: 0.5rem; }
+  .product-card:hover { color: inherit; }
+  .product-card img { width: 100%; height: 200px; object-fit: cover; border-radius: var(--radius-sm); }
+  @media (max-width: 640px) { .page-hero__inner { flex-direction: column; align-items: flex-start; } }
+</style>
