@@ -69,6 +69,34 @@ export const exhibition = {
   ],
 };
 
+// Industry & regional background — original editorial content informed by
+// publicly available information about Qinghe County's filter/auto-parts cluster.
+export const industryBackground = {
+  heading: 'Built in China\'s filter-manufacturing heartland',
+  paragraphs: [
+    'Our factory sits in Qinghe County, Xingtai City, Hebei Province — a region widely recognised as one of China\'s core clusters for automotive filters and related parts. Filter manufacturing here began as early as the 1980s and has since grown into a full supply chain covering filter paper, media processing, rubber and polyurethane sealing, and finished-element assembly.',
+    'Being part of this cluster gives practical advantages that translate directly to buyers. Raw materials, tooling and specialised processes are available close by, which shortens lead times and keeps prototyping and batch production flexible. The Beijing-Kowloon Railway and the Qingyin Expressway intersect nearby, forming a logistics network that reaches Beijing, Tianjin, Hebei and Shandong within roughly 300 km — convenient for both domestic distribution and shipment to major ports.',
+    'The cluster has also pushed steadily toward greener, smarter production: low-energy equipment, tighter scrap control and growing R&D into high-temperature and long-life filter media for new-energy vehicles. For our part, we combine that regional supply chain with our own clean workshop and testing equipment to turn the cluster\'s advantages into consistent, export-grade quality.',
+  ],
+  points: [
+    'Cluster roots dating back to the 1980s with a complete filter supply chain',
+    'Convenient rail and expressway links across the Beijing-Tianjin-Hebei-Shandong region',
+    'One-stop sourcing of filter paper, media, sealing and finished elements',
+    'Ongoing shift toward green manufacturing and new-energy filter media',
+  ],
+};
+
+export const exportMarkets = {
+  heading: 'Where our products go',
+  text: 'Our filters are built for export. We routinely quote for buyers across Asia, the Middle East, Africa, South America and Europe, and we support private-label and OEM-supply programs with consistent batch quality and responsive service. Tell us your target market and OE requirements and we will recommend the right specification.',
+  points: [
+    'Private-label and OEM supply programs',
+    'Mixed-container and multi-SKU orders',
+    'OE / cross-reference matching to your market',
+    'Consistent batch quality with testing documentation',
+  ],
+};
+
 export const privacyPolicy = {
   heading: 'Privacy Policy',
   updated: '2024-11-28',
