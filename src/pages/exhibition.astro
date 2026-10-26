@@ -1,11 +1,11 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { exhibition } from '../data/company';
+import { exhibition, industryBackground } from '../data/company';
 ---
 
 <BaseLayout title="Exhibition" description="Exhibition pictures.">
   <section class="page-hero">
-    <div class="container"><h1>{exhibition.heading}</h1></div>
+    <div class="container"><h1>{exhibition.heading}</h1><p>Meet us at trade shows and see our products first-hand.</p></div>
   </section>
 
   <section class="section">
@@ -15,6 +15,10 @@ import { exhibition } from '../data/company';
           <img src={src} alt={`Exhibition picture ${i + 1}`} width="600" height="400" loading="lazy" />
         ))}
       </div>
+      <p class="muted small mt-2">
+        {industryBackground.paragraphs[0].slice(0, 240)}… We welcome visiting buyers to inspect samples
+        and discuss your requirements in person — <a href="/contact/">contact us</a> to arrange a meeting.
+      </p>
     </div>
   </section>
 </BaseLayout>

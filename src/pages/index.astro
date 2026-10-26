@@ -3,7 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { site, productCategories } from '../data/site';
 import { newsPosts } from '../data/newsPosts';
 import productsData from '../data/products.json';
-import { companyProfile } from '../data/company';
+import { companyProfile, industryBackground, exportMarkets } from '../data/company';
 
 const strengths = [
   { title: 'Professional supplier of filter products', text: '10,000 m² factory with a clean workshop of over 6,000 m².', image: '/images/f4fc45f5-88c2-4d17-a75d-f050fa645b58.jpg' },
@@ -14,6 +14,7 @@ const strengths = [
 
 const categoryCount = (slug: string) => productsData.products.filter((p) => p.category === slug).length;
 const latestNews = newsPosts.slice(0, 3);
+const totalSkus = productsData.products.length;
 ---
 
 <BaseLayout title="Home" description={site.positioning}>
@@ -25,7 +26,8 @@ const latestNews = newsPosts.slice(0, 3);
         <h1 class="hero__title">High-tech filter manufacturer &amp; exporter</h1>
         <p class="hero__lede">
           {site.positioning} We produce air, cabin, oil and fuel filters for
-          automotive and industrial applications.
+          automotive and industrial applications — with {totalSkus} reference SKUs across
+          {productCategories.length} product categories.
         </p>
         <div class="hero__actions">
           <a class="btn btn--primary" href="/products/">Explore Products</a>
@@ -68,8 +70,43 @@ const latestNews = newsPosts.slice(0, 3);
     </div>
   </section>
 
-  <!-- COMPANY STRENGTH -->
+  <!-- PROCUREMENT / FITMENT TEASER -->
   <section class="section section--soft">
+    <div class="container two-col">
+      <div>
+        <div class="section-head">
+          <h2>Matched to the vehicles your market drives</h2>
+          <p class="lede">Common application references across the brands you stock — from Toyota and Honda to Geely and Great Wall.</p>
+        </div>
+        <p>
+          We maintain reference-level fitment knowledge across global and domestic brands so you can
+          match the right filter to the right vehicle — whether it is a
+          <a href="/products/air-filter/">Toyota Corolla air filter</a>,
+          a <a href="/products/oil-filter/">BMW 3 Series oil filter</a> or a
+          <a href="/products/cabin-filter/">Honda Civic cabin filter</a>.
+        </p>
+        <div class="brand-cloud">
+          {['Toyota', 'Honda', 'Volkswagen', 'BMW', 'Mercedes-Benz', 'Ford', 'Hyundai', 'Nissan', 'Geely', 'Great Wall'].map((b) => (
+            <span class="brand-tag">{b}</span>
+          ))}
+        </div>
+        <a class="btn btn--brand" href="/products/air-filter/">See fitment by category</a>
+      </div>
+      <div class="procure-card">
+        <h3>Sourcing with huiying</h3>
+        <ul class="tick-list">
+          <li>OE / cross-reference matching to your market</li>
+          <li>Private-label and OEM supply programs</li>
+          <li>Mixed-container and multi-SKU orders</li>
+          <li>Consistent batch quality with testing documentation</li>
+        </ul>
+        <a class="btn btn--primary" href="/contact/">Start a Quote</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPANY STRENGTH -->
+  <section class="section">
     <div class="container">
       <div class="section-head">
         <h2>Company Strength</h2>
@@ -90,13 +127,14 @@ const latestNews = newsPosts.slice(0, 3);
   </section>
 
   <!-- ABOUT PREVIEW -->
-  <section class="section">
+  <section class="section section--soft">
     <div class="container about-preview">
       <div class="about-preview__text">
         <div class="section-head">
           <h2>About {site.brand}</h2>
         </div>
         <p>{companyProfile.description.slice(0, 420)}…</p>
+        <p class="muted small">{industryBackground.paragraphs[0].slice(0, 200)}…</p>
         <a class="btn btn--brand" href="/company-profile/">Read Company Profile</a>
       </div>
       <div class="about-preview__img">
@@ -106,7 +144,7 @@ const latestNews = newsPosts.slice(0, 3);
   </section>
 
   <!-- NEWS PREVIEW -->
-  <section class="section section--soft">
+  <section class="section">
     <div class="container">
       <div class="section-head">
         <h2>Latest News</h2>
@@ -172,6 +210,23 @@ const latestNews = newsPosts.slice(0, 3);
   .cat-card p { color: var(--ink-soft); font-size: 0.9rem; }
   .cat-card__count { color: var(--orange-600); font-weight: 700; font-size: 0.85rem; }
 
+  .two-col { display: grid; grid-template-columns: 1.3fr 0.9fr; gap: 3rem; align-items: center; }
+  .two-col a { color: var(--brand); text-decoration: underline; }
+  .two-col a:hover { color: var(--accent); }
+  .brand-cloud { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1.25rem 0; }
+  .brand-tag {
+    background: var(--navy-050); border: 1px solid var(--navy-100); color: var(--navy-700);
+    border-radius: 999px; padding: 0.3rem 0.75rem; font-size: 0.85rem; font-weight: 600;
+  }
+  .procure-card {
+    background: #fff; border: 1px solid var(--line); border-radius: var(--radius-lg);
+    border-top: 4px solid var(--orange-500); padding: var(--sp-8); box-shadow: var(--shadow-md);
+  }
+  .procure-card h3 { color: var(--navy-800); }
+  .tick-list { list-style: none; margin: 0 0 1.5rem; padding: 0; }
+  .tick-list li { padding-left: 1.6rem; position: relative; margin-bottom: 0.6rem; }
+  .tick-list li::before { content: "✓"; position: absolute; left: 0; color: var(--orange-500); font-weight: 700; }
+
   .strength img { width: 100%; height: 180px; object-fit: cover; border-radius: var(--radius-sm); margin-bottom: 1rem; }
 
   .about-preview { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
@@ -192,5 +247,6 @@ const latestNews = newsPosts.slice(0, 3);
     .hero__inner { grid-template-columns: 1fr; }
     .hero__media { order: -1; }
     .about-preview { grid-template-columns: 1fr; }
+    .two-col { grid-template-columns: 1fr; }
   }
 </style>

@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { companyProfile } from '../data/company';
+import { companyProfile, industryBackground, exportMarkets } from '../data/company';
 ---
 
 <BaseLayout title="Company Profile" description={companyProfile.description.slice(0, 155)}>
@@ -32,6 +32,39 @@ import { companyProfile } from '../data/company';
       </div>
     </div>
   </section>
+
+  <section class="section section--soft">
+    <div class="container">
+      <div class="section-head">
+        <h2>{industryBackground.heading}</h2>
+      </div>
+      <div class="region-grid">
+        <div>
+          {industryBackground.paragraphs.map((p) => <p>{p}</p>)}
+        </div>
+        <div class="region-points">
+          <h3>Why the location matters</h3>
+          <ul class="tick-list">
+            {industryBackground.points.map((p) => <li>{p}</li>)}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2>{exportMarkets.heading}</h2>
+        <p class="lede">{exportMarkets.text}</p>
+      </div>
+      <div class="grid grid--4">
+        {exportMarkets.points.map((p) => (
+          <div class="card mini"><h3>{p}</h3></div>
+        ))}
+      </div>
+    </div>
+  </section>
 </BaseLayout>
 
 <style>
@@ -39,5 +72,18 @@ import { companyProfile } from '../data/company';
   .profile__img { display: grid; gap: 1rem; }
   .profile__img img { border-radius: var(--radius); box-shadow: var(--shadow-md); }
   .strength img { width: 100%; height: 180px; object-fit: cover; border-radius: var(--radius-sm); margin-bottom: 1rem; }
-  @media (max-width: 820px) { .profile { grid-template-columns: 1fr; } }
+
+  .region-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 3rem; align-items: start; }
+  .region-points { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: var(--sp-6); box-shadow: var(--shadow-sm); }
+  .region-points h3 { color: var(--navy-800); }
+  .tick-list { list-style: none; margin: 0; padding: 0; }
+  .tick-list li { padding-left: 1.6rem; position: relative; margin-bottom: 0.6rem; }
+  .tick-list li::before { content: "✓"; position: absolute; left: 0; color: var(--orange-500); font-weight: 700; }
+
+  .card.mini h3 { font-size: 1rem; margin: 0; }
+
+  @media (max-width: 820px) {
+    .profile { grid-template-columns: 1fr; }
+    .region-grid { grid-template-columns: 1fr; }
+  }
 </style>

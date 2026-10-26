@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { companyCulture } from '../data/company';
+import { companyCulture, industryBackground } from '../data/company';
 ---
 
 <BaseLayout title="Company Culture" description={companyCulture.tagline}>
@@ -21,9 +21,27 @@ import { companyCulture } from '../data/company';
       </div>
     </div>
   </section>
+
+  <section class="section section--soft">
+    <div class="container">
+      <div class="section-head">
+        <h2>How our values show up in the work</h2>
+      </div>
+      <div class="culture-note">
+        <p>
+          These values are not slogans — they shape how we run production and service. Quality-as-survival means
+          every batch is checked rather than assumed; win-win cooperation means we respond to a buyer\'s
+          OE or cross-reference question with a real match, not a guess. That is how a manufacturer in
+          Qinghe County\'s filter cluster turns a competitive location into a long-term relationship.
+        </p>
+        <p>{industryBackground.paragraphs[2]}</p>
+      </div>
+    </div>
+  </section>
 </BaseLayout>
 
 <style>
   .culture { text-align: center; display: flex; flex-direction: column; align-items: center; gap: 0.5rem; }
   .culture img { width: 88px; height: 88px; object-fit: contain; }
+  .culture-note { max-width: 800px; }
 </style>

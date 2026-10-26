@@ -1,11 +1,11 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { downloadCenter } from '../data/company';
+import { downloadCenter, industryBackground } from '../data/company';
 ---
 
 <BaseLayout title="Download" description="Download company documents and catalogs.">
   <section class="page-hero">
-    <div class="container"><h1>{downloadCenter.heading}</h1></div>
+    <div class="container"><h1>{downloadCenter.heading}</h1><p>Company profile, catalogs and product documentation on request.</p></div>
   </section>
 
   <section class="section">
@@ -30,4 +30,22 @@ import { downloadCenter } from '../data/company';
       <p class="muted small mt-2">Company documents are provided on request. <a href="/contact/">Contact us</a> to receive the full catalog.</p>
     </div>
   </section>
+
+  <section class="section section--soft">
+    <div class="container">
+      <div class="section-head">
+        <h2>Documentation we can provide</h2>
+      </div>
+      <div class="grid grid--3">
+        <div class="card mini"><h3>Product catalog &amp; cross-reference list</h3></div>
+        <div class="card mini"><h3>Company profile &amp; factory introduction</h3></div>
+        <div class="card mini"><h3>Testing &amp; quality documentation</h3></div>
+      </div>
+      <p class="muted small mt-2">{industryBackground.paragraphs[2]}</p>
+    </div>
+  </section>
 </BaseLayout>
+
+<style>
+  .card.mini h3 { font-size: 1rem; margin: 0; }
+</style>

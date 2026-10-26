@@ -1,7 +1,9 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
-import { productCategories } from '../../../data/site';
+import { productCategories, site } from '../../../data/site';
 import productsData from '../../../data/products.json';
+import { getFitment } from '../../../data/vehicleFitment';
+import { getProductContent } from '../../../data/productContent';
 
 export function getStaticPaths() {
   return productsData.products.map((p) => ({
@@ -13,9 +15,61 @@ export function getStaticPaths() {
 const { product } = Astro.props;
 const category = productCategories.find((c) => c.slug === product.category);
 const related = productsData.products.filter((p) => p.category === product.category && p.slug !== product.slug).slice(0, 4);
+const fitment = getFitment(product.category);
+const content = getProductContent(product.slug);
+
+const siteUrl = Astro.site?.toString() ?? 'https://huiyingfilter.com';
+const pageUrl = new URL(Astro.url.pathname, Astro.site).toString();
+
+// Reference price range — given value, marked as a reference (not a final quote).
+const PRICE_MIN = 10;
+const PRICE_MAX = 60;
+
+const productJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Product',
+  name: `${product.name} ${product.model}`,
+  sku: product.model,
+  mpn: product.model,
+  brand: { '@type': 'Brand', name: site.brand },
+  image: new URL(product.image, Astro.site).toString(),
+  description: product.desc,
+  category: category?.name ?? product.category,
+  url: pageUrl,
+  offers: {
+    '@type': 'AggregateOffer',
+    priceCurrency: 'USD',
+    availability: 'https://schema.org/InStock',
+    url: pageUrl,
+    lowPrice: PRICE_MIN,
+    highPrice: PRICE_MAX,
+    offerCount: 1,
+    priceSpecification: {
+      '@type': 'PriceSpecification',
+      priceCurrency: 'USD',
+      minPrice: PRICE_MIN,
+      maxPrice: PRICE_MAX,
+      valueAddedTaxIncluded: false,
+    },
+  },
+};
+
+const breadcrumbJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: `${siteUrl}/` },
+    { '@type': 'ListItem', position: 2, name: 'Products', item: `${siteUrl}/products/` },
+    { '@type': 'ListItem', position: 3, name: category?.name ?? product.category, item: `${siteUrl}/products/${product.category}/` },
+    { '@type': 'ListItem', position: 4, name: product.model },
+  ],
+};
 ---
 
 <BaseLayout title={`${product.name} ${product.model}`} description={product.desc}>
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(productJsonLd)} />
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(breadcrumbJsonLd)} />
+
   <nav class="crumbs" aria-label="Breadcrumb">
     <div class="container">
       <a href="/">Home</a> <span>/</span> <a href="/products/">Products</a> <span>/</span>
@@ -36,21 +90,23 @@ const related = productsData.products.filter((p) => p.category === product.categ
       </div>
       <div class="product__info">
         <span class="chip">{category.name}</span>
-        <h1>{product.name}</h1>
-        <p class="model">Model: <strong>{product.model}</strong></p>
-        <p>{product.desc}</p>
+        <h1>{product.name} <span class="model-inline">{product.model}</span></h1>
+        <p class="lede">{product.desc}</p>
 
         <table class="spec">
           <tbody>
             <tr><th>Category</th><td>{category.name}</td></tr>
             <tr><th>Model</th><td>{product.model}</td></tr>
+            <tr><th>Brand</th><td>{site.brand}</td></tr>
             <tr><th>Source reference</th><td>#{product.sourceId}</td></tr>
+            <tr><th>Reference price</th><td>USD {PRICE_MIN}–{PRICE_MAX} <span class="muted">(reference only)</span></td></tr>
           </tbody>
         </table>
 
         <p class="muted small">
           Dimensions, filtration media and efficiency are confirmed per OE application.
-          Tell us your OE / cross-reference number for an exact match.
+          The price range shown is a reference only — final pricing depends on quantity,
+          specification and shipping terms. Tell us your OE / cross-reference number for an exact match.
         </p>
 
         <div class="product__cta">
@@ -60,6 +116,73 @@ const related = productsData.products.filter((p) => p.category === product.categ
       </div>
     </div>
   </section>
+
+  {content && (
+    <section class="section section--soft">
+      <div class="container product-deep">
+        <div class="section-head">
+          <h2>About this {category.name.toLowerCase()}</h2>
+          <p class="lede">Application, selection and maintenance guidance for {product.model}.</p>
+        </div>
+        <div class="deep-grid">
+          <div class="deep-block">
+            <h3>Application</h3>
+            {content.application.map((p) => <p>{p}</p>)}
+          </div>
+          <div class="deep-block">
+            <h3>Selection notes</h3>
+            <ul>
+              {content.selectionNotes.map((n) => <li>{n}</li>)}
+            </ul>
+          </div>
+          <div class="deep-block">
+            <h3>Maintenance</h3>
+            <ul>
+              {content.maintenance.map((m) => <li>{m}</li>)}
+            </ul>
+          </div>
+        </div>
+        <div class="opinion">
+          <strong>Buyer's note.</strong>
+          <p>{content.buyerNote}</p>
+        </div>
+      </div>
+    </section>
+  )}
+
+  {fitment && (
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Vehicle Fitment &amp; Brand Association</h2>
+          <p class="lede">{fitment.intro}</p>
+        </div>
+        <div class="fitment-grid">
+          {
+            fitment.brands.map((b) => (
+              <div class="fitment-card">
+                <h3>{b.brand}</h3>
+                <span class="chip">{b.region}</span>
+                <ul class="fitment-models">
+                  {
+                    b.models.map((m) => (
+                      <li>
+                        <a href={`/products/${category.slug}/`} title={`${b.brand} ${m} ${category.name.toLowerCase()}`}>
+                          {b.brand} {m} {category.name.toLowerCase()}
+                        </a>
+                      </li>
+                    ))
+                  }
+                </ul>
+                <p class="small muted">{b.filterNote}</p>
+              </div>
+            ))
+          }
+        </div>
+        <p class="muted small mt-2">{fitment.disclaimer}</p>
+      </div>
+    </section>
+  )}
 
   {related.length > 0 && (
     <section class="section section--soft">
@@ -86,10 +209,32 @@ const related = productsData.products.filter((p) => p.category === product.categ
   .crumbs .container { display: flex; flex-wrap: wrap; gap: 0.4rem; }
   .product { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
   .product__gallery img { width: 100%; border-radius: var(--radius); box-shadow: var(--shadow-sm); margin-bottom: 1rem; }
-  .product__info h1 { margin: 0.5rem 0 0.25rem; }
-  .product__info .model { color: var(--ink-soft); margin-bottom: 1rem; }
+  .product__info h1 { margin: 0.5rem 0 0.5rem; }
+  .model-inline { color: var(--orange-600); font-size: 0.85em; white-space: nowrap; }
+  .product__info .lede { margin-bottom: 1.25rem; }
   .product__cta { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1.5rem; }
   table.spec { margin-top: 1.25rem; }
+
+  .deep-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: var(--sp-6); }
+  .deep-block { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: var(--sp-6); box-shadow: var(--shadow-sm); }
+  .deep-block h3 { color: var(--navy-800); }
+  .deep-block ul { margin: 0; padding-left: 1.2rem; }
+  .deep-block li { margin-bottom: 0.5rem; }
+  .deep-block p:last-child { margin-bottom: 0; }
+
+  .fitment-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--sp-5); }
+  .fitment-card {
+    background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
+    padding: var(--sp-5); box-shadow: var(--shadow-sm);
+    transition: box-shadow var(--t-med) var(--ease), transform var(--t-med) var(--ease);
+  }
+  .fitment-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+  .fitment-card h3 { color: var(--navy-800); margin-bottom: 0.35rem; }
+  .fitment-models { list-style: none; margin: 0.85rem 0 0.75rem; padding: 0; font-size: 0.9rem; }
+  .fitment-models li { margin-bottom: 0.3rem; }
+  .fitment-models a { color: var(--ink-soft); }
+  .fitment-models a:hover { color: var(--orange-600); }
+
   .related { color: inherit; display: flex; flex-direction: column; gap: 0.4rem; }
   .related:hover { color: inherit; }
   .related img { width: 100%; height: 150px; object-fit: cover; border-radius: var(--radius-sm); }

@@ -5,7 +5,7 @@ import { site } from '../data/site';
 
 <BaseLayout title="Contact" description="Contact us for filter inquiries.">
   <section class="page-hero">
-    <div class="container"><h1>Contact Us</h1></div>
+    <div class="container"><h1>Contact Us</h1><p>Tell us your OE number or application and we will match the right filter.</p></div>
   </section>
 
   <section class="section">
@@ -20,6 +20,15 @@ import { site } from '../data/site';
           <li><strong>Address:</strong> {site.address}</li>
         </ul>
         <a class="wa-btn" href={site.whatsappLink} target="_blank" rel="nofollow noopener">💬 Chat on WhatsApp Now</a>
+
+        <div class="contact__tips">
+          <h3>For a faster quote, please include</h3>
+          <ul class="tick-list">
+            <li>OE / cross-reference number or vehicle application</li>
+            <li>Target quantity and destination market</li>
+            <li>Any private-label or packaging requirements</li>
+          </ul>
+        </div>
       </div>
 
       <div class="contact__form card">
@@ -41,6 +50,11 @@ import { site } from '../data/site';
   .contact { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
   .contact__list { list-style: none; margin: 1.25rem 0; padding: 0; }
   .contact__list li { margin-bottom: 0.6rem; }
+  .contact__tips { margin-top: 2rem; padding: var(--sp-5); background: var(--bg-soft); border-radius: var(--radius); }
+  .contact__tips h3 { color: var(--navy-800); font-size: 1rem; }
+  .tick-list { list-style: none; margin: 0; padding: 0; font-size: 0.92rem; }
+  .tick-list li { padding-left: 1.5rem; position: relative; margin-bottom: 0.5rem; }
+  .tick-list li::before { content: "✓"; position: absolute; left: 0; color: var(--orange-500); font-weight: 700; }
   .contact__form form { display: grid; gap: 1rem; margin-top: 1rem; }
   .contact__form label { display: grid; gap: 0.3rem; font-weight: 600; font-size: 0.9rem; }
   .contact__form input, .contact__form textarea {

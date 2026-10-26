@@ -29,13 +29,22 @@ const orgJsonLd = {
   name: site.companyName,
   alternateName: [site.brand, site.companyNameShort],
   url: siteUrl,
+  logo: ogImage,
   foundingDate: `${site.since}`,
+  telephone: site.phone,
+  email: site.email,
   address: {
     '@type': 'PostalAddress',
     addressCountry: 'CN',
     addressRegion: '河北省',
     addressLocality: '邢台市清河县',
     streetAddress: 'Wangshuangmiao Industrial Zone',
+  },
+  contactPoint: {
+    '@type': 'ContactPoint',
+    contactType: 'sales',
+    email: site.email,
+    telephone: site.phone,
   },
 };
 ---
@@ -61,6 +70,7 @@ const orgJsonLd = {
     <meta name="twitter:image" content={ogImage} />
     {!noindex && <link rel="canonical" href={canonical} />}
     <script type="application/ld+json" set:html={JSON.stringify(orgJsonLd)} />
+    <slot name="head" />
   </head>
   <body>
     <Header />
