@@ -41,9 +41,11 @@ export const companyLinks = [
   { label: 'Download', href: '/download/' },
   { label: 'Exhibition', href: '/exhibition/' },
   { label: 'Contact', href: '/contact/' },
-  { label: 'Privacy Policy', href: '/privacy-policy/' },
 ];
 
 export const complianceLinks = [
   { label: 'Privacy Policy', href: '/privacy-policy/' },
+  { label: 'Terms of Service', href: '/terms/' },
+  { label: 'Disclaimer', href: '/disclaimer/' },
+  { label: 'Cookie Policy', href: '/cookies/' },
 ];

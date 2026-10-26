@@ -1,0 +1,193 @@
+---
+// LegalPage — shared scaffold for legal pages (privacy / terms / disclaimer / cookies).
+// Renders a hero, an auto-generated table of contents, and a robust markdown body.
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+interface Props {
+  title: string;
+  heading: string;
+  description: string;
+  updated: string;
+  body: string;
+}
+
+const { title, heading, description, updated, body } = Astro.props;
+
+// --- Inline markdown: escape HTML, then bold -> italic -> links -------------------
+function inline(src: string): string {
+  return src
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+    .replace(/\*([^*]+)\*/g, '<em>$1</em>')
+    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>');
+}
+
+// --- Slugify a heading for anchor ids ---------------------------------------------
+function slug(text: string): string {
+  return text
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+}
+
+// --- Block parser: h2/h3, ul/ol lists, tables, paragraphs --------------------------
+interface TocItem {
+  slug: string;
+  label: string;
+}
+
+function renderBody(md: string): { html: string; toc: TocItem[] } {
+  const lines = md.split('\n');
+  const toc: TocItem[] = [];
+  const out: string[] = [];
+
+  // Buffers for the current list / table
+  let listType: 'ul' | 'ol' | null = null;
+  let list: string[] = [];
+  let table: string[][] | null = null;
+  let para: string[] = [];
+
+  const flushList = () => {
+    if (list.length) {
+      out.push(`<${listType}>${list.map((li) => `<li>${li}</li>`).join('')}</${listType}>`);
+      list = [];
+      listType = null;
+    }
+  };
+
+  const flushTable = () => {
+    if (table && table.length >= 2) {
+      const [head, ...rows] = table;
+      const thead = `<thead><tr>${head.map((c) => `<th>${inline(c.trim())}</th>`).join('')}</tr></thead>`;
+      const tbody = `<tbody>${rows
+        .map((r) => `<tr>${r.map((c) => `<td>${inline(c.trim())}</td>`).join('')}</tr>`)
+        .join('')}</tbody>`;
+      out.push(`<table>${thead}${tbody}</table>`);
+    }
+    table = null;
+  };
+
+  const flushPara = () => {
+    if (para.length) {
+      out.push(`<p>${inline(para.join(' '))}</p>`);
+      para = [];
+    }
+  };
+
+  const flushAll = () => {
+    flushList();
+    flushTable();
+    flushPara();
+  };
+
+  const isTableSep = (t: string) => /^\|?[\s:|-]+\|[\s:|-]*$/.test(t) && t.includes('-');
+
+  for (const raw of lines) {
+    const t = raw.trim();
+
+    if (t === '') {
+      flushAll();
+      continue;
+    }
+
+    // h2 (section) — collect for TOC
+    if (t.startsWith('## ')) {
+      flushAll();
+      const label = t.slice(3).trim();
+      const id = slug(label);
+      toc.push({ slug: id, label });
+      out.push(`<h2 id="${id}">${inline(label)}</h2>`);
+      continue;
+    }
+
+    // h3 (subsection)
+    if (t.startsWith('### ')) {
+      flushAll();
+      out.push(`<h3>${inline(t.slice(4).trim())}</h3>`);
+      continue;
+    }
+
+    // Table row
+    if (t.startsWith('|')) {
+      flushList();
+      flushPara();
+      const cells = t
+        .replace(/^\|/, '')
+        .replace(/\|$/, '')
+        .split('|');
+      if (isTableSep(t)) {
+        // separator row — ignore (header already captured)
+      } else {
+        if (!table) table = [];
+        table.push(cells);
+      }
+      continue;
+    }
+
+    // Ordered list
+    const olMatch = t.match(/^(\d+)\.\s+(.*)$/);
+    if (olMatch) {
+      flushTable();
+      flushPara();
+      if (listType !== 'ol') {
+        flushList();
+        listType = 'ol';
+      }
+      list.push(inline(olMatch[2]));
+      continue;
+    }
+
+    // Unordered list
+    if (t.startsWith('- ')) {
+      flushTable();
+      flushPara();
+      if (listType !== 'ul') {
+        flushList();
+        listType = 'ul';
+      }
+      list.push(inline(t.slice(2)));
+      continue;
+    }
+
+    // Paragraph line (may continue across lines)
+    flushList();
+    flushTable();
+    para.push(t);
+  }
+
+  flushAll();
+
+  return { html: out.join(''), toc };
+}
+
+const { html, toc } = renderBody(body);
+---
+
+<BaseLayout title={title} description={description}>
+  <section class="page-hero">
+    <div class="container"><h1>{heading}</h1></div>
+  </section>
+
+  <section class="section">
+    <div class="container legal">
+      <p class="updated">
+        Last updated: {updated} · Effective date: {updated}
+      </p>
+
+      {
+        toc.length > 0 && (
+          <nav class="toc" aria-label="On this page">
+            <strong>On this page</strong>
+            <ol>
+              {toc.map((item) => <li><a href={`#${item.slug}`}>{item.label}</a></li>)}
+            </ol>
+          </nav>
+        )
+      }
+
+      <div set:html={html} />
+    </div>
+  </section>
+</BaseLayout>

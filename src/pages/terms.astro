@@ -1,0 +1,12 @@
+---
+import LegalPage from '../components/LegalPage.astro';
+import { termsOfService } from '../data/legal';
+---
+
+<LegalPage
+  title={termsOfService.title}
+  heading={termsOfService.heading}
+  description={termsOfService.description}
+  updated={termsOfService.updated}
+  body={termsOfService.body}
+/>

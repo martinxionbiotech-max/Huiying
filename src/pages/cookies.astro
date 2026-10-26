@@ -1,0 +1,12 @@
+---
+import LegalPage from '../components/LegalPage.astro';
+import { cookiePolicy } from '../data/legal';
+---
+
+<LegalPage
+  title={cookiePolicy.title}
+  heading={cookiePolicy.heading}
+  description={cookiePolicy.description}
+  updated={cookiePolicy.updated}
+  body={cookiePolicy.body}
+/>

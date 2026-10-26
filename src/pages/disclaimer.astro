@@ -1,0 +1,12 @@
+---
+import LegalPage from '../components/LegalPage.astro';
+import { disclaimer } from '../data/legal';
+---
+
+<LegalPage
+  title={disclaimer.title}
+  heading={disclaimer.heading}
+  description={disclaimer.description}
+  updated={disclaimer.updated}
+  body={disclaimer.body}
+/>
