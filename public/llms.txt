@@ -1,0 +1,50 @@
+# huiying Filter
+
+> Qinghe County Huiying Filter Manufacturing Co., Ltd. — a professional manufacturer of automotive and industrial filters (air, cabin, oil, fuel filters and wipers), integrating R&D, production and sales since 1996. This file lists the main pages of the site for LLM consumption.
+
+## Site structure
+
+- [Home](https://huiyingfilter.com/): Company overview, product categories, sourcing highlights and latest news.
+- [Products](https://huiyingfilter.com/products/): All filter product categories.
+- [Air Filter](https://huiyingfilter.com/products/air-filter/): Engine air filters, buyer's guide, vehicle fitment references and FAQ.
+- [Cabin Filter](https://huiyingfilter.com/products/cabin-filter/): Cabin (pollen) air filters, buyer's guide and FAQ.
+- [Oil Filter](https://huiyingfilter.com/products/oil-filter/): Engine oil filters, buyer's guide and FAQ.
+- [Fuel Filter](https://huiyingfilter.com/products/fuel-filter/): Fuel filters, buyer's guide and FAQ.
+- [Wiper](https://huiyingfilter.com/products/wiper/): Wiper blades and products.
+
+## Product SKUs
+
+- [Oil Filter HY-OF-690](https://huiyingfilter.com/products/oil-filter/of-690/): Spin-on engine oil filter reference SKU.
+- [Cabin Filter HY-CF-691](https://huiyingfilter.com/products/cabin-filter/cf-691/): Cabin air filter reference SKU.
+- [Air Filter HY-AF-692](https://huiyingfilter.com/products/air-filter/af-692/): Panel engine air filter reference SKU.
+- [Air Filter HY-AF-693](https://huiyingfilter.com/products/air-filter/af-693/): Engine air filter reference SKU.
+- [Air Filter HY-AF-698](https://huiyingfilter.com/products/air-filter/af-698/): Engine air filter reference SKU.
+- [Air Filter HY-AF-699](https://huiyingfilter.com/products/air-filter/af-699/): Engine air filter reference SKU.
+- [Air Filter HY-AF-700](https://huiyingfilter.com/products/air-filter/af-700/): Engine air filter reference SKU.
+- [Air Filter HY-AF-701](https://huiyingfilter.com/products/air-filter/af-701/): Engine air filter reference SKU.
+- [Air Filter HY-AF-702](https://huiyingfilter.com/products/air-filter/af-702/): Engine air filter reference SKU.
+- [Air Filter HY-AF-703](https://huiyingfilter.com/products/air-filter/af-703/): Engine air filter reference SKU.
+
+## Company
+
+- [Company Profile](https://huiyingfilter.com/company-profile/): About the company, strengths, regional industry background and export markets.
+- [Company Culture](https://huiyingfilter.com/culture/): Vision, values, philosophy and mission.
+- [Factory](https://huiyingfilter.com/factory/): How to reach the factory and regional cluster context.
+- [Marketing](https://huiyingfilter.com/marketing/): Marketing network and export markets.
+- [Download](https://huiyingfilter.com/download/): Company documents and catalogs on request.
+- [Exhibition](https://huiyingfilter.com/exhibition/): Exhibition pictures.
+- [Contact](https://huiyingfilter.com/contact/): Contact details and inquiry form.
+- [Privacy Policy](https://huiyingfilter.com/privacy-policy/): Privacy policy.
+
+## News
+
+- [News](https://huiyingfilter.com/news/): Filter knowledge and company updates.
+- [How to choose air filter](https://huiyingfilter.com/news/how-to-choose-air-filter/)
+- [Why does sludge still appear in the oil shell](https://huiyingfilter.com/news/why-does-sludge-still-appear-in-the-oil-shell/)
+- [Frequently Asked Questions About Excavator Filter Elements](https://huiyingfilter.com/news/frequently-asked-questions-about-excavator-filter-elements/)
+- [The lungs of the engine-the working principle of the air filter](https://huiyingfilter.com/news/the-lungs-of-the-engine-working-principle-of-the-air-filter/)
+- [Is it necessary to replace the oil filter while maintaining the oil?](https://huiyingfilter.com/news/is-it-necessary-to-replace-the-oil-filter-while-maintaining-the-oil/)
+- [Good engine oil is changed every time. Why does sludge still appear in the oil shell?](https://huiyingfilter.com/news/good-engine-oil-changed-every-time-why-sludge-still-appears/)
+- [Oil filter-the knowledge you don't know](https://huiyingfilter.com/news/oil-filter-the-knowledge-you-dont-know/)
+- [The importance of filter efficiency to the engine](https://huiyingfilter.com/news/the-importance-of-filter-efficiency-to-the-engine/)
+- [The misunderstanding and identification method of air filter](https://huiyingfilter.com/news/the-misunderstanding-and-identification-method-of-air-filter/)
