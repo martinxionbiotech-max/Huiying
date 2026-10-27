@@ -286,7 +286,7 @@ We may modify, update, replace or remove any content on the Site at any time wit
 
 ## 8. Images
 
-Images on the Site are provided for illustrative purposes. Photographs of products, facilities and exhibitions reflect actual items and premises at the time they were taken, but final product appearance, packaging and configuration may differ. We do not use artificially generated ("AI") imagery on the Site.
+Images on the Site are provided for illustrative purposes. Photographs of products, facilities and exhibitions reflect actual items and premises at the time they were taken, but final product appearance, packaging and configuration may differ. Some illustrative images (for example, on the Factory page) are computer-generated representations and may not depict our actual facility.
 
 ## 9. No Warranty and Use at Your Own Risk
 
