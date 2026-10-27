@@ -30,11 +30,14 @@ const fitment = getFitment(category.slug);
     <div class="container">
       <div class="section-head">
         <h2>{category.name} Products</h2>
-        <p class="lede">{products.length} product{products.length === 1 ? '' : 's'} in this category.</p>
+        <p class="lede">{products.length > 0 ? `${products.length} product${products.length === 1 ? '' : 's'} in this category.` : 'SKU list available on request.'}</p>
       </div>
       {
         products.length === 0 ? (
-          <p class="muted">This category is currently being prepared. <a href="/contact/">Contact us</a> for availability.</p>
+          <div class="on-request">
+            <p>This product line is part of our production capability. The SKU list is available on request — tell us your target application or OE / cross-reference number and we will match the right part for you.</p>
+            <a class="btn btn--primary" href="/contact/">Request the SKU list</a>
+          </div>
         ) : (
           <div class="grid grid--3">
             {
@@ -181,6 +184,12 @@ const fitment = getFitment(category.slug);
   .inline-links a { color: var(--ink-soft); }
   .inline-links a:hover { color: var(--orange-600); }
   .fitment-table th { white-space: normal; }
+
+  .on-request {
+    background: #fff; border: 1px solid var(--line); border-left: 4px solid var(--orange-500);
+    border-radius: var(--radius); padding: var(--sp-6); max-width: 800px;
+  }
+  .on-request p { margin-bottom: 1rem; }
 
   .faq-list { max-width: 800px; }
 

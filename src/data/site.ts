@@ -37,12 +37,16 @@ export const nav = [
 ];
 
 export const productCategories = [
-  { slug: 'air-filter', name: 'Air Filter', code: 'af', desc: 'Engine air filters for cars, trucks and off-highway equipment.', icon: '/images/d6a0298e-b775-4dac-8ba0-3d4a059757e5.png' },
-  { slug: 'cabin-filter', name: 'Cabin Filter', code: 'cf', desc: 'Cabin air filters for clean in-cabin air.', icon: '/images/d6028db0-eb29-447e-8e5a-1c238d99f4c0.png' },
-  { slug: 'oil-filter', name: 'Oil Filter', code: 'of', desc: 'Engine oil filters for reliable lubrication.', icon: '/images/d3c90754-3b64-49fe-9777-7973fb0eab78.png' },
-  { slug: 'fuel-filter', name: 'Fuel Filter', code: 'ff', desc: 'Fuel filters for clean fuel delivery.', icon: '/images/dfa88509-8560-4df5-88f7-e980a578d65a.png' },
-  { slug: 'wiper', name: 'Wiper', code: 'wb', desc: 'Wiper blades and wiper products.', icon: '/images/d8dc5304-3276-4f48-95dd-1e16fa3e4e23.png' },
+  { slug: 'air-filter', name: 'Air Filter', code: 'af', desc: 'Engine air filters for cars, trucks and off-highway equipment.', icon: '/images/d6a0298e-b775-4dac-8ba0-3d4a059757e5.png', stocked: true },
+  { slug: 'cabin-filter', name: 'Cabin Filter', code: 'cf', desc: 'Cabin air filters for clean in-cabin air.', icon: '/images/d6028db0-eb29-447e-8e5a-1c238d99f4c0.png', stocked: true },
+  { slug: 'oil-filter', name: 'Oil Filter', code: 'of', desc: 'Engine oil filters for reliable lubrication.', icon: '/images/d3c90754-3b64-49fe-9777-7973fb0eab78.png', stocked: true },
+  { slug: 'fuel-filter', name: 'Fuel Filter', code: 'ff', desc: 'Fuel filters for clean fuel delivery.', icon: '/images/dfa88509-8560-4df5-88f7-e980a578d65a.png', stocked: false },
+  { slug: 'wiper', name: 'Wiper', code: 'wb', desc: 'Wiper blades and wiper products.', icon: '/images/d8dc5304-3276-4f48-95dd-1e16fa3e4e23.png', stocked: false },
 ];
+
+// Categories shown in product navigation — only stocked lines (air/cabin/oil).
+// Empty categories (fuel/wiper) stay published as pages but are hidden from nav.
+export const stockedCategories = productCategories.filter((c) => c.stocked);
 
 export const companyLinks = [
   { label: 'Company Profile', href: '/company-profile/' },

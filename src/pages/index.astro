@@ -25,9 +25,9 @@ const totalSkus = productsData.products.length;
         <p class="hero__eyebrow">EST. {site.since} · QINGHE, HEBEI, CHINA</p>
         <h1 class="hero__title">High-tech filter manufacturer &amp; exporter</h1>
         <p class="hero__lede">
-          {site.positioning} We produce air, cabin, oil and fuel filters for
-          automotive and industrial applications — with {totalSkus} reference SKUs across
-          {productCategories.length} product categories.
+          {site.positioning} We manufacture air, cabin, oil and fuel filters for
+          automotive and industrial applications — {totalSkus} reference SKUs listed
+          across the stocked air, cabin and oil ranges, with fuel-filter and wiper lines available on request.
         </p>
         <div class="hero__actions">
           <a class="btn btn--primary" href="/products/">Explore Products</a>
@@ -63,7 +63,11 @@ const totalSkus = productsData.products.length;
               </div>
               <h3>{c.name}</h3>
               <p>{c.desc}</p>
-              <span class="cat-card__count">{categoryCount(c.slug)} product{categoryCount(c.slug) === 1 ? '' : 's'}</span>
+              {categoryCount(c.slug) > 0 ? (
+                <span class="cat-card__count">{categoryCount(c.slug)} product{categoryCount(c.slug) === 1 ? '' : 's'}</span>
+              ) : (
+                <span class="cat-card__count cat-card__count--request">On request</span>
+              )}
             </a>
           ))
         }
@@ -210,6 +214,7 @@ const totalSkus = productsData.products.length;
   .cat-card h3 { color: var(--navy-800); }
   .cat-card p { color: var(--ink-soft); font-size: 0.9rem; }
   .cat-card__count { color: var(--orange-600); font-weight: 700; font-size: 0.85rem; }
+  .cat-card__count--request { color: var(--ink-soft); }
 
   .two-col { display: grid; grid-template-columns: 1.3fr 0.9fr; gap: 3rem; align-items: center; }
   .two-col a { color: var(--brand); text-decoration: underline; }

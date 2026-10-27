@@ -23,7 +23,11 @@ const count = (slug: string) => productsData.products.filter((p) => p.category =
               <img src={c.icon} alt={c.name} width="96" height="96" loading="lazy" />
               <h3>{c.name}</h3>
               <p class="muted small">{c.desc}</p>
-              <span class="cat__count">{count(c.slug)} product{count(c.slug) === 1 ? '' : 's'}</span>
+              {count(c.slug) > 0 ? (
+                <span class="cat__count">{count(c.slug)} product{count(c.slug) === 1 ? '' : 's'}</span>
+              ) : (
+                <span class="cat__count cat__count--request">On request</span>
+              )}
             </a>
           ))
         }
@@ -43,4 +47,5 @@ const count = (slug: string) => productsData.products.filter((p) => p.category =
   .cat:hover { color: inherit; }
   .cat img { max-height: 96px; width: auto; }
   .cat__count { color: var(--orange-600); font-weight: 700; font-size: 0.85rem; }
+  .cat__count--request { color: var(--ink-soft); }
 </style>
