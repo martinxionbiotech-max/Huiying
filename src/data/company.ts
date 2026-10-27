@@ -42,7 +42,7 @@ export const factoryInfo = {
     'Jinan West High-speed Railway Station',
     'Xingtai East Station',
   ],
-  image: '/images/cdb5ad87-ffa7-4c86-996d-da097a190a17.jpg',
+  image: '/images/factory-ai/factory-01-1600x1200.webp',
 };
 
 export const marketingInfo = {
