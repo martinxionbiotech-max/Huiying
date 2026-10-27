@@ -206,6 +206,84 @@ export const categoryContent: CategoryContent[] = [
       ],
     },
   },
+  {
+    slug: 'brake-pads',
+    purchasingGuide: [
+      'Brake pads are the highest-safety consumable on the vehicle, so the sourcing decision turns on friction formulation and hardware completeness more than on unit price. A ceramic pad trades a little initial bite for quieter, lower-dust operation and gentler rotor wear, while a semi-metallic pad delivers stronger cold bite and heat tolerance at the cost of more dust and rotor wear — the right choice depends on the driving profile of the market you serve.',
+      'For importers and private-label programs, the checklist is the backing-plate fit, the chamfer and slot pattern, and whether the noise-reduction shims, springs and anti-rattle clips are included in the box. A pad that fits the caliper but ships without the hardware kit generates returns and workshop complaints, so confirm the full set contents per OE number.',
+      'Our advice to buyers is to quote the OE or cross-reference number and match the friction material to the application — ceramic for the premium urban/SUV segment, semi-metallic for fleets and heavier vehicles — rather than mixing on price alone.',
+    ],
+    longTail: [
+      'Ceramic and semi-metallic pads differ mainly in how they manage heat and noise. Ceramic compounds use ceramic fibres and fillers that run quieter and cooler with less dust, which suits modern passenger cars and SUVs; semi-metallic compounds use metal fibres for strong bite and high-temperature stability, which suits heavier vehicles and demanding duty cycles.',
+      'New pads should be bedded in against the rotor for the first few hundred kilometres to transfer a consistent friction film. Skipping this step can cause uneven deposits, noise and judder, and is the most common cause of post-installation complaints.',
+    ],
+    faqs: [
+      { q: 'Which brake pads fit a Toyota Corolla or Camry?', a: 'Both the Corolla and Camry are common applications for ceramic front brake pads in our range. The exact pad is matched by OE number — for example 04465-0K020, 04465-04030 and 04465-0K070 for several Toyota platforms — and we confirm the full set contents before quoting.' },
+      { q: 'Do you offer brake pads for the Honda Civic or Hyundai Elantra?', a: 'Yes — the Honda Civic and Hyundai Elantra are common applications in our brake-pad range. We match the pad set by OE number and confirm the friction material and hardware kit per model.' },
+      { q: 'What is the difference between ceramic and semi-metallic pads?', a: 'Ceramic pads are quieter, lower-dust and easier on rotors, while semi-metallic pads offer stronger cold bite and higher heat tolerance. The right material depends on the vehicle and driving conditions, so we confirm the recommendation per application.' },
+      { q: 'How can I tell when brake pads need replacing?', a: 'Squealing wear indicators, reduced pedal feel, longer stopping distance or a low-pad warning light are the usual signs. We recommend inspecting pad thickness at every service and replacing before the friction material reaches the minimum thickness.' },
+    ],
+    selectionAdvice: {
+      heading: 'Selection advice from our team',
+      items: [
+        'Premium / urban segment: ceramic for quiet, low-dust operation and longer rotor life.',
+        'Fleet / heavy vehicles: semi-metallic for cold bite and heat tolerance.',
+        'Always confirm the noise/hardware kit is included per OE to avoid returns.',
+      ],
+    },
+  },
+  {
+    slug: 'spark-plugs',
+    purchasingGuide: [
+      'Spark plugs are selected by heat range, thread reach and electrode material, not by a single generic part number. A plug with the wrong heat range will either foul at low load or overheat at high load, so the sourcing decision should be driven by the exact engine application rather than by appearance or price.',
+      'For importers and private-label programs, the useful checks are the centre-electrode material (nickel, platinum or iridium), the thread size and reach, and the factory-set gap. Iridium plugs cost more up front but last far longer and are now the mainstream OEM choice, which makes them the natural premium line.',
+      'Our advice to buyers is to quote the OE or engine code and match the heat range and electrode spec per model, then position iridium as the premium line and nickel as the price-sensitive option.',
+    ],
+    longTail: [
+      'Electrode material drives both cost and service life. Nickel is the budget option with the shortest life; platinum is a mid-tier step up; iridium offers the longest life and most consistent spark, which is why it is the factory fit on most modern engines.',
+      'The heat range describes how quickly a plug dissipates heat from the firing tip. A too-hot plug can cause pre-ignition and engine damage, while a too-cold plug fouls with carbon deposits — which is why matching the heat range to the engine is the first correctness check.',
+    ],
+    faqs: [
+      { q: 'Which spark plugs fit a Toyota or Honda gasoline engine?', a: 'Toyota and Honda gasoline engines are common applications in our spark-plug range. The exact plug is matched by OE number and engine code, and we confirm the heat range, thread reach and electrode material per model.' },
+      { q: 'What is the difference between iridium and platinum spark plugs?', a: 'Iridium plugs have a finer, harder electrode that lasts longer and produces a more consistent spark than platinum, which is why they are the mainstream OEM choice. Platinum is a good mid-tier alternative; nickel is the budget option.' },
+      { q: 'How often should spark plugs be replaced?', a: 'The interval depends on the electrode material — roughly 30,000 km for nickel, 60,000 km for platinum and up to 100,000 km or more for iridium — but always follow the engine manufacturer schedule first.' },
+      { q: 'Can I gap the spark plugs myself?', a: 'We recommend using the factory-set gap for iridium and platinum plugs. Confirm the correct gap for the application and avoid re-gapping fine-wire iridium electrodes, which are easily damaged.' },
+    ],
+    selectionAdvice: {
+      heading: 'Selection advice from our team',
+      items: [
+        'Premium / long-life: iridium electrodes for consistent spark and extended intervals.',
+        'Match heat range and thread reach by engine code to avoid pre-ignition or fouling.',
+        'Keep a nickel line for price-sensitive demand and an iridium line for the service market.',
+      ],
+    },
+  },
+  {
+    slug: 'rubber-hoses',
+    purchasingGuide: [
+      'Rubber hoses are chosen by compound, reinforcement and inner diameter, and the wrong compound is the most common failure. EPDM suits coolant and radiator circuits, NBR (nitrile) resists oil and fuel, and silicone handles higher heat — so the first sourcing question is which fluid and temperature the hose will carry.',
+      'For importers and private-label programs, ask about the reinforcement (fabric or braided) and the dimensional tolerance on the inner diameter, because a hose that swells, hardens or collapses under heat or oil is a premature-failure risk that ends up on the end customer.',
+      'Our advice to buyers is to specify the compound, the working temperature and the inner diameter up front, and to treat material consistency across a batch as the main quality signal — not the price.',
+    ],
+    longTail: [
+      'EPDM, NBR and silicone each serve a different circuit. EPDM is the standard for coolant because it resists water and glycol; NBR resists oil and fuel and is used for fuel lines and oil-transfer hoses; silicone tolerates higher temperatures and is used for turbo, heater and vacuum lines where heat resistance matters.',
+      'Reinforcement is what lets a hose hold pressure and vacuum without collapsing. A braided or fabric-reinforced hose keeps its shape under vacuum and at temperature, while an unreinforced hose is only suitable for low-pressure gravity flow.',
+    ],
+    faqs: [
+      { q: 'What is the difference between EPDM, NBR and silicone hose?', a: 'EPDM resists water and coolant and is the standard radiator choice; NBR resists oil and fuel; silicone handles higher heat. The right compound depends on the fluid and working temperature, so we confirm the application before quoting.' },
+      { q: 'Do you make custom-sized radiator or turbo hoses?', a: 'Yes — our hose range includes custom EPDM elbow, NBR and reinforced silicone hoses in a range of inner diameters, and we match the compound, reinforcement and dimensions to your application.' },
+      { q: 'Which hose fits the BMW 17127525023 upper radiator application?', a: 'The BMW 17127525023 upper radiator hose is a common application in our range, supplied in EPDM for coolant service. We confirm the diameter and any elbow geometry per the OE number before quoting.' },
+      { q: 'How can I tell a hose needs replacing?', a: 'Swelling, hardening, cracks, soft spots or leaks at the clamp are the usual signs. Coolant hoses are typically inspected at every service and replaced on a time or mileage schedule rather than waiting for failure.' },
+    ],
+    selectionAdvice: {
+      heading: 'Selection advice from our team',
+      items: [
+        'Coolant circuits: EPDM for water/glycol resistance.',
+        'Fuel / oil circuits: NBR for oil and fuel resistance.',
+        'High-heat circuits: silicone with reinforcement for turbo, heater and vacuum lines.',
+      ],
+    },
+  },
 ];
 
 export function getCategoryContent(slug: string): CategoryContent | undefined {

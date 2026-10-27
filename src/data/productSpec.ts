@@ -1,8 +1,8 @@
 // SKU "Specification & Ordering" table — procurement-level fields.
-// Zero-fabrication discipline: fields are filled only with data the source dataset
-// actually provides (category type, model). Everything else is stated honestly as
-// "Confirm per order specification" rather than invented. No dimensions, OE numbers,
-// MOQ or lead times are asserted because the source data does not contain them.
+// Zero-fabrication discipline: per-SKU fields (OE number, cross-reference, material,
+// fitment, dimensions) are rendered ONLY when the source catalog provides them.
+// Everything else is stated honestly as "Confirm per order specification" rather
+// than invented.
 
 export interface SpecRow {
   label: string;
@@ -32,12 +32,12 @@ const categorySpecs: CategorySpec[] = [
   },
   {
     slug: 'oil-filter',
-    vehicleApplication: 'Engine lubrication circuit — spin-on (confirm per fitment table)',
+    vehicleApplication: 'Engine lubrication circuit — spin-on or cartridge (confirm per fitment table)',
     filterMedia: 'Heat-cured filter-paper media (confirmed per application)',
   },
   {
     slug: 'fuel-filter',
-    vehicleApplication: 'Fuel delivery system (confirm per fitment table)',
+    vehicleApplication: 'Fuel delivery system — including diesel water-separator assemblies (confirm per fitment table)',
     filterMedia: CONFIRM,
   },
   {
@@ -45,22 +45,55 @@ const categorySpecs: CategorySpec[] = [
     vehicleApplication: 'Windscreen wiper (confirm per fitment table)',
     filterMedia: CONFIRM,
   },
+  {
+    slug: 'brake-pads',
+    vehicleApplication: 'Front-axle disc brakes — passenger car (confirm per fitment table)',
+    filterMedia: 'Ceramic or semi-metallic friction material (confirmed per order)',
+  },
+  {
+    slug: 'spark-plugs',
+    vehicleApplication: 'Gasoline engine ignition (confirm per fitment table)',
+    filterMedia: 'Iridium / platinum / nickel electrode (confirmed per order)',
+  },
+  {
+    slug: 'rubber-hoses',
+    vehicleApplication: 'Cooling, fuel and air-transfer circuits (confirm per application)',
+    filterMedia: 'EPDM / NBR / silicone compound (confirmed per order)',
+  },
 ];
 
 export function getCategorySpec(categorySlug: string): CategorySpec | undefined {
   return categorySpecs.find((c) => c.slug === categorySlug);
 }
 
+/** Shape of the per-SKU data carried on a product record in products.json. */
+export interface ProductData {
+  model?: string;
+  oeNumbers?: string[] | null;
+  crossReference?: string | null;
+  material?: string | null;
+  dimensions?: string | null;
+  fitment?: { brand?: string; models?: string[]; engine?: string | null } | null;
+  source?: { name?: string; status?: string; url?: string } | null;
+}
+
 /**
  * Build the ordering/spec rows for a given SKU.
- * `model` is the only per-SKU data available in the source dataset.
+ * Per-SKU values (OE, cross-reference, material, fitment) are shown when the
+ * source catalog provides them; otherwise the honest "confirm per order" default.
  */
-export function getProductSpec(categorySlug: string): SpecRow[] {
+export function getProductSpec(categorySlug: string, product?: ProductData): SpecRow[] {
   const spec = getCategorySpec(categorySlug);
+  const fitment = product?.fitment;
+  const fitmentValue = fitment?.brand
+    ? `${fitment.brand}${fitment.models && fitment.models.length ? ' ' + fitment.models.join(', ') : ''}${fitment.engine ? ` (engine: ${fitment.engine})` : ''}`
+    : null;
   return [
-    { label: 'Dimensions', value: CONFIRM },
-    { label: 'OE number', value: CONFIRM },
-    { label: 'Cross-reference', value: CONFIRM },
+    { label: 'OE number', value: product?.oeNumbers?.length ? product.oeNumbers.join(' / ') : CONFIRM },
+    { label: 'Cross-reference', value: product?.crossReference || CONFIRM },
+    { label: 'Material', value: product?.material || CONFIRM },
+    { label: 'Dimensions', value: product?.dimensions || CONFIRM },
+    { label: 'Vehicle fitment', value: fitmentValue || CONFIRM },
     { label: 'Vehicle application', value: spec?.vehicleApplication ?? CONFIRM },
     { label: 'Filter media', value: spec?.filterMedia ?? CONFIRM },
     { label: 'MOQ', value: CONFIRM },

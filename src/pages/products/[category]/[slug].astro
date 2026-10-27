@@ -18,7 +18,10 @@ const category = productCategories.find((c) => c.slug === product.category);
 const related = productsData.products.filter((p) => p.category === product.category && p.slug !== product.slug).slice(0, 4);
 const fitment = getFitment(product.category);
 const content = getProductContent(product.slug);
-const spec = getProductSpec(product.category);
+const spec = getProductSpec(product.category, product);
+const sourceStatus = (product.source && product.source.status) ? product.source.status : null;
+const sourceName = (product.source && product.source.name) ? product.source.name : null;
+const sourceUrl = (product.source && product.source.url) ? product.source.url : null;
 
 const siteUrl = Astro.site?.toString() ?? 'https://huiyingfilter.com';
 const pageUrl = new URL(Astro.url.pathname, Astro.site).toString();
@@ -99,11 +102,23 @@ const breadcrumbJsonLd = {
           <tbody>
             <tr><th>Category</th><td>{category.name}</td></tr>
             <tr><th>Model</th><td>{product.model}</td></tr>
+            {product.oeNumbers && product.oeNumbers.length > 0 && <tr><th>OE number</th><td>{product.oeNumbers.join(' / ')}</td></tr>}
+            {product.crossReference && <tr><th>Cross-reference</th><td>{product.crossReference}</td></tr>}
+            {product.material && <tr><th>Material</th><td>{product.material}</td></tr>}
+            {product.fitment && product.fitment.brand && <tr><th>Fitment</th><td>{product.fitment.brand}{product.fitment.models?.length ? ' ' + product.fitment.models.join(', ') : ''}</td></tr>}
             <tr><th>Brand</th><td>{site.brand}</td></tr>
             <tr><th>Source reference</th><td>#{product.sourceId}</td></tr>
             <tr><th>Reference price</th><td>USD {PRICE_MIN}–{PRICE_MAX} <span class="muted">(reference only)</span></td></tr>
           </tbody>
         </table>
+
+        {sourceStatus && (
+          <p class="muted small mt-2">
+            Data source: {sourceName} catalog · status <code>{sourceStatus}</code>
+            {sourceUrl && <a href={sourceUrl} rel="noopener" target="_blank"> (view source)</a>}.
+            OE numbers, cross-references, material and fitment are as published by the source catalog and are confirmed per order.
+          </p>
+        )}
 
         <p class="muted small">
           Dimensions, filtration media and efficiency are confirmed per OE application.

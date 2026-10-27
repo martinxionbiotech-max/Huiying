@@ -47,6 +47,9 @@ const noteByType = {
   oil: 'Spin-on or cartridge oil filters are common fitment across the service fleet of this brand.',
   fuel: 'In-line or cartridge fuel filters are common fitment, especially on diesel and commercial applications.',
   wiper: 'Wiper blades are sized by length and fitting; these are reference vehicle examples only.',
+  brake: 'Ceramic and semi-metallic brake pads are common fitment across the passenger-car fleet of this brand.',
+  spark: 'Spark plugs are matched by engine code; these are reference vehicle examples only.',
+  hose: 'Rubber hoses (EPDM/NBR/silicone) are matched by circuit and diameter; these are reference vehicle examples only.',
 } as const;
 
 function build(category: string, categoryLabel: string, intro: string, noteKey: keyof typeof noteByType, includeCommercial = false): FitmentEntry {
@@ -95,6 +98,24 @@ export const vehicleFitment: FitmentEntry[] = [
     'Wiper',
     'Wiper blades are selected by blade length, curvature and connector type. The vehicle references below are examples of common fitment; exact length is confirmed per vehicle.',
     'wiper',
+  ),
+  build(
+    'brake-pads',
+    'Brake Pads',
+    'Brake pads are matched by OE number to the caliper and platform. The references below are common application examples; the exact pad set is confirmed per OE.',
+    'brake',
+  ),
+  build(
+    'spark-plugs',
+    'Spark Plugs',
+    'Spark plugs are matched by engine code, heat range and thread reach. The references below are common application examples; the exact plug is confirmed per engine.',
+    'spark',
+  ),
+  build(
+    'rubber-hoses',
+    'Rubber Hoses',
+    'Rubber hoses are matched by circuit (coolant, fuel, air), compound and inner diameter. The references below are common application examples; the exact hose is confirmed per application.',
+    'hose',
   ),
 ];
 
