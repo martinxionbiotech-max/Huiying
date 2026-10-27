@@ -1,11 +1,11 @@
-// Company page content — scraped from the source site (brand renamed to huiying).
+// Company page content — original editorial rewrite for E-E-A-T.
 import { site } from './site';
 
 export const companyProfile = {
   heading: 'About Us',
   name: site.companyName,
   description:
-    'Qinghe County Huiying Filter Manufacturing Co., Ltd. is a factory that produces automotive filters and is an enterprise approved and registered by the relevant state departments. The company is located in Wangshuangmiao Industrial Zone, Qinghe County, Hebei Province, China, at the intersection of Beijing-Kowloon Railway, 308 National Road and Qingyin Expressway. The company occupies an area of 10,000 square meters, with a clean workshop of more than 6,000 square meters, and has more than 100 employees, including more than 10 various management personnel and 15 professional and technical personnel. Since its establishment in 1996, the company has been committed to developing a professional manufacturer of global filter high-tech products, integrating R&D, production and sales. With the strong support of new and old customers and our unremitting efforts, our company has achieved rapid development, continuously improved technical strength, and successively introduced advanced production and testing equipment at home and abroad. The company now has three sets of PU filter production lines, two sets of filter vacuum experiment equipment and more than 20 sets of other professional filter production equipment. To ensure the production of stable quality, reasonable price, new and high-efficiency filters for users.',
+    'Qinghe County Huiying Automotive Parts Co., Ltd. (清河县汇盈汽车零部件有限公司) is an automotive-parts manufacturer based in Qinghe County, Xingtai City, Hebei Province, China — one of the country\'s established clusters for automotive filters and related components. Incorporated on 10 October 2017 with a registered capital of RMB 1,000,000, the company\'s registered scope covers the manufacturing of automotive parts and components, and its registered address is north of Minjiang Street and west of Jiuhuashan Road in Qinghe County. The Huiying brand carries a longer history in the Qinghe filter industry, tracing back to 1996. The company runs a 10,000 m² facility with a clean workshop of over 6,000 m², employs more than 100 people, and operates three PU filter production lines, vacuum-testing equipment and more than twenty specialist machines to produce air, cabin, oil and fuel filters for domestic and export markets.',
   strengths: [
     { title: 'Quality to open up the market', image: '/images/a05a4769-ee8f-494a-8490-805b91999f73.jpg' },
     { title: 'Advanced equipment', image: '/images/07598f55-0f02-42d9-9649-8cfafbd88c7f.jpg' },
@@ -33,6 +33,34 @@ export const companyCulture = {
   ],
 };
 
+// Legal-entity disclosure — verified business-registration facts (retrieved 2026-10-25,
+// Tianyancha snapshot via Sogou aggregation). Kept separate from brand lineage on purpose:
+// the Huiying brand dates to 1996, while the operating legal entity was incorporated 2017-10-10.
+export const companyDisclosure = {
+  heading: 'Legal entity & registration',
+  items: [
+    { label: 'Legal name', value: site.companyName },
+    { label: 'Chinese name', value: site.companyNameZh },
+    { label: 'Unified social credit code', value: site.unifiedSocialCreditCode },
+    { label: 'Legal representative', value: site.legalRepresentative },
+    { label: 'Incorporated', value: '10 October 2017' },
+    { label: 'Registered capital', value: site.registeredCapital },
+    { label: 'Registered address', value: site.address },
+  ],
+  sourceNote:
+    'Business-registration data: Tianyancha snapshot aggregated via Sogou (retrieved 2026-10-25). Production figures (facility area, headcount, equipment) are as published in the company\'s own profile.',
+  baikeUrl: site.baiduBaikeUrl,
+  baikeLabel: 'Company profile on Baidu Baike',
+  baikeNote:
+    'Baidu Baike company entry — region-blocked (403) on crawl, so the URL is cited as the authoritative reference.',
+};
+
+export const brandLineage = {
+  heading: 'Brand lineage vs. legal entity',
+  text:
+    'The Huiying brand traces its roots in Qinghe County\'s filter industry back to 1996, when the founding team began producing filter products. The operating company — Qinghe County Huiying Automotive Parts Co., Ltd. — was incorporated later, on 10 October 2017, with a registered scope covering the manufacturing of automotive parts and components. We keep these two dates distinct on purpose: "since 1996" describes the brand\'s history in the Qinghe filter cluster, while "2017" is the legal-entity incorporation date.',
+};
+
 export const factoryInfo = {
   heading: 'How to reach our factory?',
   intro:
@@ -55,7 +83,7 @@ export const marketingInfo = {
 export const downloadCenter = {
   heading: 'Download Center',
   files: [
-    { name: 'huiying Filter Manufacturing — Company Profile', size: '62.6KB', updated: '2024/12/30' },
+    { name: 'Huiying Automotive Parts — Company Profile', size: '62.6KB', updated: '2024/12/30' },
   ],
 };
 

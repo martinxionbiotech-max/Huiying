@@ -8,7 +8,7 @@ export const legalEntity = {
   email: site.email,
   phone: site.phone,
   address: site.address,
-  effectiveDate: 'October 26, 2026',
+  effectiveDate: 'October 27, 2026',
 };
 
 // ---------------------------------------------------------------------------
@@ -18,8 +18,8 @@ export const privacyPolicy = {
   title: 'Privacy Policy',
   heading: 'Privacy Policy',
   description:
-    'How Qinghe County Huiying Filter Manufacturing Co., Ltd. collects, uses, shares and protects personal information on huiyingfilter.com, including GDPR and CCPA rights.',
-  updated: '2026-10-26',
+    `How ${legalEntity.name} collects, uses, shares and protects personal information on ${legalEntity.domain}, including GDPR and CCPA rights.`,
+  updated: '2026-10-27',
   body: `This Privacy Policy explains how **${legalEntity.name}** ("we", "our", "us"), the operator of **${legalEntity.domain}** (the "Site"), collects, uses, shares and protects personal information when you visit the Site or contact us. Please read it carefully.
 
 ## 1. Who We Are
@@ -153,8 +153,8 @@ export const termsOfService = {
   title: 'Terms of Service',
   heading: 'Terms of Service',
   description:
-    'The terms that govern your use of huiyingfilter.com, operated by Qinghe County Huiying Filter Manufacturing Co., Ltd.',
-  updated: '2026-10-26',
+    `The terms that govern your use of ${legalEntity.domain}, operated by ${legalEntity.name}.`,
+  updated: '2026-10-27',
   body: `These Terms of Service ("Terms") govern your access to and use of **${legalEntity.domain}** (the "Site"), operated by **${legalEntity.name}** ("we", "our", "us"). By accessing or using the Site, you agree to be bound by these Terms. If you do not agree, please do not use the Site.
 
 ## 1. Acceptance of Terms
@@ -252,8 +252,8 @@ export const disclaimer = {
   title: 'Disclaimer',
   heading: 'Disclaimer',
   description:
-    'Important disclaimers about the information on huiyingfilter.com, including product specifications, reference pricing and industry information.',
-  updated: '2026-10-26',
+    `Important disclaimers about the information on ${legalEntity.domain}, including product specifications, reference pricing and industry information.`,
+  updated: '2026-10-27',
   body: `This Disclaimer applies to your use of **${legalEntity.domain}** (the "Site"), operated by **${legalEntity.name}** ("we", "our", "us"). By using the Site, you accept this Disclaimer together with our Terms of Service and Privacy Policy.
 
 ## 1. General Disclaimer
@@ -309,8 +309,8 @@ export const cookiePolicy = {
   title: 'Cookie Policy',
   heading: 'Cookie Policy',
   description:
-    'How huiyingfilter.com uses cookies and similar technologies, with a clear classification of the cookies in use.',
-  updated: '2026-10-26',
+    `How ${legalEntity.domain} uses cookies and similar technologies, with a clear classification of the cookies in use.`,
+  updated: '2026-10-27',
   body: `This Cookie Policy explains how **${legalEntity.name}** ("we", "our", "us") uses cookies and similar technologies on **${legalEntity.domain}** (the "Site").
 
 ## 1. What Are Cookies
