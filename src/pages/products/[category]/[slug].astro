@@ -139,12 +139,30 @@ const breadcrumbJsonLd = {
       <div class="container product-deep">
         <div class="section-head">
           <h2>About this {category.name.toLowerCase()}</h2>
-          <p class="lede">Application, selection and maintenance guidance for {product.model}.</p>
+          <p class="lede">Application, scenarios, technical, procurement and maintenance guidance for {product.model}.</p>
         </div>
         <div class="deep-grid">
           <div class="deep-block">
             <h3>Application</h3>
             {content.application.map((p) => <p>{p}</p>)}
+          </div>
+          <div class="deep-block">
+            <h3>Application scenarios</h3>
+            <ul>
+              {content.scenarios.map((s) => <li>{s}</li>)}
+            </ul>
+          </div>
+          <div class="deep-block">
+            <h3>Technical notes</h3>
+            <ul>
+              {content.technical.map((t) => <li>{t}</li>)}
+            </ul>
+          </div>
+          <div class="deep-block">
+            <h3>Procurement notes</h3>
+            <ul>
+              {content.procurement.map((p) => <li>{p}</li>)}
+            </ul>
           </div>
           <div class="deep-block">
             <h3>Selection notes</h3>

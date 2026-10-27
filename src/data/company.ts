@@ -7,15 +7,15 @@ export const companyProfile = {
   description:
     'Qinghe County Huiying Automotive Parts Co., Ltd. is an automotive-parts manufacturer based in Qinghe County, Xingtai City, Hebei Province, China — one of the country\'s established clusters for automotive filters and related components. Incorporated on 10 October 2017 with a registered capital of RMB 1,000,000, the company\'s registered scope covers the manufacturing of automotive parts and components, and its registered address is north of Minjiang Street and west of Jiuhuashan Road in Qinghe County. The Huiying brand carries a longer history in the Qinghe filter industry, tracing back to 1996. The company runs a 10,000 m² facility with a clean workshop of over 6,000 m², employs more than 100 people, and operates three PU filter production lines, vacuum-testing equipment and more than twenty specialist machines to produce air, cabin, oil and fuel filters for domestic and export markets.',
   strengths: [
-    { title: 'Quality to open up the market', image: '/images/a05a4769-ee8f-494a-8490-805b91999f73.jpg' },
-    { title: 'Advanced equipment', image: '/images/07598f55-0f02-42d9-9649-8cfafbd88c7f.jpg' },
+    { title: 'Quality to open up the market', image: '/images/a05a4769-ee8f-494a-8490-805b91999f73.webp' },
+    { title: 'Advanced equipment', image: '/images/07598f55-0f02-42d9-9649-8cfafbd88c7f.webp' },
     { title: 'Product guarantee', image: '/images/c0117352-9851-433d-99d0-d7ece663fe6a.jpg' },
-    { title: 'Boutique service', image: '/images/e9647e60-eeba-412c-84a3-51208285c65c.jpg' },
+    { title: 'Boutique service', image: '/images/e9647e60-eeba-412c-84a3-51208285c65c.webp' },
   ],
   welcome:
     'All employees of the company sincerely welcome guests from all over the world and merchants from all over the world to visit and negotiate business. Based on the corporate philosophy of quality as a survival, we will seek common development and create brilliance with you!',
   images: [
-    '/images/e2302fd0-e550-4281-8068-ec9a1d0221ae.jpg',
+    '/images/6a2fe246-680d-466b-8ec1-301773bc3506.jpg',
     '/images/447f20e8-e91b-46de-bda9-20ce84d92597.jpg',
     '/images/5b08293c-8b97-4f3e-b5ea-2116d487dcc6.jpg',
     '/images/0baa2d31-9857-44d6-a5e7-9e1993ccd122.jpg',
@@ -26,10 +26,10 @@ export const companyCulture = {
   heading: 'Culture',
   tagline: 'Integrity, win-win cooperation, carry forward, and pass on from generation to generation',
   items: [
-    { title: 'Vision', text: 'Green high-end products, high-quality services', image: '/images/fdc4449b-3e36-4d88-89e8-dad85a694dff.jpg' },
+    { title: 'Vision', text: 'Green high-end products, high-quality services', image: '/images/fdc4449b-3e36-4d88-89e8-dad85a694dff.webp' },
     { title: 'Values', text: 'Serve customers, benefit employees, develop enterprises, and contribute to society', image: '/images/afe91872-0ad7-4d8c-9c2c-de67f8951e5a.jpg' },
     { title: 'Philosophy', text: 'Let the market determine the product, let customers recognize the quality', image: '/images/95d57966-b721-417b-a9f1-19ccee001137.jpg' },
-    { title: 'Mission', text: 'Safety, excellence, low carbon, environmental protection', image: '/images/1381949f-aef8-4860-a33f-6fdfc0d5bbe0.jpg' },
+    { title: 'Mission', text: 'Safety, excellence, low carbon, environmental protection', image: '/images/1381949f-aef8-4860-a33f-6fdfc0d5bbe0.webp' },
   ],
 };
 
@@ -77,7 +77,7 @@ export const marketingInfo = {
   heading: 'Marketing Network',
   text:
     'All employees of the company sincerely welcome guests from all over the world and merchants from all over the world to visit and negotiate business. Based on the corporate philosophy of quality as a survival, we will seek common development and create brilliance with you!',
-  image: '/images/44babffb-c530-4321-af90-a0dc846f2960.jpg',
+  image: '/images/44babffb-c530-4321-af90-a0dc846f2960.webp',
 };
 
 export const downloadCenter = {
