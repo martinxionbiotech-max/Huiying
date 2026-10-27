@@ -125,4 +125,59 @@ export const exportMarkets = {
   ],
 };
 
+// Factory evidence — production process, quality system, equipment and OEM delivery.
+// Framework-level and honest: no certificate numbers, test results or specific
+// machine counts are invented (audit discipline 4.3). Only the equipment figures
+// already published in the company profile (three PU lines, 20+ machines, vacuum
+// testing) are referenced.
+
+export const productionProcess = {
+  heading: 'Production process',
+  intro:
+    'Our filter elements move through a standard production flow. The description below is a framework overview of the steps, not a machine-by-machine specification.',
+  steps: [
+    { title: 'Pleating', text: 'Filter media is folded into even pleats. Consistent fold spacing increases the usable media area and dust-holding capacity, and is checked during production.' },
+    { title: 'Bonding & sealing', text: 'The pleated media is bonded to its end caps. On our PU (polyurethane) lines, polyurethane is used to form and seal the end caps so the element seats correctly and does not let unfiltered air or oil bypass the media.' },
+    { title: 'Assembly', text: 'The element is assembled into its housing or frame — for example, a spin-on canister for oil filters or a panel frame for air filters.' },
+    { title: 'Inspection & testing', text: 'Finished elements are checked for dimensions, sealing and, where applicable, leak or pressure integrity before packing.' },
+  ],
+};
+
+export const qualitySystem = {
+  heading: 'Quality control system',
+  intro:
+    'Quality is controlled at four gates across the production flow, using an AQL (Acceptable Quality Limit) sampling framework. This is a framework description of our control points; specific limits are set per product and confirmed with the buyer at order time.',
+  gates: [
+    { code: 'IQC', name: 'Incoming Quality Control', text: 'Inspection of incoming raw materials and filter media before they enter production.' },
+    { code: 'IPQC', name: 'In-Process Quality Control', text: 'In-line checks during pleating, bonding and assembly to catch deviation early.' },
+    { code: 'FQC', name: 'Final Quality Control', text: 'Inspection of finished elements against dimension, sealing and appearance criteria.' },
+    { code: 'OQC', name: 'Outgoing Quality Control', text: 'Pre-shipment inspection and sampling before packing and dispatch.' },
+  ],
+  aqlNote:
+    'Sampling follows an AQL-based framework. The specific AQL level, sample size and defect classification are agreed with the buyer as part of the order specification.',
+};
+
+export const equipmentCategories = {
+  heading: 'Equipment categories',
+  intro:
+    'The facility combines the machine types needed for filter production, including the three PU production lines and vacuum-testing equipment described in our company profile, alongside more than twenty specialist machines.',
+  items: [
+    'Filter-media pleating and folding machines',
+    'PU end-cap moulding and bonding lines',
+    'Assembly and sealing equipment',
+    'Vacuum / leak testing equipment',
+    'Measurement and inspection tools',
+  ],
+};
+
+export const oemDeliveryProcess = {
+  heading: 'OEM & private-label delivery process',
+  steps: [
+    { title: 'Sample confirmation', text: 'We produce a sample against your specification and send it for approval before production begins.' },
+    { title: 'Specification freeze', text: 'Once the sample is approved, the specification — dimensions, media, packaging and marking — is frozen and becomes the reference for the batch.' },
+    { title: 'Batch identification', text: 'Each production batch carries its own identification so it can be traced to its specification, materials and inspection records.' },
+    { title: 'MOQ & lead time', text: 'Minimum order quantity and lead time are set per product and per order, and confirmed in the quotation before the order is placed.' },
+  ],
+};
+
 // Privacy policy and other legal content now live in src/data/legal.ts (compliance suite).
