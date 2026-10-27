@@ -186,9 +186,9 @@ a:hover { color: var(--accent); }
   box-shadow: 0 6px 16px rgba(232, 98, 44, 0.38);
 }
 
-.btn--brand { background: var(--navy-800); color: #fff; }
+.btn--brand { background: var(--orange-600); color: #fff; }
 .btn--brand:hover {
-  background: var(--navy-700);
+  background: var(--orange-700);
   color: #fff;
   transform: translateY(-1px);
   box-shadow: var(--shadow-md);

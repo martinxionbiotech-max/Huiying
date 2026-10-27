@@ -16,8 +16,8 @@ export const site = {
     email: 'Martin@carfilterpro.com',
   phone: '+86 13323237275',
   phoneHref: '+8613323237275',
-  whatsapp: '+8615903195739',
-  whatsappLink: 'https://wa.me/8615903195739',
+  whatsapp: '+86 13323237275',
+  whatsappLink: 'https://wa.me/8613323237275',
   contactName: 'Martin',
   // Verified business-registration facts (Tianyancha snapshot via Sogou aggregation, retrieved 2026-10-25).
   unifiedSocialCreditCode: '91130534MA0958NT84',
