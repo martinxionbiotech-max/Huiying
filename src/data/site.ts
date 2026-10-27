@@ -1,12 +1,11 @@
 // Central site config — single source for brand/contact facts (kept consistent site-wide).
-// Legal entity: Qinghe County Huiying Automotive Parts Co., Ltd. (清河县汇盈汽车零部件有限公司).
+// Legal entity: Qinghe County Huiying Automotive Parts Co., Ltd..
 export const site = {
   brand: 'huiying',
   companyName: 'Qinghe County Huiying Automotive Parts Co., Ltd.',
   legalName: 'Qinghe County Huiying Automotive Parts Co., Ltd.',
   companyNameShort: 'Huiying Automotive Parts',
-  companyNameZh: '清河县汇盈汽车零部件有限公司',
-  domain: 'huiyingfilter.com', // placeholder domain
+    domain: 'huiyingfilter.com', // placeholder domain
   since: 1996, // brand lineage — the Huiying brand traces back to 1996
   foundingDate: '2017-10-10', // legal-entity incorporation date
   tagline: 'Manufacturer of high-tech filter',
@@ -14,8 +13,7 @@ export const site = {
     'Professional manufacturer of global filter high-tech products, integrating R&D, production and sales.',
   address:
     'North of Minjiang Street, west of Jiuhuashan Road, Qinghe County, Xingtai City, Hebei Province, China',
-  addressZh: '河北省邢台市清河县闽江街以北、九华山路以西',
-  email: 'Martin@carfilterpro.com',
+    email: 'Martin@carfilterpro.com',
   phone: '+86 13323237275',
   phoneHref: '+8613323237275',
   whatsapp: '+8615903195739',
@@ -26,7 +24,7 @@ export const site = {
   legalRepresentative: 'Liu Fengxiu',
   registeredCapital: 'RMB 1,000,000',
   // Baidu Baike company entry (region-blocked 403 on crawl; URL is the authoritative citation).
-  baiduBaikeUrl: 'https://baike.baidu.com/item/清河县汇盈汽车零部件有限公司/54139720',
+  baiduBaikeUrl: 'https://baike.baidu.com/item/%E6%B8%85%E6%B2%B3%E5%8E%BF%E6%B1%87%E7%9B%88%E6%B1%BD%E8%BD%A6%E9%9B%B6%E9%83%A8%E4%BB%B6%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8/54139720',
 };
 
 export const nav = [

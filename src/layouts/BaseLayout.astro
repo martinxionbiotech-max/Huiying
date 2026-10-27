@@ -28,7 +28,7 @@ const orgJsonLd = {
   '@id': `${siteUrl}/#organization`,
   name: site.companyName,
   legalName: site.legalName,
-  alternateName: [site.brand, site.companyNameShort, site.companyNameZh],
+  alternateName: [site.brand, site.companyNameShort],
   url: siteUrl,
   logo: ogImage,
   foundingDate: site.foundingDate,
@@ -37,9 +37,9 @@ const orgJsonLd = {
   address: {
     '@type': 'PostalAddress',
     addressCountry: 'CN',
-    addressRegion: '河北省',
-    addressLocality: '邢台市清河县',
-    streetAddress: '闽江街以北、九华山路以西',
+    addressRegion: 'Hebei Province',
+    addressLocality: 'Qinghe County, Xingtai City',
+    streetAddress: 'North of Minjiang Street, west of Jiuhuashan Road',
   },
   sameAs: [site.baiduBaikeUrl],
   contactPoint: {
