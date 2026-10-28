@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { companyProfile, companyDisclosure, brandLineage, industryBackground, exportMarkets } from '../data/company';
+import { companyProfile, companyDisclosure, brandLineage, brandCompanyRelationship, industryBackground, exportMarkets } from '../data/company';
 ---
 
 <BaseLayout title="Company Profile" description={companyProfile.description.slice(0, 155)}>
@@ -40,6 +40,17 @@ import { companyProfile, companyDisclosure, brandLineage, industryBackground, ex
       </div>
       <div class="disclosure">
         <p class="lede">{brandLineage.text}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--soft">
+    <div class="container">
+      <div class="section-head">
+        <h2>{brandCompanyRelationship.heading}</h2>
+      </div>
+      <div class="disclosure">
+        <p class="lede">{brandCompanyRelationship.text}</p>
       </div>
     </div>
   </section>

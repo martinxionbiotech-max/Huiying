@@ -61,6 +61,15 @@ export const brandLineage = {
     'The Huiying brand traces its roots in Qinghe County\'s filter industry back to 1996, when the founding team began producing filter products. The operating company — Qinghe County Huiying Automotive Parts Co., Ltd. — was incorporated later, on 10 October 2017, with a registered scope covering the manufacturing of automotive parts and components. We keep these two dates distinct on purpose: "since 1996" describes the brand\'s history in the Qinghe filter cluster, while "2017" is the legal-entity incorporation date.',
 };
 
+// Brand ↔ company ↔ site relationship — a single unambiguous statement used on the
+// Company Profile and Contact pages so the brand/legal-entity/domain mapping is never
+// left unexplained. Kept identical across pages (audit3 P0-1).
+export const brandCompanyRelationship = {
+  heading: 'Brand, company & site',
+  text:
+    '"huiying" is the brand name. The operating legal entity is Qinghe County Huiying Automotive Parts Co., Ltd. This website runs on the domain carfilterspro.com. Our reference data site runs on data.carfilterspro.com.',
+};
+
 export const factoryInfo = {
   heading: 'How to reach our factory?',
   intro:

@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { site } from '../data/site';
+import { brandCompanyRelationship } from '../data/company';
 
 // Direct-contact page (no server-side form on this static site).
 // Product-page "Request a quote" links pass ?product=MODEL&url=… to pre-fill a mailto.
@@ -31,6 +32,7 @@ const mailtoHref = `mailto:${site.email}?subject=${encodeURIComponent(mailtoSubj
       <div class="contact__info">
         <h2>{site.companyName}</h2>
         <p>All employees of the company sincerely welcome guests from all over the world and merchants from all over the world to visit and negotiate business.</p>
+        <p class="muted small">{brandCompanyRelationship.text}</p>
         <ul class="contact__list">
           <li><strong>Email:</strong> <a href={`mailto:${site.email}`}>{site.email}</a></li>
           <li><strong>Phone | WeChat:</strong> <a href={`tel:${site.phoneHref}`}>{site.phone}</a></li>
