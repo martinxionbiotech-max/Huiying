@@ -2,6 +2,8 @@
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import { productCategories, site } from '../../../data/site';
 import productsData from '../../../data/products.json';
+import { getProductContent } from '../../../data/productContent';
+import { NOINDEX_SET } from '../../../data/indexQuality.mjs';
 
 export function getStaticPaths() {
   return productsData.products.map((p) => ({
@@ -11,6 +13,12 @@ export function getStaticPaths() {
 }
 
 const { product } = Astro.props;
+// index-quality batch: not-ready SKU pages get a robots noindex (still crawlable,
+// still live and internally linked — only excluded from search indexing + sitemap).
+const noindex = NOINDEX_SET.has(product.slug);
+// Per-SKU original editorial content (quality pass 2) — SKU-level independent info
+// that enriches the thin B-tier pages while the evidence fields above stay conditional.
+const editorial = getProductContent(product.slug);
 const category = productCategories.find((c) => c.slug === product.category);
 const related = productsData.products.filter((p) => p.category === product.category && p.slug !== product.slug).slice(0, 4);
 const sourceStatus = (product.source && product.source.status) ? product.source.status : null;
@@ -94,7 +102,7 @@ const breadcrumbJsonLd = {
 };
 ---
 
-<BaseLayout title={`${product.name} ${product.model}`} description={product.desc}>
+<BaseLayout title={`${product.name} ${product.model}`} description={product.desc} noindex={noindex}>
   <script slot="head" type="application/ld+json" set:html={JSON.stringify(productJsonLd)} />
   <script slot="head" type="application/ld+json" set:html={JSON.stringify(breadcrumbJsonLd)} />
 
@@ -202,6 +210,72 @@ const breadcrumbJsonLd = {
     </div>
   </section>
 
+  {editorial && (
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Product &amp; sourcing notes</h2>
+          <p class="lede">
+            Independent editorial notes for {product.model} — application, structure and
+            procurement guidance written per SKU.
+          </p>
+        </div>
+
+        <div class="editorial">
+          {editorial.application.length > 0 && (
+            <div class="editorial__block">
+              <h3>Application</h3>
+              {editorial.application.map((p) => <p>{p}</p>)}
+            </div>
+          )}
+
+          {editorial.scenarios.length > 0 && (
+            <div class="editorial__block">
+              <h3>Where it is used</h3>
+              <ul>{editorial.scenarios.map((s) => <li>{s}</li>)}</ul>
+            </div>
+          )}
+
+          {editorial.technical.length > 0 && (
+            <div class="editorial__block">
+              <h3>What to check</h3>
+              <ul>{editorial.technical.map((t) => <li>{t}</li>)}</ul>
+            </div>
+          )}
+
+          {editorial.procurement.length > 0 && (
+            <div class="editorial__block">
+              <h3>Sourcing notes</h3>
+              {editorial.procurement.map((p) => <p>{p}</p>)}
+            </div>
+          )}
+
+          <div class="editorial__grid">
+            {editorial.selectionNotes.length > 0 && (
+              <div class="editorial__block">
+                <h3>Selection notes</h3>
+                <ul>{editorial.selectionNotes.map((s) => <li>{s}</li>)}</ul>
+              </div>
+            )}
+            {editorial.maintenance.length > 0 && (
+              <div class="editorial__block">
+                <h3>Maintenance</h3>
+                <ul>{editorial.maintenance.map((m) => <li>{m}</li>)}</ul>
+              </div>
+            )}
+          </div>
+
+          {editorial.buyerNote && (
+            <div class="buyer-note">
+              <strong>Buyer note</strong>
+              <p>{editorial.buyerNote}</p>
+            </div>
+          )}
+        </div>
+      </div>
+    </section>
+  )}
+
   <section class="section">
     <div class="container center">
       <div class="section-head">
@@ -253,6 +327,19 @@ const breadcrumbJsonLd = {
   .deep-block h3 { color: var(--navy-800); }
   .deep-block ul { margin: 0; padding-left: 1.2rem; }
   .deep-block li { margin-bottom: 0.5rem; }
+
+  .editorial { max-width: 900px; display: grid; gap: var(--sp-6); }
+  .editorial__block { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: var(--sp-6); box-shadow: var(--shadow-sm); }
+  .editorial__block h3 { color: var(--navy-800); }
+  .editorial__block ul { margin: 0; padding-left: 1.2rem; }
+  .editorial__block li { margin-bottom: 0.5rem; }
+  .editorial__block p { margin-bottom: 0.75rem; }
+  .editorial__block p:last-child { margin-bottom: 0; }
+  .editorial__grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-6); }
+  @media (max-width: 700px) { .editorial__grid { grid-template-columns: 1fr; } }
+  .buyer-note { background: var(--bg-soft); border-left: 4px solid var(--orange-500); border-radius: var(--radius); padding: var(--sp-6); }
+  .buyer-note strong { color: var(--navy-800); display: block; margin-bottom: 0.4rem; }
+  .buyer-note p { margin: 0; }
 
   .spec--ordering th { width: 220px; }
 
