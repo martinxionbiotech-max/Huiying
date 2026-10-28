@@ -5,8 +5,8 @@ import json
 MAIN_PRODUCTS = '/root/.openclaw/workspace/repos/Huiying/src/data/products.json'
 DATA_PRODUCTS = '/root/.openclaw/workspace/repos/data.huiying/data/products.json'
 
-MAIN_URL = 'https://huiyingfilter.com'
-DATA_URL = 'https://data.huiying.com'
+MAIN_URL = 'https://carfilterspro.com'
+DATA_URL = 'https://data.carfilterspro.com'
 
 CAT_DESC = {
     'air-filter': 'Engine air filters for cars, trucks and off-highway equipment.',
@@ -67,10 +67,10 @@ def main_llms(ds):
         ('Contact', '/contact/'),
     ]:
         lines.append(f'- [{label}]({MAIN_URL}{href})')
-    lines.append('- [Privacy Policy](https://huiyingfilter.com/privacy-policy/): Privacy policy.')
-    lines.append('- [Terms of Service](https://huiyingfilter.com/terms/): Terms of service.')
-    lines.append('- [Disclaimer](https://huiyingfilter.com/disclaimer/): Disclaimer.')
-    lines.append('- [Cookie Policy](https://huiyingfilter.com/cookies/): Cookie policy.')
+    lines.append(f'- [Privacy Policy]({MAIN_URL}/privacy-policy/): Privacy policy.')
+    lines.append(f'- [Terms of Service]({MAIN_URL}/terms/): Terms of service.')
+    lines.append(f'- [Disclaimer]({MAIN_URL}/disclaimer/): Disclaimer.')
+    lines.append(f'- [Cookie Policy]({MAIN_URL}/cookies/): Cookie policy.')
     lines.append('')
     lines.append('## News')
     lines.append('')
@@ -88,7 +88,7 @@ def data_llms(ds):
     lines.append('> reference-level vehicle-fitment framework and filter reference data (media, OE prefix')
     lines.append('> patterns, size ranges, replacement intervals, procurement). Machine-readable, zero')
     lines.append(f'> marketing. {len(prods)} SKUs across {len(cats)} categories. Operator: Qinghe County Huiying Automotive Parts Co.,')
-    lines.append('> Ltd. — commercial catalog and inquiries at huiyingfilter.com.')
+    lines.append('> Ltd. — commercial catalog and inquiries at carfilterspro.com.')
     lines.append('')
     lines.append(f'- [Home]({DATA_URL}/): data-site overview, section index and honest data posture.')
     lines.append(f'- [SKU Index]({DATA_URL}/products/): all {len(prods)} SKUs (identity verified; specs NEEDS_VERIFICATION).')
@@ -131,7 +131,7 @@ def data_llms(ds):
     lines.append('- Per-SKU dimensions, material, efficiency, OE numbers and packing are NOT published by the')
     lines.append('  source catalogue; they are marked `NEEDS_VERIFICATION` here, never invented.')
     lines.append('- Vehicle fitment is `reference` only — common applications, not verified OE cross-references.')
-    lines.append('- Commercial catalog and quotations: huiyingfilter.com (this data site is reference-only).')
+    lines.append('- Commercial catalog and quotations: carfilterspro.com (this data site is reference-only).')
     lines.append('')
     return '\n'.join(lines) + '\n'
 
