@@ -26,9 +26,23 @@ const sourceUrl = (product.source && product.source.url) ? product.source.url : 
 const siteUrl = Astro.site?.toString() ?? 'https://carfilterspro.com';
 const pageUrl = new URL(Astro.url.pathname, Astro.site).toString();
 
+// Direct mailto RFQ (no server-side form on this static site).
+// Clicking "Request a quote" opens the buyer's email client pre-filled with the model + URL.
+const rfqSubject = `RFQ ${product.model}`;
+const rfqBody = [
+  `Model: ${product.model}`,
+  `Product URL: ${pageUrl}`,
+  '',
+  'OE / cross-reference number:',
+  'Target quantity:',
+  'Destination market:',
+  'Packaging / private-label requirements:',
+].join('\n');
+const rfqMailto = `mailto:${site.email}?subject=${encodeURIComponent(rfqSubject)}&body=${encodeURIComponent(rfqBody)}`;
+
 // Reference price range — given value, marked as a reference (not a final quote).
-const PRICE_MIN = 10;
-const PRICE_MAX = 60;
+// Note (P0-6): no server-side inventory or visible price backs an AggregateOffer,
+// so the Product schema intentionally carries no `offers` (price/availability) block.
 
 const productJsonLd = {
   '@context': 'https://schema.org',
@@ -41,22 +55,6 @@ const productJsonLd = {
   description: product.desc,
   category: category?.name ?? product.category,
   url: pageUrl,
-  offers: {
-    '@type': 'AggregateOffer',
-    priceCurrency: 'USD',
-    availability: 'https://schema.org/InStock',
-    url: pageUrl,
-    lowPrice: PRICE_MIN,
-    highPrice: PRICE_MAX,
-    offerCount: 1,
-    priceSpecification: {
-      '@type': 'PriceSpecification',
-      priceCurrency: 'USD',
-      minPrice: PRICE_MIN,
-      maxPrice: PRICE_MAX,
-      valueAddedTaxIncluded: false,
-    },
-  },
 };
 
 const breadcrumbJsonLd = {
@@ -86,10 +84,10 @@ const breadcrumbJsonLd = {
   <section class="section">
     <div class="container product">
       <div class="product__gallery">
-        <img src={product.image} alt={`${product.name} ${product.model}`} width="640" height="480" />
+        <img src={product.image} alt={`${product.model} ${category.name.toLowerCase()}`} width="640" height="480" />
         {
-          product.gallery.slice(1).map((g) => (
-            <img src={g} alt={`${product.name} gallery`} width="640" height="480" loading="lazy" />
+          product.gallery.slice(1).map((g, i) => (
+            <img src={g} alt={`${product.model} ${category.name.toLowerCase()} — view ${i + 1}`} width="640" height="480" loading="lazy" />
           ))
         }
       </div>
@@ -123,7 +121,7 @@ const breadcrumbJsonLd = {
         </p>
 
         <div class="product__cta">
-          <a class="btn btn--primary" href={`/contact/?product=${encodeURIComponent(product.model)}&url=${encodeURIComponent(pageUrl)}`}>Request a quote</a>
+          <a class="btn btn--primary" href={rfqMailto}>Request a quote</a>
           <a class="btn btn--outline" href={`/products/${category.slug}/`}>View {category.name}</a>
         </div>
       </div>
@@ -262,7 +260,7 @@ const breadcrumbJsonLd = {
           {
             related.map((r) => (
               <a class="card related" href={`/products/${r.category}/${r.slug}/`}>
-                <img src={r.image} alt={`${r.name} ${r.model}`} width="300" height="200" loading="lazy" />
+                <img src={r.image} alt={`${r.model} ${category.name.toLowerCase()}`} width="300" height="200" loading="lazy" />
                 <h3>{r.name}</h3>
                 <p class="chip">{r.model}</p>
               </a>

@@ -30,7 +30,7 @@ ${legalEntity.name} is a filter manufacturer and exporter located at ${legalEnti
 
 We collect only the information we need to respond to your enquiries and operate the Site:
 
-- **Contact and enquiry information** that you voluntarily provide — your name, email address, phone or WhatsApp number, company name and the content of your message — when you contact us by email, WhatsApp, telephone or the enquiry form on our Contact page.
+- **Contact and enquiry information** that you voluntarily provide — your name, email address, phone or WhatsApp number, company name and the content of your message — when you contact us by email, WhatsApp, telephone or direct message.
 - **Usage and technical data** collected automatically by our web-server logs — internet protocol (IP) address, browser type, operating system, pages visited, and the date and time of each request.
 
 We do **not** collect payment-card or other financial-account details through this Site, and we do not require you to create an account.
@@ -286,7 +286,7 @@ We may modify, update, replace or remove any content on the Site at any time wit
 
 ## 8. Images
 
-Images on the Site are provided for illustrative purposes. Photographs of products, facilities and exhibitions reflect actual items and premises at the time they were taken, but final product appearance, packaging and configuration may differ. Some illustrative images (for example, on the Factory page) are computer-generated representations and may not depict our actual facility.
+Images on the Site are provided for illustrative purposes. Photographs of products, facilities and exhibitions reflect actual items and premises at the time they were taken, but final product appearance, packaging and configuration may differ. **Some illustrative images (for example, several images on the Factory page) are AI-generated computer illustrations and do not depict our actual facility or equipment.** They are shown to convey the general nature of a filter-production environment and are not photographs of the company's own premises.
 
 ## 9. No Warranty and Use at Your Own Risk
 
