@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { productCategories } from '../../data/site';
+import { productCategories, site } from '../../data/site';
 import productsData from '../../data/products.json';
 import { getCategoryContent } from '../../data/categoryContent';
 import { getFitment } from '../../data/vehicleFitment';
@@ -110,7 +110,7 @@ const fitment = getFitment(category.slug);
                       <ul class="inline-links">
                         {
                           b.models.map((m) => (
-                            <li><a href={`/products/${category.slug}/`}>{b.brand} {m} {category.name.toLowerCase()}</a></li>
+                            <li>{b.brand} {m} {category.name.toLowerCase()}</li>
                           ))
                         }
                       </ul>
@@ -122,7 +122,9 @@ const fitment = getFitment(category.slug);
             </tbody>
           </table>
         </div>
-        <p class="muted small mt-2">{fitment.disclaimer}</p>
+        <p class="muted small mt-2">
+          {fitment.disclaimer} See <a href={`${site.dataSiteUrl}/fitment/${category.slug}/`} target="_blank" rel="noopener">reference fitment data ↗</a>.
+        </p>
       </div>
     </section>
   )}

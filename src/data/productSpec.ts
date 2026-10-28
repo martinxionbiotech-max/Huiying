@@ -7,6 +7,8 @@
 export interface SpecRow {
   label: string;
   value: string;
+  /** 'verified' = value comes from the source catalog; 'confirm' = finalised per order. */
+  status: 'verified' | 'confirm';
 }
 
 export interface CategorySpec {
@@ -89,16 +91,16 @@ export function getProductSpec(categorySlug: string, product?: ProductData): Spe
     ? `${fitment.brand}${fitment.models && fitment.models.length ? ' ' + fitment.models.join(', ') : ''}${fitment.engine ? ` (engine: ${fitment.engine})` : ''}`
     : null;
   return [
-    { label: 'OE number', value: product?.oeNumbers?.length ? product.oeNumbers.join(' / ') : CONFIRM },
-    { label: 'Cross-reference', value: product?.crossReference || CONFIRM },
-    { label: 'Material', value: product?.material || CONFIRM },
-    { label: 'Dimensions', value: product?.dimensions || CONFIRM },
-    { label: 'Vehicle fitment', value: fitmentValue || CONFIRM },
-    { label: 'Vehicle application', value: spec?.vehicleApplication ?? CONFIRM },
-    { label: 'Filter media', value: spec?.filterMedia ?? CONFIRM },
-    { label: 'MOQ', value: CONFIRM },
-    { label: 'Lead time', value: CONFIRM },
-    { label: 'OEM & private label', value: 'Available — confirm per order specification' },
-    { label: 'Quality documents', value: 'Available on request — confirm per order specification' },
+    { label: 'OE number', value: product?.oeNumbers?.length ? product.oeNumbers.join(' / ') : CONFIRM, status: product?.oeNumbers?.length ? 'verified' : 'confirm' },
+    { label: 'Cross-reference', value: product?.crossReference || CONFIRM, status: product?.crossReference ? 'verified' : 'confirm' },
+    { label: 'Material', value: product?.material || CONFIRM, status: product?.material ? 'verified' : 'confirm' },
+    { label: 'Dimensions', value: product?.dimensions || CONFIRM, status: product?.dimensions ? 'verified' : 'confirm' },
+    { label: 'Vehicle fitment', value: fitmentValue || CONFIRM, status: fitmentValue ? 'verified' : 'confirm' },
+    { label: 'Vehicle application', value: spec?.vehicleApplication ?? CONFIRM, status: 'confirm' },
+    { label: 'Filter media', value: spec?.filterMedia ?? CONFIRM, status: 'confirm' },
+    { label: 'MOQ', value: CONFIRM, status: 'confirm' },
+    { label: 'Lead time', value: CONFIRM, status: 'confirm' },
+    { label: 'OEM & private label', value: 'Available — confirm per order specification', status: 'confirm' },
+    { label: 'Quality documents', value: 'Available on request — confirm per order specification', status: 'confirm' },
   ];
 }
