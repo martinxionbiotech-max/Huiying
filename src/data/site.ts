@@ -5,7 +5,8 @@ export const site = {
   companyName: 'Qinghe County Huiying Automotive Parts Co., Ltd.',
   legalName: 'Qinghe County Huiying Automotive Parts Co., Ltd.',
   companyNameShort: 'Huiying Automotive Parts',
-    domain: 'huiyingfilter.com', // placeholder domain
+    domain: 'carfilterspro.com', // primary production domain
+  dataSiteUrl: 'https://data.huiying.com', // sibling data/reference site (MkDocs)
   since: 1996, // brand lineage — the Huiying brand traces back to 1996
   foundingDate: '2017-10-10', // legal-entity incorporation date
   tagline: 'Filter Manufacturer',
