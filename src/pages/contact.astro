@@ -1,6 +1,14 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { site } from '../data/site';
+
+// Product-page "Request a quote" links pass ?product=MODEL&url=… to pre-fill this form.
+const productParam = Astro.url.searchParams.get('product') ?? '';
+const urlParam = Astro.url.searchParams.get('url') ?? '';
+const prefillMessage = [
+  productParam ? `Product: ${productParam}` : '',
+  urlParam ? `Product URL: ${urlParam}` : '',
+].filter(Boolean).join('\n');
 ---
 
 <BaseLayout title="Contact" description="Contact us for filter inquiries.">
@@ -23,7 +31,7 @@ import { site } from '../data/site';
         <div class="contact__tips">
           <h3>For a faster quote, please include</h3>
           <ul class="tick-list">
-            <li>OE / cross-reference number or vehicle application</li>
+            <li>OE / cross-reference number or vehicle application — use the dedicated field below</li>
             <li>Target quantity and destination market</li>
             <li>Any private-label or packaging requirements</li>
           </ul>
@@ -37,7 +45,9 @@ import { site } from '../data/site';
           <label>Name<input type="text" name="name" required /></label>
           <label>Email<input type="email" name="email" required /></label>
           <label>Phone / WhatsApp<input type="text" name="phone" /></label>
-          <label>Message<textarea name="message" rows="4" required></textarea></label>
+          <label>Product model<input type="text" name="product" value={productParam} /></label>
+          <label>OE / cross-reference number<input type="text" name="oe" placeholder="e.g. 90915-YZZE1 or your reference" /></label>
+          <label>Message<textarea name="message" rows="5" required>{prefillMessage}</textarea></label>
           <button class="btn btn--primary" type="submit">Submit</button>
         </form>
       </div>

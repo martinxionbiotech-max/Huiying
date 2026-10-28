@@ -15,9 +15,20 @@ const strengths = [
 const categoryCount = (slug: string) => productsData.products.filter((p) => p.category === slug).length;
 const latestNews = newsPosts.slice(0, 3);
 const totalSkus = productsData.products.length;
+
+const siteRoot = Astro.site?.toString() ?? `https://${site.domain}`;
+const websiteJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  '@id': `${siteRoot}/#website`,
+  name: `${site.brand} — ${site.tagline}`,
+  url: siteRoot,
+  publisher: { '@id': `${siteRoot}/#organization` },
+};
 ---
 
 <BaseLayout title="Home" description={site.positioning}>
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(websiteJsonLd)} />
   <!-- HERO -->
   <section class="hero">
     <div class="container hero__inner">
@@ -85,10 +96,10 @@ const totalSkus = productsData.products.length;
         </div>
         <p>
           We maintain reference-level fitment knowledge across global and domestic brands so you can
-          match the right filter to the right vehicle — whether it is a
-          <a href="/products/air-filter/">Toyota Corolla air filter</a>,
-          a <a href="/products/oil-filter/">BMW 3 Series oil filter</a> or a
-          <a href="/products/cabin-filter/">Honda Civic cabin filter</a>.
+          match the right filter to the right vehicle. Common application references include the
+          Toyota Corolla, BMW 3 Series and Honda Civic — listed as
+          <a href={`${site.dataSiteUrl}/fitment/`} target="_blank" rel="noopener">reference fitment data</a>
+          rather than a precise OE fitment claim.
         </p>
         <div class="brand-cloud">
           {['Toyota', 'Honda', 'Volkswagen', 'BMW', 'Mercedes-Benz', 'Ford', 'Hyundai', 'Nissan', 'Geely', 'Great Wall'].map((b) => (
