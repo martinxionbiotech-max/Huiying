@@ -118,6 +118,29 @@ function renderTable(table: NonNullable<GuideSection['table']>): string {
                     {sub.bullets.map((b) => <li set:html={renderInline(b)} />)}
                   </ul>
                 )}
+                {sub.formulas?.map((f) => (
+                  <div class="guide__formula">
+                    <div class="guide__formula-expr" set:html={f.html} />
+                    {f.note && <p class="guide__formula-note" set:html={renderInline(f.note)} />}
+                  </div>
+                ))}
+                {sub.table && <div set:html={renderTable(sub.table)} />}
+                {sub.checklist && (
+                  <ul class="guide__checklist">
+                    {sub.checklist.map((item) => (
+                      <li><input type="checkbox" disabled /> <span set:html={renderInline(item)} /></li>
+                    ))}
+                  </ul>
+                )}
+                {sub.checklistNote && <p class="guide__checklist-note" set:html={renderInline(sub.checklistNote)} />}
+                {sub.paragraphsAfter?.map((p) => <p set:html={renderInline(p)} />)}
+              </div>
+            ))}
+
+            {s.formulas?.map((f) => (
+              <div class="guide__formula">
+                <div class="guide__formula-expr" set:html={f.html} />
+                {f.note && <p class="guide__formula-note" set:html={renderInline(f.note)} />}
               </div>
             ))}
 
@@ -226,6 +249,17 @@ function renderTable(table: NonNullable<GuideSection['table']>): string {
   .guide__checklist li:last-child { border-bottom: none; }
   .guide__checklist input[type='checkbox'] { margin-top: 0.32rem; flex: none; accent-color: var(--orange-500); }
   .guide__checklist-note { font-size: 0.9rem; color: var(--ink-soft); margin-top: 0.75rem; }
+
+  .guide__formula {
+    margin: 1.1rem 0; padding: 1rem 1.25rem;
+    background: var(--bg-soft); border: 1px solid var(--line);
+    border-left: 4px solid var(--navy-800); border-radius: 0 var(--radius) var(--radius) 0;
+  }
+  .guide__formula-expr { font-size: 1.12rem; text-align: center; color: var(--navy-800); line-height: 1.5; }
+  .guide__formula-note { font-size: 0.86rem; color: var(--ink-soft); margin-top: 0.55rem; text-align: center; }
+  .frac { display: inline-flex; flex-direction: column; vertical-align: middle; text-align: center; margin: 0 0.3rem; }
+  .frac .top { padding: 0 0.4rem; border-bottom: 1px solid currentColor; }
+  .frac .bottom { padding: 0 0.4rem; }
 
   .faq-list { max-width: 100%; }
 
