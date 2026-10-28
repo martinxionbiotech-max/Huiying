@@ -15,7 +15,7 @@ export const site = {
     'Professional manufacturer of global filter high-tech products, integrating R&D, production and sales.',
   address:
     'North of Minjiang Street, west of Jiuhuashan Road, Qinghe County, Xingtai City, Hebei Province, China',
-    email: 'Martin@carfilterpro.com',
+    email: 'martin@carfilterspro.com',
   phone: '+86 13323237275',
   phoneHref: '+8613323237275',
   whatsapp: '+86 13323237275',
