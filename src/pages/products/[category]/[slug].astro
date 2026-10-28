@@ -108,7 +108,6 @@ const breadcrumbJsonLd = {
             {product.fitment && product.fitment.brand && <tr><th>Fitment</th><td>{product.fitment.brand}{product.fitment.models?.length ? ' ' + product.fitment.models.join(', ') : ''}</td></tr>}
             <tr><th>Brand</th><td>{site.brand}</td></tr>
             <tr><th>Source reference</th><td>#{product.sourceId}</td></tr>
-            <tr><th>Reference price</th><td>USD {PRICE_MIN}–{PRICE_MAX} <span class="muted">(reference only)</span></td></tr>
           </tbody>
         </table>
 
