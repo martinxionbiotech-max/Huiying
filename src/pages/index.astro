@@ -13,6 +13,29 @@ const strengths = [
 ];
 
 const categoryCount = (slug: string) => productsData.products.filter((p) => p.category === slug).length;
+
+const fiveQuestions = [
+  {
+    q: 'Do you make your own filters, or outsource them?',
+    a: 'Our own production is the core: pleating, bonding & sealing, assembly and inspection run in-house, on three PU production lines and 20+ specialist machines. A small number of supplementary lines (brake pads, spark plugs, rubber hoses, wiper blades) may be sourced through vetted partners — and we are explicit about which is which on any quotation.',
+  },
+  {
+    q: 'Can you develop a part from an OE number, a sample or a drawing?',
+    a: 'Yes. We match to your OE / cross-reference number, a physical sample, or a drawing. Sample confirmation is the first step of our OEM & private-label delivery process, before any batch is produced.',
+  },
+  {
+    q: 'How do you control batch quality and traceability?',
+    a: 'We run a four-gate quality framework (IQC, IPQC, FQC, OQC) with AQL-based sampling, and each production batch carries identification so it can be traced to its specification, materials and inspection records. Specific AQL levels and defect classifications are agreed with you at order time.',
+  },
+  {
+    q: 'Do you support OEM / private label and multi-SKU orders?',
+    a: 'Yes. We support private-label and OEM supply programs, multi-SKU and mixed-container orders, and neutral, custom or your-own-brand packaging and labelling.',
+  },
+  {
+    q: 'What do you need to give me a quote?',
+    a: 'Your OE / cross-reference number, target quantity, destination market, and any packaging / private-label requirements. That is enough for us to confirm the specification and return a quotation.',
+  },
+];
 const latestNews = newsPosts.slice(0, 3);
 const totalSkus = productsData.products.length;
 
@@ -38,11 +61,11 @@ const websiteJsonLd = {
     <div class="container hero__inner">
       <div class="hero__content">
         <p class="hero__eyebrow">EST. {site.since} · QINGHE, HEBEI, CHINA</p>
-        <h1 class="hero__title">High-tech filter manufacturer &amp; exporter</h1>
+        <h1 class="hero__title">Automotive Filter Manufacturer &amp; OEM/Private Label Supplier</h1>
         <p class="hero__lede">
-          {site.positioning} We manufacture air, cabin, oil and fuel filters plus brake pads, spark plugs and
-          rubber hoses for automotive and industrial applications — {totalSkus} reference SKUs listed
-          across seven product ranges, with a wiper line available on request.
+          We manufacture air, cabin, oil and fuel filters as our core lines, with brake pads, spark plugs,
+          rubber hoses and wiper blades offered as supplementary lines — {totalSkus} reference SKUs across
+          eight product ranges, with OEM and private-label supply programs.
         </p>
         <div class="hero__actions">
           <a class="btn btn--primary" href="/products/">Explore Products</a>
@@ -67,7 +90,7 @@ const websiteJsonLd = {
     <div class="container">
       <div class="section-head">
         <h2>Product Categories</h2>
-        <p class="lede">A full range of filter products for cars, trucks and industrial equipment.</p>
+        <p class="lede">Four core filter lines (air, cabin, oil, fuel) plus supplementary lines — brake pads, spark plugs, rubber hoses and wiper blades.</p>
       </div>
       <div class="grid grid--4">
         {
@@ -121,6 +144,26 @@ const websiteJsonLd = {
           <li>Consistent batch quality with testing documentation</li>
         </ul>
         <a class="btn btn--primary" href={quoteMailto}>Start a Quote</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FIVE QUESTIONS BUYERS ASK -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2>Five questions buyers ask us</h2>
+        <p class="lede">Straight answers on production, development, quality, OEM programs and quoting.</p>
+      </div>
+      <div class="faq-grid">
+        {
+          fiveQuestions.map((f) => (
+            <details class="faq" open={false}>
+              <summary>{f.q}</summary>
+              <p>{f.a}</p>
+            </details>
+          ))
+        }
       </div>
     </div>
   </section>
@@ -255,6 +298,8 @@ const websiteJsonLd = {
 
   .news-card { display: flex; flex-direction: column; gap: 0.5rem; }
   .news-card h3 { font-size: 1.05rem; margin-bottom: 0.25rem; }
+
+  .faq-grid { display: grid; grid-template-columns: 1fr; gap: 0.75rem; max-width: 900px; }
 
   .cta {
     background: linear-gradient(135deg, var(--orange-600), var(--orange-500));

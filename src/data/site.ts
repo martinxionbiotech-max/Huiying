@@ -10,9 +10,9 @@ export const site = {
   dataSiteUrl: 'https://data.carfilterspro.com', // sibling data/reference site (MkDocs)
   since: 1996, // brand lineage — the Huiying brand traces back to 1996
   foundingDate: '2017-10-10', // legal-entity incorporation date
-  tagline: 'Filter Manufacturer',
+  tagline: 'Automotive Filter Manufacturer',
   positioning:
-    'Professional manufacturer of global filter high-tech products, integrating R&D, production and sales.',
+    'Automotive Filter Manufacturer & OEM/Private Label Supplier',
   address:
     'North of Minjiang Street, west of Jiuhuashan Road, Qinghe County, Xingtai City, Hebei Province, China',
     email: 'martin@carfilterspro.com',
