@@ -10,7 +10,7 @@
 
 | 项 | 结果 |
 |---|---|
-| P0-1 品牌/域名/邮箱统一 | ✅ 残留复验 0 · 品牌-公司关系说明已加 · 邮箱保持 `Martin@carfilterpro.com` 并注记待确认 |
+| P0-1 品牌/域名/邮箱统一 | ✅ 残留复验 0 · 品牌-公司关系说明已加 · 邮箱 `martin@carfilterspro.com`（用户已确认邮箱域） |
 | P0-2 适配数据三态 + 定位 | ✅ 三态上线（reference / source-verified / fitment-verified）+ SKU-OE-车型关联文件 |
 | P0-3 产品页数据中心化 | ✅ 「What we can confirm / What you should provide」双区 · 通用段落删除 · 按证据深度差异化 |
 | P1-1 车型模块去泛化 | ✅ SKU 页 + 品类页删除多品牌车型列表 · 适配查询指向 data 站 |
@@ -27,13 +27,17 @@
 
 - **主站**：`src/` + `public/` + `astro.config.mjs` 全域 `huiyingfilter.com` / `data.huiying.com` 残留 = **0**（`grep -rEl` 输出空）。
 - **数据站**：`docs/`（含 llms.txt / mkdocs.yml / data/*.json / scripts）旧域名残留 = **0**（`README.md` 中一处 `huiyingfilter.com` 历史引用已修正为 `carfilterspro.com`）。
-- **邮箱**：全站唯一 `Martin@carfilterpro.com`（`site.ts` 单一数据源 → footer / contact / schema / data 站 Organization schema 全部一致）。
+- **邮箱**：全站唯一 `martin@carfilterspro.com`（用户已确认邮箱域——小写 `m` · 带 `s`，与生产域名 `carfilterspro.com` 一致；`site.ts` 单一数据源 → footer / contact / schema / data 站 Organization schema 全部一致）。
 
-### 邮箱决策点（不擅自改）
+### 邮箱（用户已确认邮箱域）
 
-邮箱保持用户指定值 **`Martin@carfilterpro.com`**（少一个 `s`），与生产域名 `carfilterspro.com` 不一致但审计亦言「无核实不更换」。
+邮箱已按用户高优先级确认统一为 **`martin@carfilterspro.com`**（小写 `m` · 带 `s`，与生产域名 `carfilterspro.com` 一致）。替换范围：
 
-> **待用户确认**：`carfilterpro.com` 是否为企业自有、并已配置 SPF / DKIM / DMARC。确认后如需改到 `carfilterspro.com`，改动点仅为 `src/data/site.ts:email` 一处（全站单一数据源），并同步 data 站 `overrides/main.html` 的 Organization schema email。
+- `site.ts` email 字段（全站单一数据源）→ Footer / Contact / 隐私页 / mailto 预填 / 所有 schema email / 合规页主体提及自动全部一致；
+- data 站 `overrides/main.html` 的 Organization schema email 同步；
+- 审计脚本 `scripts/audit-recheck.py` 的 email 断言同步为新值。
+
+> **注记**：旧邮箱 `Martin@carfilterpro.com`（少 `s`）残留已复扫，**live 内容（src / public / dist / data / overrides / site / scripts）= 0**。历史审计报告（audit2 / recheck-2 / eeat / phase1 等）作为历史记录仍保留当时快照中的旧邮箱文字，不属 live 残留。
 
 ### 品牌-公司关系说明（统一措辞）
 

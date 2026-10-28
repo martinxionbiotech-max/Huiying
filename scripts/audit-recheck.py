@@ -298,7 +298,7 @@ def main():
         if os.path.exists(fp):
             p, html = parse_file(fp)
             has_entity = 'Qinghe County Huiying Automotive Parts Co., Ltd.' in html
-            has_email = 'Martin@carfilterpro.com' in html
+            has_email = 'martin@carfilterspro.com' in html
             has_phone = '+86 13323237275' in html
             has_eff = 'Effective date' in html or 'effective date' in html
             print(f"  /{pg}/: H1={p.h1[0] if p.h1 else 'MISSING'} | entity={has_entity} email={has_email} phone={has_phone} effdate={has_eff}")
