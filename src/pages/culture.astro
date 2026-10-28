@@ -13,7 +13,7 @@ import { companyCulture, industryBackground } from '../data/company';
       <div class="grid grid--4">
         {companyCulture.items.map((i) => (
           <div class="card culture">
-            <img src={i.image} alt={i.title} width="120" height="120" loading="lazy" />
+            <img src={i.image} alt={i.alt} width="120" height="120" loading="lazy" />
             <h3>{i.title}</h3>
             <p class="muted">{i.text}</p>
           </div>

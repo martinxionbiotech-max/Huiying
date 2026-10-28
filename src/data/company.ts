@@ -7,10 +7,10 @@ export const companyProfile = {
   description:
     'Qinghe County Huiying Automotive Parts Co., Ltd. is an automotive-parts manufacturer based in Qinghe County, Xingtai City, Hebei Province, China — one of the country\'s established clusters for automotive filters and related components. Incorporated on 10 October 2017 with a registered capital of RMB 1,000,000, the company\'s registered scope covers the manufacturing of automotive parts and components, and its registered address is north of Minjiang Street and west of Jiuhuashan Road in Qinghe County. The Huiying brand carries a longer history in the Qinghe filter industry, tracing back to 1996. The company runs a 10,000 m² facility with a clean workshop of over 6,000 m², employs more than 100 people, and operates three PU filter production lines, vacuum-testing equipment and more than twenty specialist machines to produce air, cabin, oil and fuel filters for domestic and export markets.',
   strengths: [
-    { title: 'Quality to open up the market', image: '/images/a05a4769-ee8f-494a-8490-805b91999f73.webp' },
-    { title: 'Advanced equipment', image: '/images/07598f55-0f02-42d9-9649-8cfafbd88c7f.webp' },
-    { title: 'Product guarantee', image: '/images/c0117352-9851-433d-99d0-d7ece663fe6a.jpg' },
-    { title: 'Boutique service', image: '/images/e9647e60-eeba-412c-84a3-51208285c65c.webp' },
+    { title: 'Quality to open up the market', image: '/images/a05a4769-ee8f-494a-8490-805b91999f73.webp', alt: 'huiying quality control — inspection' },
+    { title: 'Advanced equipment', image: '/images/07598f55-0f02-42d9-9649-8cfafbd88c7f.webp', alt: 'huiying factory — advanced production equipment' },
+    { title: 'Product guarantee', image: '/images/c0117352-9851-433d-99d0-d7ece663fe6a.jpg', alt: 'huiying products — filter range' },
+    { title: 'Boutique service', image: '/images/e9647e60-eeba-412c-84a3-51208285c65c.webp', alt: 'huiying factory — production facility' },
   ],
   welcome:
     'All employees of the company sincerely welcome guests from all over the world and merchants from all over the world to visit and negotiate business. Based on the corporate philosophy of quality as a survival, we will seek common development and create brilliance with you!',
@@ -26,10 +26,10 @@ export const companyCulture = {
   heading: 'Culture',
   tagline: 'Integrity, win-win cooperation, carry forward, and pass on from generation to generation',
   items: [
-    { title: 'Vision', text: 'Green high-end products, high-quality services', image: '/images/fdc4449b-3e36-4d88-89e8-dad85a694dff.webp' },
-    { title: 'Values', text: 'Serve customers, benefit employees, develop enterprises, and contribute to society', image: '/images/afe91872-0ad7-4d8c-9c2c-de67f8951e5a.jpg' },
-    { title: 'Philosophy', text: 'Let the market determine the product, let customers recognize the quality', image: '/images/95d57966-b721-417b-a9f1-19ccee001137.jpg' },
-    { title: 'Mission', text: 'Safety, excellence, low carbon, environmental protection', image: '/images/1381949f-aef8-4860-a33f-6fdfc0d5bbe0.webp' },
+    { title: 'Vision', text: 'Green high-end products, high-quality services', image: '/images/fdc4449b-3e36-4d88-89e8-dad85a694dff.webp', alt: 'huiying culture — vision icon' },
+    { title: 'Values', text: 'Serve customers, benefit employees, develop enterprises, and contribute to society', image: '/images/afe91872-0ad7-4d8c-9c2c-de67f8951e5a.jpg', alt: 'huiying culture — values icon' },
+    { title: 'Philosophy', text: 'Let the market determine the product, let customers recognize the quality', image: '/images/95d57966-b721-417b-a9f1-19ccee001137.jpg', alt: 'huiying culture — philosophy icon' },
+    { title: 'Mission', text: 'Safety, excellence, low carbon, environmental protection', image: '/images/1381949f-aef8-4860-a33f-6fdfc0d5bbe0.webp', alt: 'huiying culture — mission icon' },
   ],
 };
 
@@ -78,6 +78,7 @@ export const marketingInfo = {
   text:
     'All employees of the company sincerely welcome guests from all over the world and merchants from all over the world to visit and negotiate business. Based on the corporate philosophy of quality as a survival, we will seek common development and create brilliance with you!',
   image: '/images/44babffb-c530-4321-af90-a0dc846f2960.webp',
+  imageAlt: 'huiying marketing — global sales network',
 };
 
 export const downloadCenter = {

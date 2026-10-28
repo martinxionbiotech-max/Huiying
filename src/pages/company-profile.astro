@@ -17,15 +17,15 @@ import { companyProfile, companyDisclosure, brandLineage, industryBackground, ex
           <p class="opinion"><strong>Boutique service.</strong> {companyProfile.welcome}</p>
         </div>
         <div class="profile__img">
-          <img src={companyProfile.images[0]} alt="Company" width="560" height="420" loading="lazy" />
-          <img src={companyProfile.images[1]} alt="Company" width="560" height="420" loading="lazy" />
+          <img src={companyProfile.images[0]} alt="huiying oil filter — product sample" width="560" height="420" loading="lazy" />
+          <img src={companyProfile.images[1]} alt="huiying facility — Qinghe factory" width="560" height="420" loading="lazy" />
         </div>
       </div>
 
       <div class="grid grid--4 mt-2">
         {companyProfile.strengths.map((s) => (
           <div class="card strength">
-            <img src={s.image} alt={s.title} width="400" height="260" loading="lazy" />
+            <img src={s.image} alt={s.alt} width="400" height="260" loading="lazy" />
             <h3>{s.title}</h3>
           </div>
         ))}

@@ -3,7 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { exhibition, industryBackground } from '../data/company';
 ---
 
-<BaseLayout title="Exhibition" description="Exhibition pictures.">
+<BaseLayout title="Exhibition" description="Photos of Huiying at trade shows and exhibitions, with details on arranging an in-person visit to inspect filter samples.">
   <section class="page-hero">
     <div class="container"><h1>{exhibition.heading}</h1><p>Meet us at trade shows and see our products first-hand.</p></div>
   </section>
@@ -12,7 +12,7 @@ import { exhibition, industryBackground } from '../data/company';
     <div class="container">
       <div class="gallery">
         {exhibition.images.map((src, i) => (
-          <img src={src} alt={`Exhibition picture ${i + 1}`} width="600" height="400" loading="lazy" />
+          <img src={src} alt={`huiying exhibition — trade show booth ${i + 1}`} width="600" height="400" loading="lazy" />
         ))}
       </div>
       <p class="muted small mt-2">

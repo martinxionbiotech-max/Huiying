@@ -3,14 +3,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { marketingInfo, exportMarkets, industryBackground } from '../data/company';
 ---
 
-<BaseLayout title="Marketing" description="Marketing network.">
+<BaseLayout title="Marketing" description="Huiying's export marketing network and private-label/OEM supply programs for buyers across Asia, the Middle East, Africa, South America and Europe.">
   <section class="page-hero">
     <div class="container"><h1>Marketing</h1><p>{marketingInfo.heading}</p></div>
   </section>
 
   <section class="section">
     <div class="container marketing">
-      <img src={marketingInfo.image} alt="Marketing Network" width="560" height="420" loading="lazy" />
+      <img src={marketingInfo.image} alt={marketingInfo.imageAlt} width="560" height="420" loading="lazy" />
       <div>
         <h2>{marketingInfo.heading}</h2>
         <p>{marketingInfo.text}</p>

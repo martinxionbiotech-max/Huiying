@@ -20,7 +20,7 @@ const count = (slug: string) => productsData.products.filter((p) => p.category =
         {
           productCategories.map((c) => (
             <a class="card cat" href={`/products/${c.slug}/`}>
-              <img src={c.icon} alt={c.name} width="96" height="96" loading="lazy" />
+              <img src={c.icon} alt={`${c.name} icon`} width="96" height="96" loading="lazy" />
               <h3>{c.name}</h3>
               <p class="muted small">{c.desc}</p>
               {count(c.slug) > 0 ? (

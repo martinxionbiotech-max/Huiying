@@ -22,7 +22,7 @@ const fitment = getFitment(category.slug);
         <h1>{category.name}</h1>
         <p>{category.desc}</p>
       </div>
-      <img src={category.icon} alt={category.name} width="120" height="120" />
+      <img src={category.icon} alt={`${category.name} icon`} width="120" height="120" />
     </div>
   </section>
 
@@ -43,7 +43,7 @@ const fitment = getFitment(category.slug);
             {
               products.map((p) => (
                 <a class="card product-card" href={`/products/${category.slug}/${p.slug}/`}>
-                  <img src={p.image} alt={`${p.name} ${p.model}`} width="400" height="300" loading="lazy" />
+                  <img src={p.image} alt={`${p.model} ${category.name.toLowerCase()}`} width="400" height="300" loading="lazy" />
                   <h3>{p.name}</h3>
                   <p class="chip">{p.model}</p>
                   <p class="muted small">{p.desc}</p>
