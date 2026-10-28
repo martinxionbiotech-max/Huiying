@@ -38,6 +38,16 @@ const breadcrumbJsonLd = {
   ],
 };
 
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: guide.faq.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+};
+
 // Convert [label](/path/) markdown links in prose into anchors; escape the rest.
 function renderInline(text: string): string {
   return text
@@ -60,6 +70,7 @@ function renderTable(table: NonNullable<GuideSection['table']>): string {
 <BaseLayout title={guide.title} description={guide.description}>
   <script slot="head" type="application/ld+json" set:html={JSON.stringify(articleJsonLd)} />
   <script slot="head" type="application/ld+json" set:html={JSON.stringify(breadcrumbJsonLd)} />
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(faqJsonLd)} />
 
   <nav class="crumbs" aria-label="Breadcrumb">
     <div class="container">

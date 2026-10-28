@@ -92,7 +92,43 @@
 - [Disclaimer](https://carfilterspro.com/disclaimer/): Disclaimer.
 - [Cookie Policy](https://carfilterspro.com/cookies/): Cookie policy.
 
+## Buying Guides
+
+Automotive filter buying guides for importers and wholesalers, organised into three pillar groups.
+
+### Selection
+
+- [Choosing the Right Automotive Filters: A Buyer's Guide](https://carfilterspro.com/guides/automotive-filter-selection-guide/): Pillar — filter types and a pre-purchase verification process.
+- [Air Filter vs. Cabin Air Filter](https://carfilterspro.com/guides/air-filter-vs-cabin-air-filter/): Why the two filters are not interchangeable.
+- [How to Choose the Right Oil Filter](https://carfilterspro.com/guides/how-to-choose-an-oil-filter/): Spin-on vs cartridge, thread, gasket, bypass and anti-drainback checks.
+- [Automotive Fuel Filter Types](https://carfilterspro.com/guides/automotive-fuel-filter-types/): Inline, in-tank, gasoline and diesel filters.
+- [Replacement Filter by OE Number](https://carfilterspro.com/guides/replacement-filter-by-oe-number/): Cross-references, evidence levels and a verification process.
+
+### Quality & Testing
+
+- [Automotive Filter Quality: Performance, Testing and Inspection](https://carfilterspro.com/guides/automotive-filter-quality-testing/): Pillar — how to evaluate filter quality and read test reports.
+- [How Automotive Air Filter Efficiency Is Tested](https://carfilterspro.com/guides/automotive-air-filter-efficiency-test/): Initial vs loaded efficiency, particle size and pressure drop.
+- [Understanding Oil Filter Multi-Pass Test Results](https://carfilterspro.com/guides/oil-filter-multi-pass-test/): Beta ratio, particle removal and contaminant capacity.
+- [Filter Media, Pressure Drop and Dust-Holding Capacity](https://carfilterspro.com/guides/filter-media-pressure-drop-dust-holding-capacity/): How three performance characteristics relate.
+- [Automotive Filter Quality Inspection Checklist](https://carfilterspro.com/guides/automotive-filter-quality-inspection/): Product identity, dimensions, packaging and documentation.
+
+### OEM Sourcing
+
+- [OEM Automotive Filter Sourcing: A Practical Guide for Importers](https://carfilterspro.com/guides/oem-automotive-filter-sourcing/): Pillar — supplier selection to sample approval and mass production.
+- [How to Evaluate an Automotive Filter Manufacturer](https://carfilterspro.com/guides/how-to-evaluate-automotive-filter-manufacturer/): A practical supplier-evaluation checklist.
+- [OEM Automotive Filter Sourcing: From Sample to Production](https://carfilterspro.com/guides/oem-automotive-filter-sourcing-from-sample-to-production/): The six stages of an OEM filter project.
+- [Automotive Filter Packaging and Container Loading](https://carfilterspro.com/guides/automotive-filter-packaging-container-loading/): Packaging specification and shipment planning.
+
 ## News
 
 - [News](https://carfilterspro.com/news/): Filter knowledge and company updates.
+- [How to choose an air filter](https://carfilterspro.com/news/how-to-choose-air-filter/): Industry — assessing air-filter quality.
+- [Why does sludge still appear in the oil pan](https://carfilterspro.com/news/why-does-sludge-still-appear-in-the-oil-shell/): Company — sludge formation in engines.
+- [Frequently Asked Questions About Excavator Filter Elements](https://carfilterspro.com/news/frequently-asked-questions-about-excavator-filter-elements/): Company — oil and fuel filter replacement.
+- [The lungs of the engine: the working principle of the air filter](https://carfilterspro.com/news/the-lungs-of-the-engine-working-principle-of-the-air-filter/): Industry — how the air filter works.
+- [Is it necessary to replace the oil filter when changing the oil?](https://carfilterspro.com/news/is-it-necessary-to-replace-the-oil-filter-while-maintaining-the-oil/): Industry — oil and filter replacement.
+- [Good engine oil is changed every time. Why does sludge still appear in the oil pan?](https://carfilterspro.com/news/good-engine-oil-changed-every-time-why-sludge-still-appears/): Industry — sludge causes.
+- [What you may not know about the oil filter](https://carfilterspro.com/news/oil-filter-the-knowledge-you-dont-know/): Industry — oil filter service life.
+- [The importance of filter efficiency to the engine](https://carfilterspro.com/news/the-importance-of-filter-efficiency-to-the-engine/): Industry — filtration and engine life.
+- [Air filter misconceptions and how to identify a good one](https://carfilterspro.com/news/the-misunderstanding-and-identification-method-of-air-filter/): Industry — misconceptions and identification.
 
