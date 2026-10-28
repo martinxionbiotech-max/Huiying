@@ -12,5 +12,7 @@ export default defineConfig({
   // canonical richer record (air-filter-03-42776-010), which lists P320510 as a cross-reference.
   redirects: {
     '/products/air-filter/air-filter-p320510': '/products/air-filter/air-filter-03-42776-010',
+    // P1-3: /sitemap.xml → /sitemap-index.xml alias (audit flagged /sitemap.xml 404).
+    '/sitemap.xml': '/sitemap-index.xml',
   },
 });
