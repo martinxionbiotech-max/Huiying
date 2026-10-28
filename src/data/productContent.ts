@@ -1163,38 +1163,7 @@ export const productContent: Record<string, ProductContent> = {
     ],
     buyerNote: "The 04465-0K020 is the wider-OE Toyota ceramic pad set — confirm the hardware kit and align by the three-number OE set, then sell on low dust and low noise.",
   },
-  "air-filter-p320510": {
-    application: [
-      "The P320510 is a truck engine air filter matched to OE P320510 (cross-reference 03-42776-010 / 91559 / 0342776010 / 997879).",
-      "On a commercial intake, dust-holding capacity and pleat consistency are the deciding quality points, confirmed per application.",
-    ],
-    scenarios: [
-      "Truck and commercial intake systems on long-haul duty, where the element loads with road dust over long distances.",
-      "Construction and off-highway duty, where dust loading is heavy and replacement is on condition.",
-      "Fleet operations, where dust-holding capacity decides the cost per kilometre.",
-    ],
-    technical: [
-      "A commercial truck air filter is larger and built for far higher dust-holding capacity than a passenger element.",
-      "Pleat consistency keeps dust-holding capacity uniform across a batch.",
-      "The cross-reference set (03-42776-010, 91559, 0342776010, 997879) spans the truck application's several numbering systems.",
-    ],
-    procurement: [
-      "For truck-parts distributors, prioritise dust-holding capacity and pleat consistency, and confirm the cross-reference set.",
-      "Within the air-filter category, the P320510 is the truck entry, distinct from the passenger OE numbers and the generic HY-AF line — confirm the application rather than interchanging.",
-    ],
-    selectionNotes: [
-      "Quote the OE P320510 and the cross-reference set for the truck application.",
-      "For fleet programs, request the dust-holding capacity and pleat-consistency documentation.",
-      "Confirm the seal and housing fit for the commercial intake.",
-    ],
-    maintenance: [
-      "Replace on the fleet's service schedule, and shorten it in heavy dust.",
-      "A clogged element restricts airflow and raises fuel consumption on a diesel.",
-      "Keep the air-cleaner housing sealed and the intake duct free of leaks.",
-    ],
-    buyerNote: "The P320510 is the truck air filter — dust-holding capacity and pleat consistency are the two numbers that decide a fleet's cost per kilometre.",
-  },
-  "oil-filter-15400-plc": {
+    "oil-filter-15400-plc": {
     application: [
       "The 15400-PLC is a Honda oil filter matched to OE 15400-PLC, the shared-platform Honda service number.",
       "It sits in the Honda lubrication circuit, holding back wear metal and carbon sludge. Media efficiency, spin-on thread and the anti-drain-back valve are confirmed against the Honda application rather than assumed from a photo.",
