@@ -91,7 +91,7 @@ def data_llms(ds):
     lines.append('> Ltd. — commercial catalog and inquiries at carfilterspro.com.')
     lines.append('')
     lines.append(f'- [Home]({DATA_URL}/): data-site overview, section index and honest data posture.')
-    lines.append(f'- [SKU Index]({DATA_URL}/products/): all {len(prods)} SKUs (identity verified; specs NEEDS_VERIFICATION).')
+    lines.append(f'- [SKU Index]({DATA_URL}/products/): all {len(prods)} SKUs (identity verified; specs `source-verified` / blank).')
     for c in cats:
         n = sum(1 for p in prods if p['category'] == c['slug'])
         plural = 'SKU' if n == 1 else 'SKUs'
@@ -118,6 +118,7 @@ def data_llms(ds):
         ('Size Ranges', '/reference/size-ranges/'),
         ('Replacement Intervals', '/reference/replacement-intervals/'),
         ('Procurement', '/reference/procurement/'),
+        ('SKU–OE–Vehicle Association', '/reference/sku-oe-vehicle/'),
         ('Filter Media comparison', '/materials/media-comparison/'),
         ('Field Schema', '/specification/field-schema/'),
         ('Data Status Labels', '/specification/data-status/'),
@@ -128,9 +129,13 @@ def data_llms(ds):
     lines.append('')
     lines.append('## Notes')
     lines.append('')
-    lines.append('- Per-SKU dimensions, material, efficiency, OE numbers and packing are NOT published by the')
-    lines.append('  source catalogue; they are marked `NEEDS_VERIFICATION` here, never invented.')
-    lines.append('- Vehicle fitment is `reference` only — common applications, not verified OE cross-references.')
+    lines.append('- Three-state data status: `reference` (framework / common-application), `source-verified`')
+    lines.append('  (value published by the source catalog; OE↔brand is a fact), `fitment-verified`')
+    lines.append('  (complete SKU-OE-vehicle-source-date record — 0 rows today).')
+    lines.append('- OE numbers, cross-references, material and fitment are `source-verified` where the')
+    lines.append('  congbenfilter.com catalog publishes them; fields the source does not supply are blank')
+    lines.append('  (`NEEDS_VERIFICATION`), never invented.')
+    lines.append('- Vehicle fitment is `reference` only — "reference material — not an exact-fitment tool".')
     lines.append('- Commercial catalog and quotations: carfilterspro.com (this data site is reference-only).')
     lines.append('')
     return '\n'.join(lines) + '\n'

@@ -2,7 +2,7 @@
 """quality-pass2-content.py — author de-templated desc + deepened per-SKU content.
 
 Reads src/data/products.json, applies per-SKU unique desc (de-templated),
-and emits src/data/productContent.ts (all 61 SKUs, extended interface with
+and emits src/data/productContent.ts (all 60 SKUs, extended interface with
 application / scenarios / technical / procurement / selectionNotes /
 maintenance / buyerNote).
 
