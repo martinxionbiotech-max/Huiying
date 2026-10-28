@@ -9,9 +9,12 @@ interface Props {
   title: string;
   description?: string;
   noindex?: boolean;
+  ogTitle?: string;
+  ogDescription?: string;
+  ogImage?: string;
 }
 
-const { title, description, noindex = false } = Astro.props;
+const { title, description, noindex = false, ogTitle, ogDescription, ogImage: ogImageOverride } = Astro.props;
 
 const fullTitle = `${title} | ${site.brand} — ${site.tagline}`;
 const metaDescription =
@@ -20,7 +23,12 @@ const metaDescription =
 
 const siteUrl = Astro.site?.toString() ?? 'https://carfilterspro.com';
 const canonical = new URL(Astro.url.pathname, Astro.site);
-const ogImage = new URL('/images/8a59f159-d12a-4726-84f0-697566eec219.webp', Astro.site).toString();
+// Per-page OG image override (per-SKU product image); falls back to the default brand image.
+const ogImage = ogImageOverride
+  ? new URL(ogImageOverride, Astro.site).toString()
+  : new URL('/images/8a59f159-d12a-4726-84f0-697566eec219.webp', Astro.site).toString();
+const ogTitleValue = ogTitle || fullTitle;
+const ogDescriptionValue = ogDescription || metaDescription;
 
 const orgJsonLd = {
   '@context': 'https://schema.org',
@@ -30,7 +38,7 @@ const orgJsonLd = {
   legalName: site.legalName,
   alternateName: [site.brand, site.companyNameShort],
   url: siteUrl,
-  logo: ogImage,
+  logo: new URL('/images/8a59f159-d12a-4726-84f0-697566eec219.webp', Astro.site).toString(),
   foundingDate: site.foundingDate,
   telephone: site.phone,
   email: site.email,
@@ -62,14 +70,14 @@ const orgJsonLd = {
     <meta name="generator" content={Astro.generator} />
     {noindex ? <meta name="robots" content="noindex, follow" /> : null}
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <meta property="og:title" content={fullTitle} />
-    <meta property="og:description" content={metaDescription} />
+    <meta property="og:title" content={ogTitleValue} />
+    <meta property="og:description" content={ogDescriptionValue} />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content={site.brand} />
     <meta property="og:image" content={ogImage} />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={fullTitle} />
-    <meta name="twitter:description" content={metaDescription} />
+    <meta name="twitter:title" content={ogTitleValue} />
+    <meta name="twitter:description" content={ogDescriptionValue} />
     <meta name="twitter:image" content={ogImage} />
     {!noindex && <link rel="canonical" href={canonical} />}
     <script type="application/ld+json" set:html={JSON.stringify(orgJsonLd)} />

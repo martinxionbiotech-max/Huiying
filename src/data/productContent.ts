@@ -90,7 +90,7 @@ export const productContent: Record<string, ProductContent> = {
     ],
     technical: [
       "The panel form is a flat pleated element that seats into the air-cleaner housing, with the seal (foam or rubber) forming the airtight edge.",
-      "Even pleat spacing increases usable dust-holding capacity and prevents the paper from sticking together in humid air.",
+      "Even pleat spacing is a production quality signal that prevents the paper from sticking together in humid air (general category knowledge — not a measured performance figure).",
       "Media area and pleat count are matched to the housing, which is what keeps airflow and filtration in balance.",
     ],
     procurement: [
@@ -245,7 +245,7 @@ export const productContent: Record<string, ProductContent> = {
     ],
     technical: [
       "The element is confirmed against the housing dimensions and media area, since housings vary by year and engine.",
-      "Pleat count and fold spacing are what decide dust-holding capacity and airflow.",
+      "Pleat count and fold spacing are production quality signals (general category knowledge — not a measured performance figure).",
       "A clean, correctly sealed element keeps the mixture correct and prevents unfiltered air entering.",
     ],
     procurement: [
@@ -337,7 +337,7 @@ export const productContent: Record<string, ProductContent> = {
       "High-temperature and stop-and-go urban markets, where a correctly calibrated bypass valve is the difference between filtered oil and unfiltered bypass.",
     ],
     technical: [
-      "The High-Density Filtration Media holds more fine contaminant per unit area than a basic cellulose element, which is why the part is positioned for modern, close-tolerance engines.",
+      "The source catalogue lists the build as High-Density Filtration Media (a catalog-confirmed material description, not a measured efficiency figure).",
       "The spin-on canister integrates the media, bypass valve and anti-drain-back valve into one replaceable unit, matching the Toyota service pattern.",
       "The cross-reference set (90915-10003, 90915-10001, 90915-YZZF2) spans several Toyota generations, so a single part number covers a wide installed base.",
     ],
@@ -421,7 +421,7 @@ export const productContent: Record<string, ProductContent> = {
   },
   "air-filter-17801-30070": {
     application: [
-      "The 17801-30070 is a Toyota-pattern engine air filter matched to OE 17801-30070 (cross-reference 1780130070), built with PP and non-woven fabric.",
+      "The 17801-30070 is a Toyota OE-pattern engine air filter (catalog-confirmed) matched to OE 17801-30070 (cross-reference 1780130070), built with PP and non-woven fabric.",
       "The element removes dust and sand from intake air, with pleat spacing and media area matched to the air-cleaner housing for the designed airflow.",
     ],
     scenarios: [
@@ -430,7 +430,7 @@ export const productContent: Record<string, ProductContent> = {
       "High-mileage fleets, where dust-holding capacity decides the replacement interval.",
     ],
     technical: [
-      "PP and non-woven fabric construction gives a durable media with good dust-holding capacity.",
+      "The source catalogue lists the build as PP and non-woven fabric (a catalog-confirmed material description).",
       "Pleat spacing and media area are matched to the air-cleaner housing for the designed airflow.",
       "The cross-reference 1780130070 ties this part to the Toyota application's second common number.",
     ],
@@ -461,7 +461,7 @@ export const productContent: Record<string, ProductContent> = {
       "Dusty markets, where the non-woven fabric's dust capacity matters.",
     ],
     technical: [
-      "Non-woven fabric media balances airflow against filtration for the Corolla-family engine.",
+      "The source catalogue lists the build as non-woven fabric (a catalog-confirmed material description).",
       "The cross-reference set (17801-0M020, 17801-0T020, 17801-0T030) spans the Corolla/Avensis/Auris platform.",
       "Seal design is confirmed against the housing lip so the element seals without bypass.",
     ],
@@ -493,8 +493,8 @@ export const productContent: Record<string, ProductContent> = {
     ],
     technical: [
       "The heavy-duty canister is built to survive the higher pressure and vibration of a commercial diesel, unlike a light-passenger spin-on.",
-      "A larger media area and higher dirt-holding capacity are the point of the part — they are what let it run a full extended drain without the bypass opening early.",
-      "The bypass valve is calibrated for the oil pressure of the target engine family, which is why the part is matched to LF14000NN rather than sold as a universal size.",
+      "Heavy-duty filters use a larger media area than a light-passenger spin-on (general category knowledge); no measured dirt-holding figure is published for this SKU.",
+      "A bypass valve is a general design element of a spin-on filter; the bypass setting for this SKU is pending and must be confirmed per application.",
     ],
     procurement: [
       "For fleet and truck-parts distributors, qualify the burst rating and the media capacity, then buy on batch consistency — a truck filter failure is far costlier than a passenger one.",
@@ -525,7 +525,7 @@ export const productContent: Record<string, ProductContent> = {
     technical: [
       "The spin-on design integrates media, bypass valve and anti-drain-back valve in one replaceable canister, matching the Honda service pattern.",
       "The wide cross-reference (15400-PLM-A02, 15400-RTA-003, 15400-PH1-003 and others) means one part number covers several Honda platforms, which is why thread and seal confirmation is the first check.",
-      "Media efficiency and the bypass setting are the engineering details that separate this from a look-alike that shares only the outer thread.",
+      "The source catalogue lists the OE and cross-reference set; media efficiency and bypass setting are pending and must be confirmed per application.",
     ],
     procurement: [
       "For Honda-focused importers this is a cross-platform volume SKU — confirm the OE and cross-reference set, then buy on media and seal consistency.",
@@ -585,8 +585,8 @@ export const productContent: Record<string, ProductContent> = {
       "Fleet operations, where dust-holding capacity decides the replacement interval and the total cost per kilometre.",
     ],
     technical: [
-      "A commercial truck air filter is larger and built for far higher dust-holding capacity than a passenger element.",
-      "Pleat consistency and media area are what keep dust-holding capacity uniform across a batch.",
+      "A commercial truck air filter uses a larger media area than a passenger element (general category knowledge); no measured dust-holding figure is published.",
+      "Pleat consistency and media area are production quality signals (general category knowledge — not a measured performance figure).",
       "The cross-reference set (P320510, 91559, 997879) spans the truck application's several numbering systems.",
     ],
     procurement: [
@@ -647,7 +647,7 @@ export const productContent: Record<string, ProductContent> = {
       "Off-highway equipment, where a blocked element restricts airflow and hurts engine output.",
     ],
     technical: [
-      "Agricultural air filters are built for heavy dust, with a large media area and high dust-holding capacity.",
+      "Agricultural air filters use a large media area (general category knowledge); no measured dust-holding figure is published for this SKU.",
       "Pleat spacing is the production detail that keeps dust capacity uniform across a batch.",
       "The RE596317 / RE596318 pairing covers the John Deere E-series application's two references.",
     ],
@@ -802,7 +802,7 @@ export const productContent: Record<string, ProductContent> = {
       "Dusty markets, where the PP and non-woven fabric's dust capacity matters.",
     ],
     technical: [
-      "PP and non-woven fabric construction gives a durable media with good dust-holding capacity.",
+      "The source catalogue lists the build as PP and non-woven fabric (a catalog-confirmed material description).",
       "The cross-reference 1500A358 ties this part to the Mitsubishi platform's second common number.",
       "Pleat count and media area are matched to the air-cleaner housing for the designed airflow.",
     ],
@@ -833,7 +833,7 @@ export const productContent: Record<string, ProductContent> = {
       "Dusty markets, where the PP and non-woven fabric's dust capacity matters.",
     ],
     technical: [
-      "PP and non-woven fabric construction gives a durable media with good dust-holding capacity.",
+      "The source catalogue lists the build as PP and non-woven fabric (a catalog-confirmed material description).",
       "The cross-reference 17220-5RO-008 ties this part to the Honda platform's second common number.",
       "Element dimensions and seal are confirmed against the Honda airbox.",
     ],
@@ -864,7 +864,7 @@ export const productContent: Record<string, ProductContent> = {
       "Dusty markets, where the cellulose blend's dust capacity matters.",
     ],
     technical: [
-      "The PP, non-woven fabric and cellulose blend balances cost, durability and dust-holding capacity.",
+      "The source catalogue lists the build as PP, non-woven fabric and cellulose (a catalog-confirmed material description).",
       "The stated 259 × 164 × 54.5 mm dimensions are confirmed per the application.",
       "Pleat geometry and media area are matched to the Kia/Hyundai airbox.",
     ],
@@ -926,7 +926,7 @@ export const productContent: Record<string, ProductContent> = {
       "Dusty markets, where the PP and non-woven fabric's dust capacity matters.",
     ],
     technical: [
-      "PP and non-woven fabric construction gives a durable media with good dust-holding capacity.",
+      "The source catalogue lists the build as PP and non-woven fabric (a catalog-confirmed material description).",
       "The cross-references MANN C36014 and BOSCH F026400366 tie this part to the aftermarket equivalents.",
       "The N55, N57 and N20 engine fitment is confirmed against the BMW airbox.",
     ],
@@ -990,7 +990,7 @@ export const productContent: Record<string, ProductContent> = {
     technical: [
       "The spin-on canister integrates the media, bypass valve and anti-drain-back valve, matching the Toyota service pattern.",
       "The cross-reference set (90915-10002, 90915-10004, 90915-YZZF1, 90915-TA002) is what makes it a broad single-SKU cover, which is precisely why thread and seal confirmation matters most.",
-      "Media efficiency and bypass calibration are the service-grade details that separate this from a look-alike sharing only the outer thread.",
+      "The source catalogue lists the OE and cross-reference set; media efficiency and bypass setting are pending and must be confirmed per application.",
     ],
     procurement: [
       "For Toyota/Lexus importers this is the broadest single-number oil filter — a genuine inventory consolidator, so confirm the OE and buy on consistent media and seal quality.",
@@ -1052,7 +1052,7 @@ export const productContent: Record<string, ProductContent> = {
     technical: [
       "The Pressure-Resistant Heavy-Duty Steel element is built to hold its shape under the high oil pressure of the M270 / M274 turbo family.",
       "The multi-number OE set (A2701800009, A2701800109, A2701840025, A2701840125) reflects Mercedes part-number evolution, so one SKU spans the platform's service history.",
-      "Burst rating and bypass calibration are the two numbers that separate a genuine service-grade element from a look-alike.",
+      "Burst rating and bypass setting are pending and must be confirmed per application.",
     ],
     procurement: [
       "For Mercedes specialists this is the M270/M274 turbo cover — confirm the OE and the steel-element construction, and bundle with the housing seal where the application uses a cartridge.",
@@ -1083,7 +1083,7 @@ export const productContent: Record<string, ProductContent> = {
     technical: [
       "The spin-on canister integrates the media, bypass valve and anti-drain-back valve, matching the Toyota service pattern.",
       "The paired OE 04152-37010 / 04152-YZZA6 ties this part to the Corolla platform's two common numbering systems.",
-      "Media efficiency and bypass calibration are what separate a service-grade filter from a look-alike that only shares the thread.",
+      "The source catalogue lists the OE pair; media efficiency and bypass setting are pending and must be confirmed per application.",
     ],
     procurement: [
       "For Toyota Corolla specialists this is a steady, high-volume SKU — confirm the OE and buy on media and seal consistency.",
@@ -1103,16 +1103,16 @@ export const productContent: Record<string, ProductContent> = {
   },
   "oil-filter-04152-31080": {
     application: [
-      "The 04152-31080 is a Toyota/Lexus oil filter matched to OE 04152-31080 with cross-references 04152-38010, 04152-31060 and 04152-0P010, built with High-density premium filter paper and listed for the 2.5L–3.5L engine band.",
-      "It holds back wear metal and carbon sludge on the larger-displacement Toyota and Lexus petrol engines. Thread, seal and bypass specification are confirmed per engine before quoting.",
+      "The 04152-31080 is a Toyota / Lexus oil filter matched to OE 04152-31080 with cross-references 04152-38010, 04152-31060 and 04152-0P010 (source catalog), built with High-density premium filter paper. The 2.5L–3.5L engine band is a catalog reference, not a verified fitment.",
+      "It holds back wear metal and carbon sludge on Toyota and Lexus petrol engines. Thread, seal and bypass specification are pending and must be confirmed per order.",
     ],
     scenarios: [
-      "Toyota and Lexus 2.5L–3.5L petrol engines — Camry, RAV4, Highlander and Lexus equivalents — on standard service schedules.",
-      "Larger-displacement engines where oil volume is higher and the media's dirt-holding capacity must keep pace.",
-      "Highway and towing duty, where sustained load raises oil temperature and the high-density media earns its specification.",
+      "Toyota and Lexus petrol engines in the 2.5L–3.5L band (catalog reference) on standard service schedules.",
+      "Larger-displacement engines where oil volume is higher.",
+      "Highway and towing duty, where sustained load raises oil temperature.",
     ],
     technical: [
-      "The High-density premium filter paper holds finer contaminant per unit area, suited to the closer tolerances of the 2.5L–3.5L engine band.",
+      "The source catalogue lists the build as High-density premium filter paper (a catalog-confirmed material description, not a measured efficiency figure).",
       "The cross-reference set (04152-38010, 04152-31060, 04152-0P010) spans several Toyota numbering generations on the same engine family.",
       "Bypass calibration and seal diameter are matched to the larger-displacement oil system, which is why the engine band is stated on the part.",
     ],
@@ -1176,7 +1176,7 @@ export const productContent: Record<string, ProductContent> = {
     technical: [
       "The spin-on design integrates media, bypass valve and anti-drain-back valve in one replaceable canister.",
       "The 15400-PLC number is the shared Honda platform service code, so a single part covers several Honda models.",
-      "Media efficiency and the bypass setting are what separate a service-grade filter from a look-alike sharing only the outer thread.",
+      "The source catalogue lists the OE number; media efficiency and bypass setting are pending and must be confirmed per application.",
     ],
     procurement: [
       "For Honda importers this is the shared-platform entry — confirm the OE and buy on media and seal consistency.",
@@ -1299,7 +1299,7 @@ export const productContent: Record<string, ProductContent> = {
     ],
     technical: [
       "The spin-on canister integrates media, bypass valve and anti-drain-back valve in one replaceable unit.",
-      "Small-engine Suzuki filters are compact, so media efficiency and dirt-holding capacity per unit area matter more than on a large filter.",
+      "Small-engine filters are compact (general category knowledge); no measured efficiency or dirt-holding figure is published for this SKU.",
       "Bypass calibration is matched to the Suzuki oil system, which is why the part is matched to 15208-65F00 rather than sold as a universal size.",
     ],
     procurement: [
@@ -1857,7 +1857,7 @@ export const productContent: Record<string, ProductContent> = {
     ],
     technical: [
       "The heavy-duty canister survives the higher pressure and vibration of a commercial diesel, unlike a light-passenger spin-on.",
-      "A larger media area and higher dirt-holding capacity are the point of the part — they let it run a full extended drain without the bypass opening early.",
+      "Heavy-duty filters use a larger media area than a light-passenger spin-on (general category knowledge); no measured dirt-holding figure is published.",
       "The bypass valve is calibrated to the oil system of the target truck engine, which is why the part is matched per application rather than sold as a universal size.",
     ],
     procurement: [
