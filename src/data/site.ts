@@ -8,7 +8,7 @@ export const site = {
     domain: 'huiyingfilter.com', // placeholder domain
   since: 1996, // brand lineage — the Huiying brand traces back to 1996
   foundingDate: '2017-10-10', // legal-entity incorporation date
-  tagline: 'Manufacturer of high-tech filter',
+  tagline: 'Filter Manufacturer',
   positioning:
     'Professional manufacturer of global filter high-tech products, integrating R&D, production and sales.',
   address:
