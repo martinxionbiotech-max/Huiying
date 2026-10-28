@@ -1,0 +1,251 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { site } from '../../data/site';
+import { guidesPosts, type GuideSection } from '../../data/guidesPosts';
+
+export function getStaticPaths() {
+  return guidesPosts.map((g) => ({ params: { slug: g.slug }, props: { guide: g } }));
+}
+
+const { guide } = Astro.props;
+
+const siteUrl = Astro.site?.toString() ?? `https://${site.domain}`;
+const pageUrl = new URL(Astro.url.pathname, Astro.site).toString();
+
+// Direct mailto RFQ (no server-side form on this static site).
+const rfqMailto = `mailto:${site.email}?subject=${encodeURIComponent('Filter inquiry')}&body=${encodeURIComponent(
+  `Guide reference: ${pageUrl}\n\nOE / cross-reference number:\nTarget quantity:\nDestination market:\nPackaging / private-label requirements:`,
+)}`;
+
+const articleJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: guide.title,
+  description: guide.description,
+  inLanguage: 'en',
+  author: { '@type': 'Organization', name: site.companyName },
+  publisher: { '@type': 'Organization', name: site.companyName, url: siteUrl },
+  mainEntityOfPage: pageUrl,
+};
+
+const breadcrumbJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: `${siteUrl}/` },
+    { '@type': 'ListItem', position: 2, name: 'Guides', item: `${siteUrl}/guides/` },
+    { '@type': 'ListItem', position: 3, name: guide.title },
+  ],
+};
+
+// Convert [label](/path/) markdown links in prose into anchors; escape the rest.
+function renderInline(text: string): string {
+  return text
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>');
+}
+
+function renderTable(table: NonNullable<GuideSection['table']>): string {
+  const thead = `<thead><tr>${table.headers.map((h) => `<th>${h}</th>`).join('')}</tr></thead>`;
+  const tbody = `<tbody>${table.rows
+    .map((row) => `<tr>${row.map((c) => `<td>${renderInline(c)}</td>`).join('')}</tr>`)
+    .join('')}</tbody>`;
+  const caption = table.caption ? `<caption>${renderInline(table.caption)}</caption>` : '';
+  return `<div class="table-wrap"><table class="spec">${caption}${thead}${tbody}</table></div>`;
+}
+---
+
+<BaseLayout title={guide.title} description={guide.description}>
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(articleJsonLd)} />
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(breadcrumbJsonLd)} />
+
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <div class="container">
+      <a href="/">Home</a> <span>/</span> <a href="/guides/">Guides</a> <span>/</span>
+      <span>{guide.title}</span>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="container">
+      <span class="chip">Buying Guide</span>
+      <h1>{guide.title}</h1>
+      <p>{guide.description}</p>
+    </div>
+  </section>
+
+  <article class="section">
+    <div class="container guide">
+      {
+        guide.intro.map((p) => <p set:html={renderInline(p)} />)
+      }
+
+      {
+        guide.sections.map((s) => (
+          <section class="guide__section">
+            <h2>{s.heading}</h2>
+
+            {s.paragraphs?.map((p) => <p set:html={renderInline(p)} />)}
+
+            {s.bullets && (
+              <ul>
+                {s.bullets.map((b) => <li set:html={renderInline(b)} />)}
+              </ul>
+            )}
+
+            {s.orderedBullets && (
+              <ol>
+                {s.orderedBullets.map((b) => <li set:html={renderInline(b)} />)}
+              </ol>
+            )}
+
+            {s.steps && (
+              <ol class="guide__steps">
+                {s.steps.map((st) => (
+                  <li><strong>{st.title}.</strong> <span set:html={renderInline(st.text)} /></li>
+                ))}
+              </ol>
+            )}
+
+            {s.subsections?.map((sub) => (
+              <div class="guide__subsection">
+                <h3>{sub.heading}</h3>
+                {sub.paragraphs?.map((p) => <p set:html={renderInline(p)} />)}
+                {sub.bullets && (
+                  <ul>
+                    {sub.bullets.map((b) => <li set:html={renderInline(b)} />)}
+                  </ul>
+                )}
+              </div>
+            ))}
+
+            {s.table && <div set:html={renderTable(s.table)} />}
+
+            {s.checklist && (
+              <ul class="guide__checklist">
+                {s.checklist.map((item) => (
+                  <li><input type="checkbox" disabled /> <span set:html={renderInline(item)} /></li>
+                ))}
+              </ul>
+            )}
+            {s.checklistNote && <p class="guide__checklist-note" set:html={renderInline(s.checklistNote)} />}
+
+            {s.paragraphsAfter?.map((p) => <p set:html={renderInline(p)} />)}
+          </section>
+        ))
+      }
+
+      <section class="guide__section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-list">
+          {
+            guide.faq.map((f) => (
+              <details class="faq">
+                <summary>{f.q}</summary>
+                <p>{f.a}</p>
+              </details>
+            ))
+          }
+        </div>
+      </section>
+
+      <section class="guide__section">
+        <h2>{guide.conclusion.heading}</h2>
+        {
+          guide.conclusion.paragraphs.map((p) => <p set:html={renderInline(p)} />)
+        }
+      </section>
+
+      {
+        guide.relatedCategory && (
+          <aside class="guide__related-cat">
+            <strong>Related product category:</strong>{' '}
+            <a href={guide.relatedCategory.href}>{guide.relatedCategory.name} &rarr;</a>
+          </aside>
+        )
+      }
+
+      {
+        guide.dataLinks && guide.dataLinks.length > 0 && (
+          <aside class="guide__data">
+            <strong>Data records referenced in this guide:</strong>
+            <ul>
+              {guide.dataLinks.map((l) => (
+                <li><a href={l.href} target="_blank" rel="noopener">{l.label} &nearr;</a></li>
+              ))}
+            </ul>
+          </aside>
+        )
+      }
+
+      {
+        guide.internalLinks.length > 0 && (
+          <aside class="guide__related">
+            <strong>Related guides:</strong>
+            <ul>
+              {guide.internalLinks.map((l) => (
+                <li><a href={l.href}>{l.label} &rarr;</a></li>
+              ))}
+            </ul>
+          </aside>
+        )
+      }
+
+      <div class="guide__cta">
+        <p>Tell us your OE number or vehicle application and we will match the right filter.</p>
+        <a class="btn btn--primary" href={rfqMailto}>Request a Quote</a>
+      </div>
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  .page-hero .chip { margin-bottom: 0.75rem; background: var(--orange-500); color: #fff; border-color: var(--orange-600); }
+  .guide { max-width: 800px; }
+  .guide__section { margin-bottom: var(--sp-10); }
+  .guide__section h2 { margin-top: var(--sp-8); }
+  .guide__section h3 { color: var(--navy-800); margin-top: 1.5rem; }
+  .guide__section p { margin-bottom: 1.1em; }
+  .guide__section ul, .guide__section ol { margin: 0 0 1.2em; padding-left: 1.4rem; }
+  .guide__section li { margin-bottom: 0.45rem; }
+
+  .guide__steps { padding-left: 1.4rem; }
+  .guide__steps li { margin-bottom: 0.9rem; }
+
+  .guide__subsection { margin-top: 1.25rem; }
+
+  .table-wrap { margin: 1.25rem 0; }
+
+  .guide__checklist { list-style: none; padding-left: 0 !important; }
+  .guide__checklist li {
+    display: flex; gap: 0.6rem; align-items: flex-start;
+    padding: 0.55rem 0.75rem; border-bottom: 1px solid var(--line);
+  }
+  .guide__checklist li:last-child { border-bottom: none; }
+  .guide__checklist input[type='checkbox'] { margin-top: 0.32rem; flex: none; accent-color: var(--orange-500); }
+  .guide__checklist-note { font-size: 0.9rem; color: var(--ink-soft); margin-top: 0.75rem; }
+
+  .faq-list { max-width: 100%; }
+
+  .guide__related-cat, .guide__related, .guide__data {
+    margin-top: 2rem; padding: var(--sp-5) var(--sp-6);
+    background: var(--bg-soft); border: 1px solid var(--line);
+    border-left: 4px solid var(--orange-500); border-radius: 0 var(--radius) var(--radius) 0;
+  }
+  .guide__related-cat strong, .guide__related strong, .guide__data strong { color: var(--navy-800); }
+  .guide__related ul, .guide__data ul { list-style: none; margin: 0.5rem 0 0; padding: 0; }
+  .guide__related li, .guide__data li { margin-bottom: 0.4rem; }
+
+  .guide__cta {
+    margin-top: 2.5rem; padding: var(--sp-6);
+    background: #fff; border: 1px solid var(--line); border-top: 4px solid var(--orange-500);
+    border-radius: var(--radius); box-shadow: var(--shadow-md); text-align: center;
+  }
+  .guide__cta p { margin-bottom: 1rem; }
+
+  @media (max-width: 640px) {
+    .guide__checklist li { flex-direction: row; }
+  }
+</style>

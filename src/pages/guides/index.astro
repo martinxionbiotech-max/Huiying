@@ -1,0 +1,66 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { guidesPosts } from '../../data/guidesPosts';
+
+// Pillar first, then the four clusters in source-brief order.
+const pillar = guidesPosts.find((g) => g.slug === 'automotive-filter-selection-guide');
+const clusters = guidesPosts.filter((g) => g.slug !== 'automotive-filter-selection-guide');
+---
+
+<BaseLayout title="Buying Guides" description="Automotive filter buying guides for importers and wholesalers — selection, application and OE-number verification.">
+  <section class="page-hero">
+    <div class="container">
+      <h1>Buying Guides</h1>
+      <p>Practical guidance for selecting and verifying automotive filters before you buy.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      {
+        pillar && (
+          <div class="pillar card">
+            <span class="chip">Start here</span>
+            <h2>{pillar.title}</h2>
+            <p class="lede">{pillar.description}</p>
+            <a class="btn btn--primary" href={`/guides/${pillar.slug}/`}>Read the guide</a>
+          </div>
+        )
+      }
+
+      <div class="grid grid--2 cluster-grid">
+        {
+          clusters.map((c) => (
+            <a class="card cluster" href={`/guides/${c.slug}/`}>
+              <h3>{c.title}</h3>
+              <p class="muted small">{c.description}</p>
+              <span class="cluster__more">Read guide &rarr;</span>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-hero {
+    background: linear-gradient(160deg, var(--navy-900), var(--navy-700));
+    color: #fff; padding: 3.5rem 0;
+  }
+  .page-hero h1 { color: #fff; margin-bottom: 0.4rem; }
+  .page-hero p { color: var(--navy-100); margin: 0; }
+
+  .pillar {
+    max-width: 820px; margin-bottom: var(--sp-8);
+    border-left: 4px solid var(--orange-500);
+  }
+  .pillar .chip { margin-bottom: 0.75rem; background: var(--orange-500); color: #fff; border-color: var(--orange-600); }
+  .pillar h2 { font-size: clamp(1.5rem, 3vw, 2rem); }
+
+  .cluster-grid { align-items: stretch; }
+  .cluster { color: inherit; display: flex; flex-direction: column; gap: 0.5rem; }
+  .cluster:hover { color: inherit; }
+  .cluster h3 { font-size: 1.12rem; }
+  .cluster__more { color: var(--orange-600); font-weight: 600; font-size: 0.92rem; margin-top: auto; }
+</style>
