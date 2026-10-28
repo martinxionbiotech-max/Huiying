@@ -3,7 +3,6 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import { productCategories, site } from '../../data/site';
 import productsData from '../../data/products.json';
 import { getCategoryContent } from '../../data/categoryContent';
-import { getFitment } from '../../data/vehicleFitment';
 
 export function getStaticPaths() {
   return productCategories.map((c) => ({ params: { category: c.slug }, props: { category: c } }));
@@ -12,7 +11,6 @@ export function getStaticPaths() {
 const { category } = Astro.props;
 const products = productsData.products.filter((p) => p.category === category.slug);
 const content = getCategoryContent(category.slug);
-const fitment = getFitment(category.slug);
 ---
 
 <BaseLayout title={category.name} description={category.desc}>
@@ -88,46 +86,22 @@ const fitment = getFitment(category.slug);
     </>
   )}
 
-  {fitment && (
-    <section class="section section--soft">
-      <div class="container">
-        <div class="section-head">
-          <h2>Vehicle Fitment &amp; Brand Association</h2>
-          <p class="lede">{fitment.intro}</p>
-        </div>
-        <div class="table-wrap">
-          <table class="spec fitment-table">
-            <thead>
-              <tr><th>Brand</th><th>Region</th><th>Common model applications</th><th>Filter note</th></tr>
-            </thead>
-            <tbody>
-              {
-                fitment.brands.map((b) => (
-                  <tr>
-                    <th>{b.brand}</th>
-                    <td>{b.region}</td>
-                    <td>
-                      <ul class="inline-links">
-                        {
-                          b.models.map((m) => (
-                            <li>{b.brand} {m} {category.name.toLowerCase()}</li>
-                          ))
-                        }
-                      </ul>
-                    </td>
-                    <td class="muted small">{b.filterNote}</td>
-                  </tr>
-                ))
-              }
-            </tbody>
-          </table>
-        </div>
-        <p class="muted small mt-2">
-          {fitment.disclaimer} See <a href={`${site.dataSiteUrl}/fitment/${category.slug}/`} target="_blank" rel="noopener">reference fitment data ↗</a>.
+  <section class="section section--soft">
+    <div class="container">
+      <div class="section-head">
+        <h2>Fitment reference</h2>
+        <p class="lede">
+          We do not publish an unverified multi-brand vehicle list for this category. The reference
+          vehicle framework that backs our fitment work is on the data site.
         </p>
       </div>
-    </section>
-  )}
+      <p class="center">
+        <a class="btn btn--outline" href={`${site.dataSiteUrl}/fitment/${category.slug}/`} target="_blank" rel="noopener">
+          Reference fitment data ↗
+        </a>
+      </p>
+    </div>
+  </section>
 
   {content && content.faqs.length > 0 && (
     <section class="section">
