@@ -1,0 +1,27 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Page not found" description="The page you requested could not be found. Browse Huiying filter products or contact us." noindex>
+  <section class="page-hero">
+    <div class="container">
+      <h1>Page not found</h1>
+      <p>The page you requested could not be found. It may have been moved or removed.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container center">
+      <p class="lede">Here are a few helpful places to continue:</p>
+      <div class="cta__actions" style="justify-content:center;">
+        <a class="btn btn--primary" href="/">Back to Home</a>
+        <a class="btn btn--outline" href="/products/">Browse Products</a>
+        <a class="btn btn--ghost" href="/contact/">Contact Us</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .center { text-align: center; }
+</style>

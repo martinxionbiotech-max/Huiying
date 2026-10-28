@@ -43,7 +43,7 @@ export const productCategories = [
   { slug: 'cabin-filter', name: 'Cabin Filter', code: 'cf', desc: 'Cabin air filters for clean in-cabin air.', icon: '/images/d6028db0-eb29-447e-8e5a-1c238d99f4c0.png', stocked: true },
   { slug: 'oil-filter', name: 'Oil Filter', code: 'of', desc: 'Engine oil filters for reliable lubrication.', icon: '/images/d3c90754-3b64-49fe-9777-7973fb0eab78.png', stocked: true },
   { slug: 'fuel-filter', name: 'Fuel Filter', code: 'ff', desc: 'Fuel filters for clean fuel delivery.', icon: '/images/dfa88509-8560-4df5-88f7-e980a578d65a.png', stocked: true },
-  { slug: 'wiper', name: 'Wiper', code: 'wb', desc: 'Wiper blades and wiper products.', icon: '/images/d8dc5304-3276-4f48-95dd-1e16fa3e4e23.png', stocked: false },
+  { slug: 'wiper', name: 'Wiper', code: 'wb', desc: 'Wiper blades and wiper products for automotive applications — SKU list and specifications available on request.', icon: '/images/d8dc5304-3276-4f48-95dd-1e16fa3e4e23.png', stocked: false },
   { slug: 'brake-pads', name: 'Brake Pads', code: 'bp', desc: 'Ceramic and semi-metallic brake pads matched by OE number.', icon: '/images/congben/e69a383eeb894ae8.webp', stocked: true },
   { slug: 'spark-plugs', name: 'Spark Plugs', code: 'sp', desc: 'Ignition spark plugs for gasoline engines, matched by OE and engine application.', icon: '/images/congben/2ef777a7484fa06f.webp', stocked: true },
   { slug: 'rubber-hoses', name: 'Rubber Hoses', code: 'rh', desc: 'EPDM, NBR and silicone hoses for cooling, fuel and air-transfer circuits.', icon: '/images/congben/c221ff4ffc6f5a33.webp', stocked: true },
