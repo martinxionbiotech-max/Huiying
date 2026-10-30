@@ -17,3 +17,4 @@ Thumbs.db
 
 # crawl artifacts (keep scripts + report, not raw crawls in git unless needed)
 crawls/
+.wrangler/
