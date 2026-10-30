@@ -12,9 +12,11 @@ interface Props {
   ogTitle?: string;
   ogDescription?: string;
   ogImage?: string;
+  /** Organization JSON-LD is emitted only where it belongs (home, company profile) — P2 fix. */
+  showOrgSchema?: boolean;
 }
 
-const { title, description, noindex = false, ogTitle, ogDescription, ogImage: ogImageOverride } = Astro.props;
+const { title, description, noindex = false, ogTitle, ogDescription, ogImage: ogImageOverride, showOrgSchema = false } = Astro.props;
 
 const fullTitle = `${title} | ${site.brand} — ${site.tagline}`;
 const metaDescription =
@@ -80,7 +82,7 @@ const orgJsonLd = {
     <meta name="twitter:description" content={ogDescriptionValue} />
     <meta name="twitter:image" content={ogImage} />
     {!noindex && <link rel="canonical" href={canonical} />}
-    <script type="application/ld+json" set:html={JSON.stringify(orgJsonLd)} />
+    {showOrgSchema && <script type="application/ld+json" set:html={JSON.stringify(orgJsonLd)} />}
     <slot name="head" />
   </head>
   <body>

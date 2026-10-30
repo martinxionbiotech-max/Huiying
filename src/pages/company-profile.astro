@@ -3,7 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { companyProfile, companyDisclosure, brandLineage, brandCompanyRelationship, industryBackground, exportMarkets } from '../data/company';
 ---
 
-<BaseLayout title="Company Profile" description={companyProfile.description.slice(0, 155)}>
+<BaseLayout title="Company Profile" description={companyProfile.description.slice(0, 155)} showOrgSchema>
   <section class="page-hero">
     <div class="container"><h1>{companyProfile.heading}</h1><p>{companyProfile.name}</p></div>
   </section>

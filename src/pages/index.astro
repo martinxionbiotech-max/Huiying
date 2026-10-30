@@ -54,7 +54,7 @@ const websiteJsonLd = {
 };
 ---
 
-<BaseLayout title="Home" description={site.positioning}>
+<BaseLayout title="Home" description={site.positioning} showOrgSchema>
   <script slot="head" type="application/ld+json" set:html={JSON.stringify(websiteJsonLd)} />
   <!-- HERO -->
   <section class="hero">
