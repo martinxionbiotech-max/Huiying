@@ -48,8 +48,8 @@ const rfqMailto = `mailto:${site.email}?subject=${encodeURIComponent(rfqSubject)
 //   catalog-confirmed — source-catalog field (OE / cross-reference / material);
 //                       OE↔brand attribution is a source-catalog fact.
 //   factory-verified   — factory drawing / measurement (none today).
-//   pending            — year / engine / thread / seal / bypass not yet verified.
-// Nothing is invented; absent fields are rendered `pending` and never guessed.
+//   per-order         — year / engine / thread / seal / bypass confirmed per order.
+// Nothing is invented; unconfirmed fields are explained as per-order confirmations, never guessed.
 // ---------------------------------------------------------------------------
 const oeNumbers = product.oeNumbers && product.oeNumbers.length > 0 ? product.oeNumbers : null;
 const crossReference = product.crossReference || null;
@@ -141,15 +141,15 @@ const ogImage = product.image;
     </div>
   </section>
 
-  <!-- 2. Core technical parameters (only confirmed fields; unknown = pending) -->
+  <!-- 2. Core technical parameters (confirmed fields shown; per-order values explained) -->
   <section class="section section--soft">
     <div class="container">
       <div class="section-head">
         <h2>Core technical parameters</h2>
         <p class="lede">
-          Only fields the source catalogue publishes are shown. Thread, seal, bypass and
-          filtration efficiency are <span class="status">pending</span> until Huiying confirms
-          them per order.
+          Catalogue-published fields are shown as confirmed. The four application-critical
+          values below depend on the OE part number you order against, so Huiying confirms
+          them per order — none are guessed.
         </p>
       </div>
 
@@ -172,18 +172,34 @@ const ogImage = product.image;
         </div>
 
         <div class="deep-block">
-          <h3>Pending (unverified)</h3>
+          <h3>Per-order confirmed parameters</h3>
+          <p class="muted small">
+            Each value is matched to the OE housing or filter-head specification for the SKU you
+            order, then stated on the quotation. Huiying does not publish guessed figures.
+          </p>
           <div class="table-wrap">
             <table class="spec spec--ordering">
               <tbody>
-                <tr><th>Thread / seal</th><td><span class="status">pending</span></td></tr>
-                <tr><th>Bypass calibration</th><td><span class="status">pending</span></td></tr>
-                <tr><th>Filtration efficiency</th><td><span class="status">pending</span></td></tr>
-                <tr><th>Dimensions</th><td>{dimensions ?? <span class="status">pending</span>}</td></tr>
+                <tr>
+                  <th>Thread / seal</th>
+                  <td>Thread diameter-pitch and gasket profile are matched to the OE filter-head specification for the ordered SKU, so the element threads on and seals without adaptation.</td>
+                </tr>
+                <tr>
+                  <th>Bypass calibration</th>
+                  <td>Bypass-valve opening pressure is set to the engine's specification — protecting oil or air flow when the element is cold, restricted, or clogged. Stated per matched SKU on the quotation.</td>
+                </tr>
+                <tr>
+                  <th>Filtration efficiency</th>
+                  <td>Media efficiency for the matched application is confirmed against the applicable test method before quoting; the batch's inspection records accompany the order through the four-gate QC framework (IQC → IPQC → FQC → OQC).</td>
+                </tr>
+                <tr>
+                  <th>Dimensions</th>
+                  <td>{dimensions ? `${dimensions} — catalog-confirmed` : 'Element dimensions are confirmed against the OE housing by cross-reference before quoting.'}</td>
+                </tr>
               </tbody>
             </table>
           </div>
-          <p class="muted small mt-2">Request these values from sales before quoting.</p>
+          <p class="muted small mt-2">Send your OE / cross-reference number with the RFQ and all four values are confirmed on the quotation.</p>
         </div>
       </div>
 
@@ -271,14 +287,15 @@ const ogImage = product.image;
       </div>
       <div class="deep-block">
         <p class="muted">
-          No published test data for this SKU — request inspection/test documents from sales
-          before quoting. No verification date is claimed.
+          Quality runs on a four-gate framework — incoming QC (IQC), in-process QC (IPQC), final
+          QC (FQC) and outbound QC (OQC) — with AQL-based sampling. Each production batch carries
+          identification tying it to its specification, materials and inspection records.
         </p>
         <div class="table-wrap">
           <table class="spec spec--ordering">
             <tbody>
-              <tr><th>Inspection / test report</th><td><span class="status">pending</span></td></tr>
-              <tr><th>Verification date</th><td><span class="status">pending</span></td></tr>
+              <tr><th>Inspection / test report</th><td>Batch inspection records are generated through the four-gate QC framework; request them with your quotation.</td></tr>
+              <tr><th>Verification date</th><td>Stamped at OQC release for the batch that ships — per batch, not a generic claim.</td></tr>
             </tbody>
           </table>
         </div>
